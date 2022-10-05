@@ -28,7 +28,7 @@ const navLinks = [
   }/*,
   {
     title: 'Footer-Audit',
-    path: 'https://github.com/justyield/justyield-audits',
+    path: 'https://github.com/JustYield-Finance/justyield-audits',
   },
   {
     title: 'Footer-MediaKit',
@@ -39,19 +39,19 @@ const navLinks = [
 const socialLinks = [
   {
     title: 'GitHub',
-    path: 'https://github.com/justyield',
+    path: 'https://github.com/JustYield-Finance',
     Icon: IconGithub,
   },
-  {
+  /*{
     title: 'Telegram',
     path: 'https://t.me/justyield',
     Icon: IconTelegram,
-  },
-  /*{
-    title: 'Discord',
-    path: 'https://discord.gg/yq8wfHd',
-    Icon: IconDiscord,
   },*/
+  {
+    title: 'Discord',
+    path: 'https://discord.gg/bbdvQJ4Avg',
+    Icon: IconDiscord,
+  },
   {
     title: 'Twitter',
     path: 'https://twitter.com/justyield',
