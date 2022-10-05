@@ -3,12 +3,12 @@ import { Theme } from '@material-ui/core/styles';
 export const styles = (theme: Theme) => ({
   select: {
     ...theme.typography['body-lg-med'],
-    backgroundColor: '#262A40',
-    border: 'solid 2px #303550',
+    backgroundColor: '#d9d5bf',
+    border: 'solid 2px #cfcaaf',
     borderRadius: '8px',
     minWidth: 0,
     width: 'fit-content',
-    color: '#D0D0DA',
+    color: '#2f2f25',
     padding: `${8 - 2}px ${16 - 2}px`,
     cursor: 'pointer',
     userSelect: 'none' as const,
@@ -26,7 +26,7 @@ export const styles = (theme: Theme) => ({
   selectLabel: {
     flexShrink: 0,
     flexGrow: 0,
-    color: '#8A8EA8',
+    color: '#757157',
     marginRight: '4px',
   },
   selectValue: {
@@ -62,11 +62,11 @@ export const styles = (theme: Theme) => ({
   dropdown: {
     ...theme.typography['body-lg-med'],
     zIndex: 1000,
-    border: '2px solid #393F60',
+    border: '2px solid #c6c09f',
     borderRadius: '8px',
-    backgroundColor: '#303550',
+    backgroundColor: '#cfcaaf',
     padding: `${8 - 2}px 0`,
-    color: '#D0D0DA',
+    color: '#2f2f25',
     maxWidth: '100%',
     maxHeight: '100%',
     overflowX: 'hidden' as const,
@@ -78,16 +78,16 @@ export const styles = (theme: Theme) => ({
     cursor: 'pointer',
     padding: `8px ${16 - 2}px`,
     '&:hover': {
-      background: 'rgba(255, 255, 255, 0.16)',
-      color: '#FFF',
+      background: 'rgba(0, 0, 0, 0.16)',
+      color: '#000',
     },
     '&:active': {
       background: 'transparent',
-      color: '#F5F5FF',
+      color: '#0a0a00',
     },
   },
   dropdownItemSelected: {
     background: 'transparent',
-    color: '#F5F5FF',
+    color: '#0a0a00',
   },
 });

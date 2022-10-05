@@ -9,7 +9,7 @@ export const styles = (theme: Theme) => ({
   },
   sortColumn: {
     ...theme.typography['subline-sm'],
-    color: '#8A8EA8',
+    color: '#757157',
     display: 'flex',
     alignItems: 'center' as const,
     justifyContent: 'flex-end' as const,
@@ -38,10 +38,10 @@ export const styles = (theme: Theme) => ({
     display: 'block',
   },
   sortIconHighlight: {
-    fill: '#F5F5FF',
+    fill: '#0a0a00',
   },
   sortDropdown: {
-    backgroundColor: '#1B1E31',
+    backgroundColor: '#e4e1ce',
     [theme.breakpoints.up('md')]: {
       width: '200px',
       maxWidth: '100%',

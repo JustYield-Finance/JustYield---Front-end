@@ -27,7 +27,7 @@ export const styles = (theme: Theme) => ({
   beefy: {
     display: 'block',
     '& img': {
-      height: '40px',
+      height: '100px',
       display: 'block',
     },
   },

@@ -2,22 +2,22 @@ import { Theme } from '@material-ui/core/styles';
 
 export const styles = (theme: Theme) => ({
   input: {
-    color: '#D0D0DA',
-    background: '#1B1E31',
+    color: '#2f2f25',
+    background: '#e4e1ce',
     borderRadius: '8px',
     width: '100%',
     display: 'flex',
-    border: 'solid 2px #1B1E31',
+    border: 'solid 2px #e4e1ce',
     '& .MuiInputBase-input': {
       ...theme.typography['h2'],
       padding: `${8 - 2}px 16px`,
-      color: '#D0D0DA',
+      color: '#2f2f25',
       height: 'auto',
       '&:focus': {
-        color: '#F5F5FF',
+        color: '#0a0a00',
       },
       '&::placeholder': {
-        color: '#8A8EA8',
+        color: '#757157',
         opacity: 1,
       },
     },
@@ -34,7 +34,7 @@ export const styles = (theme: Theme) => ({
     lineHeight: 'inherit',
     display: 'flex',
     alignItems: 'center',
-    color: '#D0D0DA',
+    color: '#2f2f25',
     flexShrink: 0,
     width: '24px',
     height: '24px',

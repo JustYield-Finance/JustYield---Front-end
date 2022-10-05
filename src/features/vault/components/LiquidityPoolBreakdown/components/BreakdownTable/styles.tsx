@@ -6,7 +6,7 @@ export const styles = (theme: Theme) => ({
     flexDirection: 'column' as const,
     justifyContent: 'center',
     backgroundImage:
-      'linear-gradient(to bottom, #2D3153 0%, #2D3153 50%, #363B63 50%, #363B63 100%)',
+      'linear-gradient(to bottom, #d2ceac 0%, #d2ceac 50%, #c9c49c 50%, #c9c49c 100%)',
     borderBottomLeftRadius: '8px',
     borderBottomRightRadius: '8px',
     [theme.breakpoints.up('lg')]: {
@@ -19,11 +19,11 @@ export const styles = (theme: Theme) => ({
     textOverflow: 'ellipsis',
   },
   row: {
-    backgroundColor: '#2D3153',
+    backgroundColor: '#d2ceac',
     display: 'grid',
     gridTemplateColumns: '35fr 35fr 30fr',
     padding: '16px 24px',
-    borderBottom: 'solid 2px #363B63',
+    borderBottom: 'solid 2px #c9c49c',
     alignItems: 'center',
     columnGap: '16px',
     '&:last-child': {
@@ -35,10 +35,10 @@ export const styles = (theme: Theme) => ({
   },
   header: {
     ...theme.typography['subline-sm'],
-    color: '#999CB3',
+    color: '#66634c',
   },
   footer: {
-    backgroundColor: '#363B63',
+    backgroundColor: '#c9c49c',
     borderBottomLeftRadius: '8px',
     borderBottomRightRadius: '8px',
     [theme.breakpoints.up('lg')]: {

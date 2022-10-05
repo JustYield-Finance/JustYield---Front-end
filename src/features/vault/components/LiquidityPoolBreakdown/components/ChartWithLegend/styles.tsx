@@ -11,7 +11,7 @@ export const styles = (theme: Theme) => ({
     },
     [theme.breakpoints.up('lg')]: {
       flexDirection: 'column' as const,
-      borderRight: 'solid 2px #363B63',
+      borderRight: 'solid 2px #c9c49c',
     },
   },
   legend: {

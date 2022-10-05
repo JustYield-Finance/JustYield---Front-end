@@ -2,7 +2,7 @@ import { Theme } from '@material-ui/core/styles';
 
 export const styles = (theme: Theme) => ({
   header: {
-    backgroundColor: '#272B4A',
+    backgroundColor: '#d8d4b5',
     borderRadius: '12px',
   },
   tabs: {
@@ -56,7 +56,7 @@ export const styles = (theme: Theme) => ({
       backgroundColor: '#389D44',
     },
     '&.Mui-disabled': {
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+      backgroundColor: 'rgba(0, 0, 0, 0.2)',
     },
   },
   info: {

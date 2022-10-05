@@ -10,7 +10,7 @@ export const styles = (theme: Theme) => ({
     '&::before, &::after': {
       content: '""',
       display: 'block',
-      background: '#2D3153',
+      background: '#d2ceac',
       height: '2px',
       width: '1px',
       flexShrink: '0',
@@ -23,8 +23,8 @@ export const styles = (theme: Theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#F5F5FF',
-    background: '#363B63',
+    color: '#0a0a00',
+    background: '#c9c49c',
     border: 'none',
     borderRadius: '50%',
     boxShadow: 'none',
@@ -37,6 +37,6 @@ export const styles = (theme: Theme) => ({
   icon: {
     width: 15,
     height: 13,
-    fill: '#F5F5FF',
+    fill: '#0a0a00',
   },
 });

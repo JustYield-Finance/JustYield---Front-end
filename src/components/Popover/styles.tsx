@@ -3,21 +3,21 @@ import { Theme } from '@material-ui/core/styles';
 export const styles = (theme: Theme) => ({
   popover: {
     padding: '16px',
-    background: theme.palette.type === 'dark' ? '#FFF' : '#272B4A',
-    border: theme.palette.type === 'dark' ? '2px solid #E5E5E5' : '2px solid #A69885',
-    filter: 'drop-shadow(0px 0px 40px #0A0F2B)',
+    background: theme.palette.type === 'dark' ? '#000' : '#d8d4b5',
+    border: theme.palette.type === 'dark' ? '2px solid #1a1a1a' : '2px solid #59677a',
+    filter: 'drop-shadow(0px 0px 40px #f5f0d4)',
     borderRadius: '10px',
     margin: '15px auto',
     maxWidth: '350px',
     minWidth: '250px',
     textAlign: 'left' as const,
-    color: theme.palette.type === 'dark' ? '#565B81' : '#A69885',
+    color: theme.palette.type === 'dark' ? '#a9a47e' : '#59677a',
   },
   trigger: {
     display: 'flex',
     alignItems: 'center',
-    background: theme.palette.type === 'dark' ? ' #272B4A' : '#6E675D',
-    color: '#fff',
+    background: theme.palette.type === 'dark' ? ' #d8d4b5' : '#9198a2',
+    color: '#000',
     '&:hover': {
       cursor: 'pointer',
     },
@@ -26,7 +26,7 @@ export const styles = (theme: Theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#8585A6',
+    color: '#7a7a59',
     '& .MuiSvgIcon-root': {
       fontSize: 'inherit',
     },
@@ -36,7 +36,7 @@ export const styles = (theme: Theme) => ({
   },
   title: {
     ...theme.typography['body-lg-med'],
-    color: theme.palette.type === 'dark' ? '#272B4A' : '#A69885',
+    color: theme.palette.type === 'dark' ? '#d8d4b5' : '#59677a',
     marginBottom: '8px',
   },
   size_sm: {
@@ -87,7 +87,7 @@ export const styles = (theme: Theme) => ({
         borderWidth: '12px',
         borderColor:
           theme.palette.type === 'dark'
-            ? '#FFF transparent transparent transparent'
+            ? '#000 transparent transparent transparent'
             : 'transparent transparent transparent transparent',
       },
       '&:after': {
@@ -95,7 +95,7 @@ export const styles = (theme: Theme) => ({
         borderColor:
           theme.palette.type === 'dark'
             ? 'transparent transparent transparent transparent'
-            : 'transparent transparent #A69885 transparent',
+            : 'transparent transparent #59677a transparent',
       },
     },
     '&[x-placement*="bottom"] span': {
@@ -107,7 +107,7 @@ export const styles = (theme: Theme) => ({
         borderWidth: '12px',
         borderColor:
           theme.palette.type === 'dark'
-            ? 'transparent transparent #FFF transparent'
+            ? 'transparent transparent #000 transparent'
             : 'transparent transparent transparent transparent',
       },
       '&:after': {
@@ -115,7 +115,7 @@ export const styles = (theme: Theme) => ({
         borderColor:
           theme.palette.type === 'dark'
             ? 'transparent transparent transparent transparent'
-            : 'transparent transparent #A69885 transparent',
+            : 'transparent transparent #59677a transparent',
       },
     },
     '&[x-placement*="end"] span': {

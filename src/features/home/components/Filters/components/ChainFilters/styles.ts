@@ -25,10 +25,10 @@ export const styles = (theme: Theme) => ({
     cursor: 'pointer',
     '&:not($selected) $icon': {
       '& .bg': {
-        fill: '#2E324C',
+        fill: '#d1cdb3',
       },
       '& .fg': {
-        fill: '#1B1E31',
+        fill: '#e4e1ce',
       },
     },
   },

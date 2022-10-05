@@ -5,11 +5,11 @@ export const styles = (theme: Theme) => ({
     ...theme.typography['body-lg-med'],
     display: 'flex',
     alignItems: 'center',
-    color: '#D0D0DA',
+    color: '#2f2f25',
     cursor: 'pointer',
   },
   icon: {
-    color: '#848BAD',
+    color: '#7b7452',
     marginRight: `${8 - 3}px`,
   },
   label: {
@@ -18,7 +18,7 @@ export const styles = (theme: Theme) => ({
   },
   checked: {
     '& $icon': {
-      color: '#F5F5FF',
+      color: '#0a0a00',
     },
   },
 });

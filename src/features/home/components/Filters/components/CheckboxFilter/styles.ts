@@ -2,7 +2,7 @@ import { Theme } from '@material-ui/core/styles';
 
 export const styles = (theme: Theme) => ({
   checkbox: {
-    color: '#848BAD',
+    color: '#7b7452',
   },
   labelIcon: {
     marginRight: '8px',

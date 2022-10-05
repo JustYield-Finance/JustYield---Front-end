@@ -4,16 +4,16 @@ export const styles = (theme: Theme) => ({
   buttons: {
     display: 'flex',
     width: 'fit-content',
-    border: 'solid 2px #303550',
+    border: 'solid 2px #cfcaaf',
     borderRadius: '8px',
-    backgroundColor: '#262A40',
+    backgroundColor: '#d9d5bf',
   },
   fullWidth: {
     width: '100%',
   },
   button: {
     ...theme.typography['body-lg-med'],
-    color: '#8A8EA8',
+    color: '#757157',
     backgroundColor: 'inherit',
     border: 'none',
     borderRadius: '6px',
@@ -24,21 +24,21 @@ export const styles = (theme: Theme) => ({
     flexGrow: 1,
     flexShrink: 0,
     '&:hover': {
-      color: '#D0D0DA',
-      backgroundColor: 'rgba(245, 245, 255, 0.08)',
+      color: '#2f2f25',
+      backgroundColor: 'rgba(10, 10, 0, 0.08)',
       boxShadow: 'none',
     },
     '&:active, &:hover:active': {
-      color: '#ffffff',
+      color: '#000000',
       backgroundColor: theme.palette.primary.main,
     },
   },
   selected: {
     pointerEvents: 'none' as const,
-    color: '#ffffff',
+    color: '#000000',
     backgroundColor: theme.palette.primary.main,
     '&:hover': {
-      color: '#ffffff',
+      color: '#000000',
       backgroundColor: theme.palette.primary.main,
     },
   },
@@ -47,19 +47,19 @@ export const styles = (theme: Theme) => ({
     '& $button': {
       padding: '0 12px',
       '&:hover': {
-        color: '#D0D0DA',
+        color: '#2f2f25',
         backgroundColor: 'transparent',
       },
       '&:active, &:hover:active': {
-        color: '#ffffff',
+        color: '#000000',
         backgroundColor: 'transparent',
       },
       '&$selected': {
         pointerEvents: 'all' as const,
-        color: '#ffffff',
+        color: '#000000',
         backgroundColor: 'transparent',
         '&:hover': {
-          color: '#ffffff',
+          color: '#000000',
           backgroundColor: 'transparent',
         },
       },

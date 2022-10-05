@@ -55,7 +55,7 @@ export const styles = (theme: Theme) => ({
     },
   },
   checkbox: {
-    color: '#848BAD',
+    color: '#7b7452',
   },
   label: {
     ...theme.typography['subline-lg'],

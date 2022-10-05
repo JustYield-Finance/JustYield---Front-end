@@ -4,7 +4,7 @@ export const styles = (theme: Theme) => ({
   content: {
     padding: '24px',
     borderRadius: '4px',
-    backgroundColor: '#232743',
+    backgroundColor: '#dcd8bc',
   },
   confirmIntro: {
     color: theme.palette.text.secondary,
@@ -41,7 +41,7 @@ export const styles = (theme: Theme) => ({
     color: theme.palette.text.secondary,
   },
   amount: {
-    color: '#999CB3',
+    color: '#66634c',
     fontWeight: 500,
   },
   address: {
@@ -58,14 +58,14 @@ export const styles = (theme: Theme) => ({
     columnGap: '8px',
     marginTop: '24px',
     padding: '12px',
-    border: '2px solid #2D3153',
+    border: '2px solid #d2ceac',
     borderRadius: '8px',
   },
   detailLabel: {
     ...theme.typography['body-sm'],
     fontWeight: 700,
     letterSpacing: '0.5px',
-    color: '#999CB3',
+    color: '#66634c',
     textTransform: 'uppercase' as const,
     whiteSpace: 'nowrap' as const,
   },

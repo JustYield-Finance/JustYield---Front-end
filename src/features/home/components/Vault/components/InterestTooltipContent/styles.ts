@@ -9,13 +9,13 @@ export const styles = (theme: Theme) => ({
     gridTemplateColumns: '1fr auto',
   },
   label: {
-    color: '#272B4A',
+    color: '#d8d4b5',
     '&:nth-last-child(2)': {
       fontWeight: theme.typography['body-lg-med'].fontWeight,
     },
   },
   value: {
-    color: '#272B4A',
+    color: '#d8d4b5',
     textAlign: 'right' as const,
     '&:last-child': {
       fontWeight: theme.typography['body-lg-med'].fontWeight,

@@ -120,7 +120,7 @@ export const Header = connect((state: BeefyState) => {
   }) => {
     const classes = useStyles();
 
-    const isMobile = useMediaQuery('(max-width: 500px)');
+    const isMobile = useMediaQuery('(max-width: 600px)');
 
     const [mobileOpen, setMobileOpen] = useState(false);
     const handleDrawerToggle = () => {
@@ -137,8 +137,8 @@ export const Header = connect((state: BeefyState) => {
                     alt="JustYield"
                     src={
                       isMobile
-                        ? require(`../../images/bifi-logos/header-logo-notext.svg`).default
-                        : require(`../../images/bifi-logos/header-logo.svg`).default
+                        ? require(`../../images/bifi-logos/header-logo-notext.png`).default
+                        : require(`../../images/bifi-logos/header-logo.png`).default
                     }
                   />
                 </Link>

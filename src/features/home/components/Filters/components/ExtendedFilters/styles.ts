@@ -7,23 +7,23 @@ export const styles = (theme: Theme) => ({
     zIndex: 1000,
   },
   dropdownInner: {
-    backgroundColor: '#303550',
+    backgroundColor: '#cfcaaf',
     borderRadius: '8px',
     padding: '24px',
-    boxShadow: '0px 4px 24px 24px rgba(19, 17, 34, 0.16), 0px 2px 8px rgba(20, 18, 33, 0.2)',
+    boxShadow: '0px 4px 24px 24px rgba(236, 238, 221, 0.16), 0px 2px 8px rgba(235, 237, 222, 0.2)',
   },
   sidebar: {
-    backgroundColor: '#303550',
+    backgroundColor: '#cfcaaf',
     width: '350px',
     maxWidth: 'calc(100vw - 32px)',
     borderTopLeftRadius: '16px',
     borderBottomLeftRadius: '16px',
-    boxShadow: '0px 4px 24px 24px rgba(19, 17, 34, 0.16), 0px 2px 8px rgba(19, 17, 34, 0.2)',
+    boxShadow: '0px 4px 24px 24px rgba(236, 238, 221, 0.16), 0px 2px 8px rgba(236, 238, 221, 0.2)',
   },
   sidebarHeader: {
     ...theme.typography['h2'],
-    backgroundColor: '#111321',
-    color: '#F5F5FF',
+    backgroundColor: '#eeecde',
+    color: '#0a0a00',
     padding: '24px',
     flexGrow: 0,
     flexShrink: 0,
@@ -39,7 +39,7 @@ export const styles = (theme: Theme) => ({
     border: 0,
     boxShadow: 'none',
     background: 'transparent',
-    color: '#999CB3',
+    color: '#66634c',
     cursor: 'pointer',
   },
   sidebarMain: {
@@ -55,7 +55,7 @@ export const styles = (theme: Theme) => ({
     flexShrink: 0,
   },
   extendedFilters: {
-    color: '#F5F5FF',
+    color: '#0a0a00',
   },
   shownVaultsCount: {
     width: '100%',

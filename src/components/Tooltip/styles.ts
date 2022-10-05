@@ -20,9 +20,9 @@ export const styles = (theme: Theme) => ({
   },
   content: {
     ...theme.typography['body-lg'],
-    color: '#272B4A',
+    color: '#d8d4b5',
     padding: '12px 16px',
-    background: '#fff',
+    background: '#000',
     borderRadius: '8px',
     textAlign: 'left' as const,
   },
@@ -36,7 +36,7 @@ export const styles = (theme: Theme) => ({
         bottom: `-${arrowHeight}px`,
         '&::before': {
           borderWidth: `${arrowHeight}px ${arrowWidth / 2}px 0 ${arrowWidth / 2}px`,
-          borderColor: '#fff transparent transparent transparent',
+          borderColor: '#000 transparent transparent transparent',
         },
       },
     },
@@ -46,7 +46,7 @@ export const styles = (theme: Theme) => ({
         top: `-${arrowHeight}px`,
         '&::before': {
           borderWidth: `0 ${arrowWidth / 2}px ${arrowHeight}px ${arrowWidth / 2}px`,
-          borderColor: 'transparent transparent #fff transparent',
+          borderColor: 'transparent transparent #000 transparent',
         },
       },
     },
@@ -56,7 +56,7 @@ export const styles = (theme: Theme) => ({
         right: `-${arrowHeight}px`,
         '&::before': {
           borderWidth: `${arrowWidth / 2}px 0 ${arrowWidth / 2}px ${arrowHeight}px`,
-          borderColor: ' transparent transparent transparent #fff',
+          borderColor: ' transparent transparent transparent #000',
         },
       },
     },
@@ -66,7 +66,7 @@ export const styles = (theme: Theme) => ({
         left: `-${arrowHeight}px`,
         '&::before': {
           borderWidth: `${arrowWidth / 2}px ${arrowHeight}px ${arrowWidth / 2}px 0`,
-          borderColor: 'transparent #fff transparent transparent',
+          borderColor: 'transparent #000 transparent transparent',
         },
       },
     },
@@ -89,10 +89,10 @@ export const styles = (theme: Theme) => ({
   },
   basicTitle: {
     ...theme.typography['body-lg-med'],
-    color: '#272B4A',
+    color: '#d8d4b5',
   },
   basicContent: {
     ...theme.typography['body-lg'],
-    color: '#272B4A',
+    color: '#d8d4b5',
   },
 });

@@ -11,8 +11,8 @@ export const styles = (theme: Theme) => ({
   },
   vaultTag: {
     ...theme.typography['subline-sm'],
-    color: '#D0D0DA',
-    backgroundColor: '#4C5480',
+    color: '#2f2f25',
+    backgroundColor: '#b3ab7f',
     padding: '2px 8px',
     borderRadius: '4px',
     textTransform: 'uppercase' as const,
@@ -26,15 +26,15 @@ export const styles = (theme: Theme) => ({
     },
   },
   vaultTagBoost: {
-    backgroundColor: 'rgba(219, 131, 50, 0.3)',
+    backgroundColor: 'rgba(36, 124, 205, 0.3)',
   },
   vaultTagRetired: {
-    backgroundColor: 'rgba(209, 83, 71, 0.3)',
+    backgroundColor: 'rgba(46, 172, 184, 0.3)',
   },
   vaultTagPaused: {
-    backgroundColor: 'rgba(209, 152, 71, 0.3)',
+    backgroundColor: 'rgba(46, 103, 184, 0.3)',
   },
   vaultTagEarn: {
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
   },
 });

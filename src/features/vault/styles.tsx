@@ -23,7 +23,7 @@ export const styles = (theme: Theme) => ({
     margin: '0 0 0 12px',
   },
   dw: {
-    backgroundColor: '#272B4A',
+    backgroundColor: '#d8d4b5',
     borderRadius: '12px',
   },
   contentColumns: {
