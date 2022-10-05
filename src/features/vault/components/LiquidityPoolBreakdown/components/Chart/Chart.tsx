@@ -39,10 +39,10 @@ const ActiveShape = function ({
 }: ActiveShapeProps) {
   return (
     <g>
-      <text x={cx} y={cy} dy={-8} textAnchor="middle" alignmentBaseline="middle" fill="#D0D0DA">
+      <text x={cx} y={cy} dy={-8} textAnchor="middle" alignmentBaseline="middle" fill="#2f2f25">
         {payload.symbol}
       </text>
-      <text x={cx} y={cy} dy={8} textAnchor="middle" alignmentBaseline="middle" fill="#D0D0DA">
+      <text x={cx} y={cy} dy={8} textAnchor="middle" alignmentBaseline="middle" fill="#2f2f25">
         {formatPercent(payload.percent)}
       </text>
       <Sector

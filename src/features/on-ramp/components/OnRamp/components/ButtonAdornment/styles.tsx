@@ -3,7 +3,7 @@ import { Theme } from '@material-ui/core/styles';
 export const styles = (theme: Theme) => ({
   button: {
     ...theme.typography['body-lg-med'],
-    color: '#D0D0DA',
+    color: '#2f2f25',
     background: 'transparent',
     border: 'none',
     boxShadow: 'none',
@@ -14,14 +14,14 @@ export const styles = (theme: Theme) => ({
     padding: 0,
     cursor: 'pointer' as const,
     '&:hover, &:focus-visible': {
-      color: '#F5F5FF',
+      color: '#0a0a00',
       '& $arrow': {
-        color: '#D0D0DA',
+        color: '#2f2f25',
       },
     },
   },
   arrow: {
-    color: '#999CB3',
+    color: '#66634c',
     height: '24px',
   },
 });

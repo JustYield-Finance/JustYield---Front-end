@@ -10,7 +10,7 @@ export const styles = (theme: Theme) => ({
     borderRadius: '8px',
     padding: '16px',
     alignItems: 'flex-start',
-    backgroundColor: 'rgba(245, 245, 255, 0.08)',
+    backgroundColor: 'rgba(10, 10, 0, 0.08)',
   },
   icon: {
     width: '24px',
@@ -23,7 +23,7 @@ export const styles = (theme: Theme) => ({
     flexShrink: 1,
     flexGrow: 1,
     minWidth: 0,
-    color: '#D0D0DA',
+    color: '#2f2f25',
     '& p:first-child': {
       marginTop: 0,
     },

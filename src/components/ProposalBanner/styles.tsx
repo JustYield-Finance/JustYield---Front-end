@@ -8,7 +8,7 @@ export const styles = (theme: Theme) => ({
   },
   icon: { marginRight: theme.spacing(1), height: '24px' },
   box: {
-    backgroundColor: 'rgba(140, 147, 191, 0.1)',
+    backgroundColor: 'rgba(115, 108, 64, 0.1)',
     borderRadius: '8px',
     padding: '16px',
     display: 'flex',
@@ -25,7 +25,7 @@ export const styles = (theme: Theme) => ({
     color: theme.palette.primary.main,
   },
   cross: {
-    fill: '#D0D0DA',
+    fill: '#2f2f25',
     '&:hover': {
       cursor: 'pointer',
     },

@@ -64,7 +64,7 @@ export const styles = (theme: Theme) => ({
     borderRadius: '8px',
     backgroundColor: '#cfcaaf',
     padding: `${8 - 2}px 0`,
-    color: '#D0D0DA',
+    color: '#2f2f25',
     maxWidth: '100%',
     maxHeight: '100%',
     overflowX: 'hidden' as const,

@@ -8,7 +8,7 @@ export const styles = (theme: Theme) => ({
     marginRight: '8px',
   },
   iconLoading: {
-    background: 'rgba(255, 255, 255, 0.12);',
+    background: 'rgba(0, 0, 0, 0.12);',
   },
   iconProvider: {
     background: 'red',
@@ -18,12 +18,12 @@ export const styles = (theme: Theme) => ({
   },
   rate: {
     ...theme.typography['body-sm'],
-    color: '#999CB3',
+    color: '#66634c',
     marginRight: '8px',
   },
   arrow: {
     marginLeft: 'auto',
-    color: '#D0D0DA',
+    color: '#2f2f25',
     height: '24px',
   },
 });

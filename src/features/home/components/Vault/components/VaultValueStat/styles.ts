@@ -3,17 +3,17 @@ import { Theme } from '@material-ui/core/styles';
 export const styles = (theme: Theme) => ({
   value: {
     ...theme.typography['body-lg-med'],
-    color: '#D0D0DA',
+    color: '#2f2f25',
   },
   subValue: {
     ...theme.typography['body-sm'],
-    color: '#8A8EA8',
+    color: '#757157',
   },
   blurValue: {
     filter: 'blur(.5rem)',
   },
   boostedValue: {
-    color: '#DB8332',
+    color: '#247ccd',
   },
   lineThroughValue: {
     textDecoration: 'line-through',

@@ -3,7 +3,7 @@ import { Theme } from '@material-ui/core';
 export const styles = (theme: Theme) => ({
   holder: {
     ...theme.typography['subline-sm'],
-    color: '#D0D0DA',
+    color: '#2f2f25',
     display: 'flex',
     flexDirection: 'column' as const,
     rowGap: '16px',

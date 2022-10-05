@@ -8,7 +8,7 @@ export const styles = (theme: Theme) => ({
   container: {
     width: '44px',
     height: '40px',
-    border: '2px solid #30354F',
+    border: '2px solid #cfcab0',
     borderRadius: '8px',
     display: 'flex',
     alignItems: 'center',
@@ -17,7 +17,7 @@ export const styles = (theme: Theme) => ({
     backgroundColor: 'transparent',
     padding: 0,
     '&.open': {
-      backgroundColor: '#242737',
+      backgroundColor: '#dbd8c8',
     },
   },
   circle: {
@@ -84,19 +84,19 @@ export const styles = (theme: Theme) => ({
     width: '100%',
   },
   popover: {
-    border: '2px solid #30354F',
-    backgroundColor: '#242737',
+    border: '2px solid #cfcab0',
+    backgroundColor: '#dbd8c8',
     borderRadius: '8px',
     padding: `${12 - 2}px ${16 - 2}px`,
     position: 'relative' as const, // to position the close button
     width: '257px',
     maxWidth: 'min(100%, 380px)',
-    color: '#D0D0DA', // default text color
+    color: '#2f2f25', // default text color
     lineHeight: '24px', // make everything nicely spaced
   },
   popoverTitle: {
     ...theme.typography['body-lg-med'],
-    color: '#F5F5FF',
+    color: '#0a0a00',
     paddingRight: '32px', // to leave some room for the close button
     marginBottom: '8px',
     '&:last-child': {
@@ -120,7 +120,7 @@ export const styles = (theme: Theme) => ({
     marginTop: '8px',
   },
   closeIconButton: {
-    color: '#8A8EA8',
+    color: '#757157',
     position: 'absolute' as const,
     fontSize: '22px',
     width: '22px',

@@ -14,23 +14,23 @@ export const styles = (theme: Theme) => ({
     width: '64px',
     height: '64px',
     borderRadius: '50%',
-    background: 'rgba(209, 83, 71, 0.15)',
+    background: 'rgba(46, 172, 184, 0.15)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
   icon: {
-    color: '#D15347',
+    color: '#2eacb8',
     fontSize: '30px',
   },
   title: {
     ...theme.typography.h3,
-    color: '#F5F5FF',
+    color: '#0a0a00',
     marginTop: '24px',
   },
   content: {
     ...theme.typography['body-lg'],
-    color: '#D0D0DA',
+    color: '#2f2f25',
     marginTop: '24px',
   },
 });

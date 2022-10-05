@@ -30,7 +30,7 @@ export const itemStyles = (theme: Theme) => ({
     display: 'flex',
     alignItems: 'center',
     width: '100%',
-    color: '#999CB3',
+    color: '#66634c',
     background: 'transparent',
     border: 'none',
     boxShadow: 'none',
@@ -40,14 +40,14 @@ export const itemStyles = (theme: Theme) => ({
     userSelect: 'none' as const,
     outline: 'none',
     '&:hover, &:focus-visible': {
-      color: '#D0D0DA',
+      color: '#2f2f25',
       '& $arrow': {
-        color: '#fff',
+        color: '#000',
       },
     },
   },
   arrow: {
-    color: '#D0D0DA',
+    color: '#2f2f25',
     height: '24px',
   },
   marginWithEndAdornement: {
