@@ -61,7 +61,7 @@ const NavLinks = memo(function () {
   const { t } = useTranslation();
   const classes = useStyles();
   const navLinks = [
-    //{ title: t('Header-Vaults'), url: '/' },
+    { title: t('Header-Vaults'), url: '/' },
     //{ title: t('Header-Proposals'), url: 'https://vote.justyield.finance' },
     //{ title: t('Header-BuyCrypto'), url: '/onramp' },
     //{ title: t('Header-BridgeBifi'), url: '/bridge', badge: true },
