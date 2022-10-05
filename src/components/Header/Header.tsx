@@ -61,12 +61,12 @@ const NavLinks = memo(function () {
   const { t } = useTranslation();
   const classes = useStyles();
   const navLinks = [
-    { title: t('Header-Vaults'), url: '/' },
+    //{ title: t('Header-Vaults'), url: '/' },
     //{ title: t('Header-Proposals'), url: 'https://vote.justyield.finance' },
     //{ title: t('Header-BuyCrypto'), url: '/onramp' },
     //{ title: t('Header-BridgeBifi'), url: '/bridge', badge: true },
     //{ title: t('Header-News'), url: 'https://justyield.com/articles/' },
-    { title: t('Header-Docs'), url: 'https://docs.justyield.finance' }
+    //{ title: t('Header-Docs'), url: 'https://docs.justyield.finance' }
   ];
   return (
     <>
