@@ -54,7 +54,7 @@ const socialLinks = [
   },
   {
     title: 'Twitter',
-    path: 'https://twitter.com/justyield',
+    path: 'https://twitter.com/JustYield_Fi',
     Icon: IconTwitter,
   }/*,
   {
