@@ -84,7 +84,7 @@
   "StrategyDescription-multi-lp": "该金库将用户的 {{depositToken}} 存放在 {{vaultPlatform}} 农场中，从而赚取平台的治理代币。赚取的代币被交换为更多的底层资产，以获得更多相同的流动性代币。 为了完成复利周期，新的 {{depositToken}} 被添加到农场中，为下一次的盈利活动做好准备。 完成这一切所需的交易成本由金库的用户共同承担。",
   "StrategyDescription-lending": "一般来说，借贷协议是一个去中心化的市场，供贷款人和借款人使用。当用户将 {{depositToken}} 存入此金库时，Just Yield 将其移至协议中，然后以安全水平的抵押品（即低于 100% 的贷款）借入该头寸。然后，借来的 {{depositToken}} 被重新存入同一个协议，并多次重复此过程以最大化赚取的收益，并将该收益用于获得更多 {{depositToken}}。请注意，这种“杠杆”式的多重借贷仅涉及 {{depositToken}}；因此，价格波动不会带来清算风险。\n\n注意\n+ 交易费用：由于多重供应/借贷周期，金库的交易费用往往比标准金库高 4 倍。\n+ 应计模式：由于借款的应计利息，用户可能会注意到他/她的 {{depositToken}} 持有量在两次收获之间略有下降。然而，在每一次的收获事件中，随着复合收益率的增加，代币数量会逐步增加。\n+ 市场性风险：当借贷平台上的 {{depositToken}} 过度借贷时，它可能会阻止金库的去杠杆化（unfolding）策略，并不允许提款。这通常发生在市场高波动，或当人们想要持续借入资金的时候。一旦流动性回到借贷平台，过度借贷的情况将自然得到解决，而该过程可能需要几个小时，有时甚至需要几天。同时，金库的资金仍然是安全的。",
   "StrategyDescription-single": "金库将 {{depositToken}} 存入 {{vaultPlatform}} ，并帮您耕种以赚取更多的{{depositToken}，然后将赚取的 {{depositToken}} 存回 {{vaultPlatform}} 农场。",
-  "StrategyDescription-maxi": "JYIELD Maxi 金库允许用户像在收益池中一样质押他们的 JYIELD，但在这里您会得到更多 JYIELD 作为奖励。通过质押 JYIELD，每个参与者将其在 Just Yield 网络上的收入份额转化为更多的 JYIELD 代币。由于 JYIELD 代币不能再被铸造，奖励的 JYIELD 是使用网络的原生代币（例如 {{chain}} 上的 {{nativeToken}}）在公开市场上购买的。",
+  "StrategyDescription-maxi": "YIELD Maxi 金库允许用户像在收益池中一样质押他们的 YIELD，但在这里您会得到更多 YIELD 作为奖励。通过质押 YIELD，每个参与者将其在 Just Yield 网络上的收入份额转化为更多的 YIELD 代币。由于 YIELD 代币不能再被铸造，奖励的 YIELD 是使用网络的原生代币（例如 {{chain}} 上的 {{nativeToken}}）在公开市场上购买的。",
   "StrategyDescription-default": "尚未添加对当前策略的描述。",
   "xyz": "最后一行的占位符"
 }

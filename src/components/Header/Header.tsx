@@ -50,7 +50,7 @@ const BifiPrice = connect((state: BeefyState) => {
     >
       <img alt="BIFI" src={require(`../../images/bifi-logos/BIFI-TOKEN.svg`).default} />
       {
-        "$JYield"
+        "$YIELD"
         //formatBigUsd(beefyPrice)
       }
     </a>*/

@@ -16,7 +16,7 @@ export const styles = (theme: Theme) => ({
     padding: '18px 24px',
     background: theme.palette.background.vaults.inactive,
     borderRadius: '10px 10px 0px 0px ',
-    borderBottom: '2px solid #373c68',
+    borderBottom: '2px solid #c8c397',
   },
   title: {
     color: theme.palette.text.primary,

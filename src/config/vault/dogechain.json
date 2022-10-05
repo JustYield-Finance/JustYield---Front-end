@@ -921,7 +921,7 @@
       "earnContractAddress": "0xa549cf1bDBf72CEcc9bc3fF34F5E16C8CAe7bE21",
       "oracle": "lps",
       "oracleId": "dogemuskswap-omnom-wwdoge",
-      "status": "active",
+      "status": "eol",
       "platformId": "muskswap",
       "strategyTypeId": "lp",
       "assets": ["OMNOM", "DOGE"],
