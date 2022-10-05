@@ -1,0 +1,1302 @@
+[
+  {
+      "id": "kibbleswap-kib-wwdoge",
+      "name": "KIB-WWDOGE LP",
+      "token": "KIB-WWDOGE LP",
+      "tokenAddress": "0xc1c10b8beec82e840990a2c60a54ccdb39b2153f",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "mookibbleswapKIB-WWDOGE",
+      "earnedTokenAddress": "0x3c4F3d77f6C0B318f0cc90b9d5335a15E2C9bbc6",
+      "earnContractAddress": "0x3c4F3d77f6C0B318f0cc90b9d5335a15E2C9bbc6",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-kib-wwdoge",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["DOGE", "KIB"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0x1e1026ba0810e6391b0f86afa8a9305c12713b66&base=0xb7ddc6414bf4f5515b52d8bdd69973ae205ff101",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0x1e1026ba0810e6391b0f86afa8a9305c12713b66",
+      "network": "dogechain",
+      "createdAt": 2104460
+  },
+  {
+      "id": "kibbleswap-usdc-wwdoge",
+      "name": "USDC-WWDOGE LP",
+      "token": "USDC-WWDOGE LP",
+      "tokenAddress": "0x0b81c7AcFCa44fC4AdE2DA70246d71a650652c6B",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-usdc-wwdoge",
+      "earnedTokenAddress": "0x75F234de48579Ec46BB09da0A319ca4Dfddb0F17",
+      "earnContractAddress": "0x75F234de48579Ec46BB09da0A319ca4Dfddb0F17",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-usdc-wwdoge",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["DOGE", "USDC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0x765277eebeca2e31912c9946eae1021199b39c61&base=0xb7ddc6414bf4f5515b52d8bdd69973ae205ff101",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0x765277eebeca2e31912c9946eae1021199b39c61",
+      "network": "dogechain",
+      "createdAt": 2150444
+  },
+  {
+      "id": "kibbleswap-eth-wwdoge",
+      "name": "ETH-WWDOGE LP",
+      "token": "ETH-WWDOGE LP",
+      "tokenAddress": "0xb9a5f0cdf48054e101fd2d39b4f434c1ced8b2ec",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-eth-wwdoge",
+      "earnedTokenAddress": "0x20364B2C43f0bD1C1E8098D32fc4B9bb9116Acf1",
+      "earnContractAddress": "0x20364B2C43f0bD1C1E8098D32fc4B9bb9116Acf1",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-eth-wwdoge",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["DOGE", "ETH"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0xB44a9B6905aF7c801311e8F4E76932ee959c663C&base=0xb7ddc6414bf4f5515b52d8bdd69973ae205ff101",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0xB44a9B6905aF7c801311e8F4E76932ee959c663C",
+      "network": "dogechain",
+      "createdAt": 2151024
+  },
+  {
+      "id": "kibbleswap-kib-usdc",
+      "name": "KIB-USDC LP",
+      "token": "KIB-USDC LP",
+      "tokenAddress": "0xe085c40c7d702e803f5d6d9288c06ec216e3d75b",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-kib-usdc",
+      "earnedTokenAddress": "0x3947aF860D7218f4A12A38AB446E3AE524255122",
+      "earnContractAddress": "0x3947aF860D7218f4A12A38AB446E3AE524255122",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-kib-usdc",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["KIB", "USDC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0x1e1026ba0810e6391b0f86afa8a9305c12713b66&base=0x765277eebeca2e31912c9946eae1021199b39c61",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0x1e1026ba0810e6391b0f86afa8a9305c12713b66",
+      "network": "dogechain",
+      "createdAt": 2151403
+  },
+  {
+      "id": "kibbleswap-weth-eth",
+      "name": "WETH-ETH LP",
+      "token": "WETH-ETH LP",
+      "tokenAddress": "0x19d76073bd09b8779f9ef268d2e83ffd53a66a22",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-weth-eth",
+      "earnedTokenAddress": "0x9224d767fFe57D8F8F9C59746cd97E1Ae697EcEA",
+      "earnContractAddress": "0x9224d767fFe57D8F8F9C59746cd97E1Ae697EcEA",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-weth-eth",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["WETH", "ETH"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0x9F4614E4Ea4A0D7c4B1F946057eC030beE416cbB&base=0xB44a9B6905aF7c801311e8F4E76932ee959c663C",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0x9F4614E4Ea4A0D7c4B1F946057eC030beE416cbB",
+      "network": "dogechain",
+      "createdAt": 2151907
+  },
+  {
+      "id": "kibbleswap-usdts-usdt",
+      "name": "USDTs-USDT LP",
+      "token": "USDTs-USDT LP",
+      "tokenAddress": "0x44324c9ff5888003495989da9126a2b2e02b1ce6",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-usdts-usdt",
+      "earnedTokenAddress": "0xe4029330423cdeAfcFd08DD6D24f284F59ad46B2",
+      "earnContractAddress": "0xe4029330423cdeAfcFd08DD6D24f284F59ad46B2",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-usdts-usdt",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["USDTs", "USDT"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0x7f8e71DD5A7e445725F0EF94c7F01806299e877A&base=0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0x7f8e71DD5A7e445725F0EF94c7F01806299e877A",
+      "network": "dogechain",
+      "createdAt": 2152281
+  },
+  {
+      "id": "kibbleswap-daim-dai",
+      "name": "DAIm-DAI LP",
+      "token": "DAIm-DAI LP",
+      "tokenAddress": "0x30bd958928ff4b532000c49f321d26c0814271f8",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-daim-dai",
+      "earnedTokenAddress": "0x528Da87ed04c44D75Ed0892ECC5341d1c9139cae",
+      "earnContractAddress": "0x528Da87ed04c44D75Ed0892ECC5341d1c9139cae",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-daim-dai",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["DAIm", "DAI"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C&base=0xB3306f03595490e5cC3a1b1704a5a158D3436ffC",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C",
+      "network": "dogechain",
+      "createdAt": 2160503
+  },
+  {
+      "id": "kibbleswap-wwdoge-usdt",
+      "name": "WWDOGE-USDT LP",
+      "token": "WWDOGE-USDT LP",
+      "tokenAddress": "0x8494b5ae983d8b5ef5fcac13857eec7236b8c7c3",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-wwdoge-usdt",
+      "earnedTokenAddress": "0x1B6CA8BDEcF6d11519f480485b3Bbb3501c19129",
+      "earnContractAddress": "0x1B6CA8BDEcF6d11519f480485b3Bbb3501c19129",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-wwdoge-usdt",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["DOGE", "USDT"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101&base=0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D",
+      "network": "dogechain",
+      "createdAt": 2160725
+  },
+  {
+      "id": "kibbleswap-dai-wwdoge",
+      "name": "DAI-WWDOGE LP",
+      "token": "DAI-WWDOGE LP",
+      "tokenAddress": "0x8cd73b75009b99715750b0b55ac2998743a37fcc",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-dai-wwdoge",
+      "earnedTokenAddress": "0xD7D07f8AE6D79147D4487dFa91A8FFc6Faba8EaD",
+      "earnContractAddress": "0xD7D07f8AE6D79147D4487dFa91A8FFc6Faba8EaD",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-dai-wwdoge",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["DAI", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C&base=0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C",
+      "network": "dogechain",
+      "createdAt": 2161089
+  },
+  {
+      "id": "kibbleswap-dc-wwdoge",
+      "name": "DC-WWDOGE LP",
+      "token": "DC-WWDOGE LP",
+      "tokenAddress": "0x4a1442143b3491a8edeb19c9cf7cdd9f7fe39b97",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-dc-wwdoge",
+      "earnedTokenAddress": "0x2C6746A13b34e8720FdfD25d2836ccc218Ba6E6E",
+      "earnContractAddress": "0x2C6746A13b34e8720FdfD25d2836ccc218Ba6E6E",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-dc-wwdoge",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["DC", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0x7B4328c127B85369D9f82ca0503B000D09CF9180&base=0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0x7B4328c127B85369D9f82ca0503B000D09CF9180",
+      "network": "dogechain",
+      "createdAt": 2161293
+  },
+  {
+      "id": "kibbleswap-usdcm-usdc",
+      "name": "USDCm-USDC LP",
+      "token": "USDCm-USDC LP",
+      "tokenAddress": "0xbcb74543c6cc593bbfb129dd3cca92f6baa49b12",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-usdcm-usdc",
+      "earnedTokenAddress": "0x1d0B1bF3a56F7727AF1e3167dBA22429D2dA99d0",
+      "earnContractAddress": "0x1d0B1bF3a56F7727AF1e3167dBA22429D2dA99d0",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-usdcm-usdc",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["USDCm", "USDC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0x765277EebeCA2e31912C9946eAe1021199B39C61&base=0x85C2D3bEBffD83025910985389aB8aD655aBC946",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0x765277EebeCA2e31912C9946eAe1021199B39C61",
+      "network": "dogechain",
+      "createdAt": 2161573
+  },
+  {
+      "id": "kibbleswap-kib-dc",
+      "name": "KIB-DC LP",
+      "token": "KIB-DC LP",
+      "tokenAddress": "0xc2b089efd7255046f899082a864be9361413aae6",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-kib-dc",
+      "earnedTokenAddress": "0x161559A6BD59505ECFC1FB8E01623D6C16129b7d",
+      "earnContractAddress": "0x161559A6BD59505ECFC1FB8E01623D6C16129b7d",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-kib-dc",
+      "status": "eol",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["KIB", "DC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0x1e1026ba0810e6391b0f86afa8a9305c12713b66&base=0x7b4328c127b85369d9f82ca0503b000d09cf9180",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0x1e1026ba0810e6391b0f86afa8a9305c12713b66",
+      "network": "dogechain",
+      "createdAt": 2167677
+  },
+  {
+      "id": "kibbleswap-wwdoge-chewy",
+      "name": "WWDOGE-CHEWY LP",
+      "token": "WWDOGE-CHEWY LP",
+      "tokenAddress": "0x7b952cc5887c8806d7a277071474dbdaa1ab36a6",
+      "tokenDecimals": 18,
+      "tokenProviderId": "kibbleswap",
+      "earnedToken": "kibbleswap-wwdoge-chewy",
+      "earnedTokenAddress": "0x453f3D8ecD4188Bfa8E6e5Dd5c84CA8D0d627ceF",
+      "earnContractAddress": "0x453f3D8ecD4188Bfa8E6e5Dd5c84CA8D0d627ceF",
+      "oracle": "lps",
+      "oracleId": "kibbleswap-wwdoge-chewy",
+      "status": "active",
+      "platformId": "kibbleswap",
+      "strategyTypeId": "lp",
+      "assets": ["DOGE", "CHEWY"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://www.kibbleswap.dog/liquidity/pool?main=0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101&base=0xbA2fa659f475f69EeEFa245523DBa9C14BbA7163",
+      "buyTokenUrl":
+        "https://www.kibbleswap.dog/swap?from=wdoge&to=0xbA2fa659f475f69EeEFa245523DBa9C14BbA7163",
+      "network": "dogechain",
+      "createdAt": 2167889
+  },
+  {
+      "id": "yodeswap-yode-wwdoge",
+      "name": "YODE-WWDOGE LP",
+      "token": "YODE-WWDOGE LP",
+      "tokenAddress": "0x2dd53abcfebe71a9cd5dff4f44458e14707f9280",
+      "tokenDecimals": 18,
+      "tokenProviderId": "yodeswap",
+      "earnedToken": "yodeswap-yode-wwdoge",
+      "earnedTokenAddress": "0x3B1a999a6319DAa3CfE21aAe27B86CAf2636b886",
+      "earnContractAddress": "0x3B1a999a6319DAa3CfE21aAe27B86CAf2636b886",
+      "oracle": "lps",
+      "oracleId": "yodeswap-yode-wwdoge",
+      "status": "active",
+      "platformId": "yodeswap",
+      "strategyTypeId": "lp",
+      "assets": ["YODE", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://app.yodeswap.dog/exchange/add/0x6FC4563460d5f45932C473334d5c1C5B4aEA0E01/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101",
+      "buyTokenUrl":
+        "https://app.yodeswap.dog/exchange/swap",
+      "network": "dogechain",
+      "createdAt": 2168775
+  },
+  {
+      "id": "yodeswap-usdc-wwdoge",
+      "name": "USDC-WWDOGE LP",
+      "token": "USDC-WWDOGE LP",
+      "tokenAddress": "0x8dcebe9f071562d52b5abb17235f3bca768c1e44",
+      "tokenDecimals": 18,
+      "tokenProviderId": "yodeswap",
+      "earnedToken": "yodeswap-usdc-wwdoge",
+      "earnedTokenAddress": "0x4bE8141CcCd784d68d56a7217b542278c634BDc7",
+      "earnContractAddress": "0x4bE8141CcCd784d68d56a7217b542278c634BDc7",
+      "oracle": "lps",
+      "oracleId": "yodeswap-usdc-wwdoge",
+      "status": "active",
+      "platformId": "yodeswap",
+      "strategyTypeId": "lp",
+      "assets": ["USDC", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://app.yodeswap.dog/exchange/add/0x765277EebeCA2e31912C9946eAe1021199B39C61/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101",
+      "buyTokenUrl":
+        "https://app.yodeswap.dog/exchange/swap",
+      "network": "dogechain",
+      "createdAt": 2169118
+  },
+  {
+      "id": "yodeswap-usdc-eth",
+      "name": "USDC-ETH LP",
+      "token": "USDC-ETH LP",
+      "tokenAddress": "0x7a3542fada818c705e1ce6da508f5aa5dfc35edd",
+      "tokenDecimals": 18,
+      "tokenProviderId": "yodeswap",
+      "earnedToken": "yodeswap-usdc-eth",
+      "earnedTokenAddress": "0xC9f885FF2917DA1e6244Eed8844F3Ed8C7544Cb5",
+      "earnContractAddress": "0xC9f885FF2917DA1e6244Eed8844F3Ed8C7544Cb5",
+      "oracle": "lps",
+      "oracleId": "yodeswap-usdc-eth",
+      "status": "active",
+      "platformId": "yodeswap",
+      "strategyTypeId": "lp",
+      "assets": ["USDC", "ETH"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://app.yodeswap.dog/exchange/add/0x765277EebeCA2e31912C9946eAe1021199B39C61/0xB44a9B6905aF7c801311e8F4E76932ee959c663C",
+      "buyTokenUrl":
+        "https://app.yodeswap.dog/exchange/swap",
+      "network": "dogechain",
+      "createdAt": 2169314
+  },
+  {
+      "id": "yodeswap-usdc-wbtc",
+      "name": "USDC-WBTC LP",
+      "token": "USDC-WBTC LP",
+      "tokenAddress": "0x5ac5529f6d948d565a7832b0950592845b029584",
+      "tokenDecimals": 18,
+      "tokenProviderId": "yodeswap",
+      "earnedToken": "yodeswap-usdc-wbtc",
+      "earnedTokenAddress": "0x776cf4Ad4B48E7B5f196A2380aB7753587930c7d",
+      "earnContractAddress": "0x776cf4Ad4B48E7B5f196A2380aB7753587930c7d",
+      "oracle": "lps",
+      "oracleId": "yodeswap-usdc-wbtc",
+      "status": "active",
+      "platformId": "yodeswap",
+      "strategyTypeId": "lp",
+      "assets": ["USDC", "WBTC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://app.yodeswap.dog/exchange/add/0x765277EebeCA2e31912C9946eAe1021199B39C61/0xfA9343C3897324496A05fC75abeD6bAC29f8A40f",
+      "buyTokenUrl":
+        "https://app.yodeswap.dog/exchange/swap",
+      "network": "dogechain",
+      "createdAt": 2183962
+  },
+  {
+      "id": "yodeswap-usdc-usdt",
+      "name": "USDC-USDT LP",
+      "token": "USDC-USDT LP",
+      "tokenAddress": "0xd95b66fbd36c5754fe7c837500cccbf113fd6ac6",
+      "tokenDecimals": 18,
+      "tokenProviderId": "yodeswap",
+      "earnedToken": "yodeswap-usdc-usdt",
+      "earnedTokenAddress": "0xB6EDB218356BD9Cd6773Aba02ce49C0e9C2F44Af",
+      "earnContractAddress": "0xB6EDB218356BD9Cd6773Aba02ce49C0e9C2F44Af",
+      "oracle": "lps",
+      "oracleId": "yodeswap-usdc-usdt",
+      "status": "active",
+      "platformId": "yodeswap",
+      "strategyTypeId": "lp",
+      "assets": ["USDC", "USDT"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://app.yodeswap.dog/exchange/add/0x765277EebeCA2e31912C9946eAe1021199B39C61/0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D",
+      "buyTokenUrl":
+        "https://app.yodeswap.dog/exchange/swap",
+      "network": "dogechain",
+      "createdAt": 2184155
+  },
+  {
+      "id": "yodeswap-busd-bnb",
+      "name": "BUSD-BNB LP",
+      "token": "BUSD-BNB LP",
+      "tokenAddress": "0xf4887cef251e6bafed9478f115b92aeba81d88f7",
+      "tokenDecimals": 18,
+      "tokenProviderId": "yodeswap",
+      "earnedToken": "yodeswap-busd-bnb",
+      "earnedTokenAddress": "0x8F49e215D6d5f52b2A4647F4C339809D8fc46928",
+      "earnContractAddress": "0x8F49e215D6d5f52b2A4647F4C339809D8fc46928",
+      "oracle": "lps",
+      "oracleId": "yodeswap-busd-bnb",
+      "status": "active",
+      "platformId": "yodeswap",
+      "strategyTypeId": "lp",
+      "assets": ["BUSD", "BNB"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://app.yodeswap.dog/exchange/add/0x332730a4F6E03D9C55829435f10360E13cfA41Ff/0xA649325Aa7C5093d12D6F98EB4378deAe68CE23F",
+      "buyTokenUrl":
+        "https://app.yodeswap.dog/exchange/swap",
+      "network": "dogechain",
+      "createdAt": 2184329
+  },
+  {
+      "id": "yodeswap-busd-usdc",
+      "name": "BUSD-USDC LP",
+      "token": "BUSD-USDC LP",
+      "tokenAddress": "0xe180b62c4cf96112e7999200ef9275f83f7e3088",
+      "tokenDecimals": 18,
+      "tokenProviderId": "yodeswap",
+      "earnedToken": "yodeswap-busd-usdc",
+      "earnedTokenAddress": "0xA4d62e0670CB05c8664a3E6cC564c72a710f45AD",
+      "earnContractAddress": "0xA4d62e0670CB05c8664a3E6cC564c72a710f45AD",
+      "oracle": "lps",
+      "oracleId": "yodeswap-busd-usdc",
+      "status": "active",
+      "platformId": "yodeswap",
+      "strategyTypeId": "lp",
+      "assets": ["BUSD", "USDC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://app.yodeswap.dog/exchange/add/0x332730a4F6E03D9C55829435f10360E13cfA41Ff/0x765277EebeCA2e31912C9946eAe1021199B39C61",
+      "buyTokenUrl":
+        "https://app.yodeswap.dog/exchange/swap",
+      "network": "dogechain",
+      "createdAt": 2184549
+  },
+  {
+      "id": "yodeswap-dc-wwdoge",
+      "name": "DC-WWDOGE LP",
+      "token": "DC-WWDOGE LP",
+      "tokenAddress": "0xd2333137d28710aced9e8572d8bf4baf184e6d16",
+      "tokenDecimals": 18,
+      "tokenProviderId": "yodeswap",
+      "earnedToken": "yodeswap-dc-wwdoge",
+      "earnedTokenAddress": "0xEfC331fA34cAcE8A490Dce46aE31c03725Ea1049",
+      "earnContractAddress": "0xEfC331fA34cAcE8A490Dce46aE31c03725Ea1049",
+      "oracle": "lps",
+      "oracleId": "yodeswap-dc-wwdoge",
+      "status": "active",
+      "platformId": "yodeswap",
+      "strategyTypeId": "lp",
+      "assets": ["DC", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://app.yodeswap.dog/exchange/add/0x7B4328c127B85369D9f82ca0503B000D09CF9180/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101",
+      "buyTokenUrl":
+        "https://app.yodeswap.dog/exchange/swap",
+      "network": "dogechain",
+      "createdAt": 2184690
+  },
+  {
+      "id": "yodeswap-slurp-wwdoge",
+      "name": "SLURP-WWDOGE LP",
+      "token": "SLURP-WWDOGE LP",
+      "tokenAddress": "0x100c7656c5c2710be1b939a4ce91db2c9a224f79",
+      "tokenDecimals": 18,
+      "tokenProviderId": "yodeswap",
+      "earnedToken": "yodeswap-slurp-wwdoge",
+      "earnedTokenAddress": "0x78f35CeEA11c85E6b19212d62809FD9E813b3720",
+      "earnContractAddress": "0x78f35CeEA11c85E6b19212d62809FD9E813b3720",
+      "oracle": "lps",
+      "oracleId": "yodeswap-slurp-wwdoge",
+      "status": "active",
+      "platformId": "yodeswap",
+      "strategyTypeId": "lp",
+      "assets": ["SLURP", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://app.yodeswap.dog/exchange/add/0x0caE51e1032e8461f4806e26332c030E34De3aDb/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101",
+      "buyTokenUrl":
+        "https://app.yodeswap.dog/exchange/swap",
+      "network": "dogechain",
+      "createdAt": 2184935
+  },
+  {
+      "id": "yodeswap-dogepup-wwdoge",
+      "name": "DOGEPUP-WWDOGE LP",
+      "token": "DOGEPUP-WWDOGE LP",
+      "tokenAddress": "0x1a6089545284d47e7294b7452744208db317fe81",
+      "tokenDecimals": 18,
+      "tokenProviderId": "yodeswap",
+      "earnedToken": "yodeswap-dogepup-wwdoge",
+      "earnedTokenAddress": "0x4328cA4095B93c304F685951201aA508d7a75018",
+      "earnContractAddress": "0x4328cA4095B93c304F685951201aA508d7a75018",
+      "oracle": "lps",
+      "oracleId": "yodeswap-dogepup-wwdoge",
+      "status": "active",
+      "platformId": "yodeswap",
+      "strategyTypeId": "lp",
+      "assets": ["DOGEPUP", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://app.yodeswap.dog/exchange/add/0x1b15b9446b9f632a78396a1680DAaE17f74Ce8d9/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101",
+      "buyTokenUrl":
+        "https://app.yodeswap.dog/exchange/swap",
+      "network": "dogechain",
+      "createdAt": 2185134
+  },
+  {
+      "id": "boneswap-bone-wwdoge",
+      "name": "BONE-WWDOGE LP",
+      "token": "BONE-WWDOGE LP",
+      "tokenAddress": "0x552de336afae1cd17bf1df517403f686f550f21e",
+      "tokenDecimals": 18,
+      "tokenProviderId": "boneswap",
+      "earnedToken": "boneswap-bone-wwdoge",
+      "earnedTokenAddress": "0xA76b079E933E91565a6e9337C0860BE363240037",
+      "earnContractAddress": "0xA76b079E933E91565a6e9337C0860BE363240037",
+      "oracle": "lps",
+      "oracleId": "boneswap-bone-wwdoge",
+      "status": "active",
+      "platformId": "boneswap",
+      "strategyTypeId": "lp",
+      "assets": ["BONE", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://exchange.boneswap.dog/#/add/0x16d0046597b0E3B136CDBB4edEb956D04232A711/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101",
+      "buyTokenUrl":
+        "https://exchange.boneswap.dog/#/swap",
+      "network": "dogechain",
+      "createdAt": 2313296
+  },
+  {
+      "id": "boneswap-bone-busd",
+      "name": "BONE-BUSD LP",
+      "token": "BONE-BUSD LP",
+      "tokenAddress": "0x5704d76389bfbde1ab2b642ed9ea720bace88cc9",
+      "tokenDecimals": 18,
+      "tokenProviderId": "boneswap",
+      "earnedToken": "boneswap-bone-busd",
+      "earnedTokenAddress": "0x6fc27907AFF492957Fe0a2D3c4a6B3c62a040349",
+      "earnContractAddress": "0x6fc27907AFF492957Fe0a2D3c4a6B3c62a040349",
+      "oracle": "lps",
+      "oracleId": "boneswap-bone-busd",
+      "status": "active",
+      "platformId": "boneswap",
+      "strategyTypeId": "lp",
+      "assets": ["BONE", "BUSD"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://exchange.boneswap.dog/#/add/0x16d0046597b0E3B136CDBB4edEb956D04232A711/0x332730a4F6E03D9C55829435f10360E13cfA41Ff",
+      "buyTokenUrl":
+        "https://exchange.boneswap.dog/#/swap",
+      "network": "dogechain",
+      "createdAt": 2314300
+  },
+  {
+      "id": "boneswap-busd-usdt",
+      "name": "BUSD-USDT LP",
+      "token": "BUSD-USDT LP",
+      "tokenAddress": "0xa5f8d753f1a530a1e8a2b19ccada0600136a63f1",
+      "tokenDecimals": 18,
+      "tokenProviderId": "boneswap",
+      "earnedToken": "boneswap-busd-usdt",
+      "earnedTokenAddress": "0x60c48fc627C0377c58c02a6085A9E4bA2cF98A4B",
+      "earnContractAddress": "0x60c48fc627C0377c58c02a6085A9E4bA2cF98A4B",
+      "oracle": "lps",
+      "oracleId": "boneswap-busd-usdt",
+      "status": "active",
+      "platformId": "boneswap",
+      "strategyTypeId": "lp",
+      "assets": ["BUSD", "USDT"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://exchange.boneswap.dog/#/add/0x332730a4F6E03D9C55829435f10360E13cfA41Ff/0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D",
+      "buyTokenUrl":
+        "https://exchange.boneswap.dog/#/swap",
+      "network": "dogechain",
+      "createdAt": 2314562
+  },
+  {
+      "id": "boneswap-busd-usdc",
+      "name": "BUSD-USDC LP",
+      "token": "BUSD-USDC LP",
+      "tokenAddress": "0x1d43d0f79bb55e4e799883dafb545f5d5f702bd6",
+      "tokenDecimals": 18,
+      "tokenProviderId": "boneswap",
+      "earnedToken": "boneswap-busd-usdc",
+      "earnedTokenAddress": "0xE7B1278EcF2e03AE706ADd9D8877dAFa67f8d344",
+      "earnContractAddress": "0xE7B1278EcF2e03AE706ADd9D8877dAFa67f8d344",
+      "oracle": "lps",
+      "oracleId": "boneswap-busd-usdc",
+      "status": "active",
+      "platformId": "boneswap",
+      "strategyTypeId": "lp",
+      "assets": ["BUSD", "USDC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://exchange.boneswap.dog/#/add/0x332730a4F6E03D9C55829435f10360E13cfA41Ff/0x765277EebeCA2e31912C9946eAe1021199B39C61",
+      "buyTokenUrl":
+        "https://exchange.boneswap.dog/#/swap",
+      "network": "dogechain",
+      "createdAt": 2314761
+  },
+  {
+      "id": "boneswap-busd-wwdoge",
+      "name": "BUSD-WWDOGE LP",
+      "token": "BUSD-WWDOGE LP",
+      "tokenAddress": "0x44b2f983b69c9d1f4e9e777ca181328ec136ae45",
+      "tokenDecimals": 18,
+      "tokenProviderId": "boneswap",
+      "earnedToken": "boneswap-busd-wwdoge",
+      "earnedTokenAddress": "0x5b2C0dBe9Ec6349793De9fB75DcDadDfB7F98aA1",
+      "earnContractAddress": "0x5b2C0dBe9Ec6349793De9fB75DcDadDfB7F98aA1",
+      "oracle": "lps",
+      "oracleId": "boneswap-busd-wwdoge",
+      "status": "active",
+      "platformId": "boneswap",
+      "strategyTypeId": "lp",
+      "assets": ["BUSD", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://exchange.boneswap.dog/#/add/0x332730a4F6E03D9C55829435f10360E13cfA41Ff/0xb7ddc6414bf4f5515b52d8bdd69973ae205ff101",
+      "buyTokenUrl":
+        "https://exchange.boneswap.dog/#/swap",
+      "network": "dogechain",
+      "createdAt": 2314901
+  },
+  {
+      "id": "boneswap-busd-eth",
+      "name": "BUSD-ETH LP",
+      "token": "BUSD-ETH LP",
+      "tokenAddress": "0x7b7a1e7a5f71fea50d3c72673ad9ba6b0a3f2b57",
+      "tokenDecimals": 18,
+      "tokenProviderId": "boneswap",
+      "earnedToken": "boneswap-busd-eth",
+      "earnedTokenAddress": "0xf2E0774520756510D3e081710dde847D9943874B",
+      "earnContractAddress": "0xf2E0774520756510D3e081710dde847D9943874B",
+      "oracle": "lps",
+      "oracleId": "boneswap-busd-eth",
+      "status": "active",
+      "platformId": "boneswap",
+      "strategyTypeId": "lp",
+      "assets": ["BUSD", "ETH"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://exchange.boneswap.dog/#/add/0x332730a4F6E03D9C55829435f10360E13cfA41Ff/0xB44a9B6905aF7c801311e8F4E76932ee959c663C",
+      "buyTokenUrl":
+        "https://exchange.boneswap.dog/#/swap",
+      "network": "dogechain",
+      "createdAt": 2315047
+  },
+  {
+      "id": "boneswap-busd-wbtc",
+      "name": "BUSD-WBTC LP",
+      "token": "BUSD-WBTC LP",
+      "tokenAddress": "0xda4cf82d7dce3ebf43225e32217b459e91bcb760",
+      "tokenDecimals": 18,
+      "tokenProviderId": "boneswap",
+      "earnedToken": "boneswap-busd-wbtc",
+      "earnedTokenAddress": "0xBCbD34E011fF5a8fB39d27954E15b9d888Afb131",
+      "earnContractAddress": "0xBCbD34E011fF5a8fB39d27954E15b9d888Afb131",
+      "oracle": "lps",
+      "oracleId": "boneswap-busd-wbtc",
+      "status": "active",
+      "platformId": "boneswap",
+      "strategyTypeId": "lp",
+      "assets": ["BUSD", "WBTC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://exchange.boneswap.dog/#/add/0x332730a4F6E03D9C55829435f10360E13cfA41Ff/0xfA9343C3897324496A05fC75abeD6bAC29f8A40f",
+      "buyTokenUrl":
+        "https://exchange.boneswap.dog/#/swap",
+      "network": "dogechain",
+      "createdAt": 2316633
+  },
+  {
+      "id": "boneswap-usdc-usdt",
+      "name": "USDC-USDT LP",
+      "token": "USDC-USDT LP",
+      "tokenAddress": "0xfe298c9e9c059a45f065ad412b84321fd62889f6",
+      "tokenDecimals": 18,
+      "tokenProviderId": "boneswap",
+      "earnedToken": "boneswap-usdc-usdt",
+      "earnedTokenAddress": "0x0246329A90EfdF5E180109D1a5315a2F26d3a20B",
+      "earnContractAddress": "0x0246329A90EfdF5E180109D1a5315a2F26d3a20B",
+      "oracle": "lps",
+      "oracleId": "boneswap-usdc-usdt",
+      "status": "active",
+      "platformId": "boneswap",
+      "strategyTypeId": "lp",
+      "assets": ["USDC", "USDT"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://exchange.boneswap.dog/#/add/0x765277EebeCA2e31912C9946eAe1021199B39C61/0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D",
+      "buyTokenUrl":
+        "https://exchange.boneswap.dog/#/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "dogemuskswap-dmusk-wwdoge",
+      "name": "DMUSK-WWDOGE LP",
+      "token": "DMUSK-WWDOGE LP",
+      "tokenAddress": "0x4Ef34A9C9906d67c2F28ba3EEe2d01B1Fb7b6e81",
+      "tokenDecimals": 18,
+      "tokenProviderId": "muskswap",
+      "earnedToken": "dogemuskswap-dmusk-wwdoge",
+      "earnedTokenAddress": "0x5C66c49136f10b1484Af3C4Fe3fFbb26DDFf069f",
+      "earnContractAddress": "0x5C66c49136f10b1484Af3C4Fe3fFbb26DDFf069f",
+      "oracle": "lps",
+      "oracleId": "dogemuskswap-dmusk-wwdoge",
+      "status": "active",
+      "platformId": "muskswap",
+      "strategyTypeId": "lp",
+      "assets": ["DMUSK", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://muskswap.dog/add/0xdD1D3B04939972A617E0bA7710591B03E825207c/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101?chainId=2000",
+      "buyTokenUrl":
+        "https://muskswap.dog/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "dogemuskswap-dmusk-usdc",
+      "name": "DMUSK-USDC LP",
+      "token": "DMUSK-USDC LP",
+      "tokenAddress": "0x13e8C1B4355176dBd2036389A7d32E40a2f95B85",
+      "tokenDecimals": 18,
+      "tokenProviderId": "muskswap",
+      "earnedToken": "dogemuskswap-dmusk-usdc",
+      "earnedTokenAddress": "0x2A771610cA689d38Fd6dC579b013d162e896DC20",
+      "earnContractAddress": "0x2A771610cA689d38Fd6dC579b013d162e896DC20",
+      "oracle": "lps",
+      "oracleId": "dogemuskswap-dmusk-usdc",
+      "status": "active",
+      "platformId": "muskswap",
+      "strategyTypeId": "lp",
+      "assets": ["DMUSK", "USDC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://muskswap.dog/add/0xdD1D3B04939972A617E0bA7710591B03E825207c/0x765277EebeCA2e31912C9946eAe1021199B39C61?chainId=2000",
+      "buyTokenUrl":
+        "https://muskswap.dog/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "dogemuskswap-dmusk-dinu",
+      "name": "DMUSK-DINU LP",
+      "token": "DMUSK-DINU LP",
+      "tokenAddress": "0x9b5C63Fb5931b74C627CB7c50964B91716bc47f4",
+      "tokenDecimals": 18,
+      "tokenProviderId": "muskswap",
+      "earnedToken": "dogemuskswap-dmusk-dinu",
+      "earnedTokenAddress": "0x396C1723C082E38a78bC5940b335e09f9c94e182",
+      "earnContractAddress": "0x396C1723C082E38a78bC5940b335e09f9c94e182",
+      "oracle": "lps",
+      "oracleId": "dogemuskswap-dmusk-dinu",
+      "status": "active",
+      "platformId": "muskswap",
+      "strategyTypeId": "lp",
+      "assets": ["DMUSK", "DINU"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://muskswap.dog/add/0xdD1D3B04939972A617E0bA7710591B03E825207c/0x8a764cF73438dE795c98707B07034e577Af54825?chainId=2000",
+      "buyTokenUrl":
+        "https://muskswap.dog/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "dogemuskswap-dmusk-dc",
+      "name": "DMUSK-DC LP",
+      "token": "DMUSK-DC LP",
+      "tokenAddress": "0x68282AFc5C3e37c0B9D0c6D6C4D34b7f78F702F1",
+      "tokenDecimals": 18,
+      "tokenProviderId": "muskswap",
+      "earnedToken": "dogemuskswap-dmusk-dc",
+      "earnedTokenAddress": "0xd163Ef8AfB8c52266b7991789A487A598280d2Cc",
+      "earnContractAddress": "0xd163Ef8AfB8c52266b7991789A487A598280d2Cc",
+      "oracle": "lps",
+      "oracleId": "dogemuskswap-dmusk-dc",
+      "status": "active",
+      "platformId": "muskswap",
+      "strategyTypeId": "lp",
+      "assets": ["DMUSK", "DC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://muskswap.dog/add/0xdD1D3B04939972A617E0bA7710591B03E825207c/0x7B4328c127B85369D9f82ca0503B000D09CF9180?chainId=2000",
+      "buyTokenUrl":
+        "https://muskswap.dog/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "dogemuskswap-omnom-wwdoge",
+      "name": "OMNOM-WWDOGE LP",
+      "token": "OMNOM-WWDOGE LP",
+      "tokenAddress": "0xB857b18eF653c00F826908Ea69bA66A3BCC92856",
+      "tokenDecimals": 18,
+      "tokenProviderId": "muskswap",
+      "earnedToken": "dogemuskswap-omnom-wwdoge",
+      "earnedTokenAddress": "0xa549cf1bDBf72CEcc9bc3fF34F5E16C8CAe7bE21",
+      "earnContractAddress": "0xa549cf1bDBf72CEcc9bc3fF34F5E16C8CAe7bE21",
+      "oracle": "lps",
+      "oracleId": "dogemuskswap-omnom-wwdoge",
+      "status": "active",
+      "platformId": "muskswap",
+      "strategyTypeId": "lp",
+      "assets": ["OMNOM", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://muskswap.dog/add/0xe3fca919883950c5cd468156392a6477ff5d18de/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101?chainId=2000",
+      "buyTokenUrl":
+        "https://muskswap.dog/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "dogemuskswap-dinu-wwdoge",
+      "name": "DINU-WWDOGE LP",
+      "token": "DINU-WWDOGE LP",
+      "tokenAddress": "0x9953Ca08E0a6fd795D7dB29F267C5cdEd518CB55",
+      "tokenDecimals": 18,
+      "tokenProviderId": "muskswap",
+      "earnedToken": "dogemuskswap-dinu-wwdoge",
+      "earnedTokenAddress": "0x53942245Db817f23c51727D60D8F4111D412387f",
+      "earnContractAddress": "0x53942245Db817f23c51727D60D8F4111D412387f",
+      "oracle": "lps",
+      "oracleId": "dogemuskswap-dinu-wwdoge",
+      "status": "active",
+      "platformId": "muskswap",
+      "strategyTypeId": "lp",
+      "assets": ["DINU", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://muskswap.dog/add/0x8a764cF73438dE795c98707B07034e577Af54825/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101?chainId=2000",
+      "buyTokenUrl":
+        "https://muskswap.dog/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "dogemuskswap-dc-wwdoge",
+      "name": "DC-WWDOGE LP",
+      "token": "DC-WWDOGE LP",
+      "tokenAddress": "0xc1817E9cAcE6990255c46f29905a4a2a4c88Ae53",
+      "tokenDecimals": 18,
+      "tokenProviderId": "muskswap",
+      "earnedToken": "dogemuskswap-dc-wwdoge",
+      "earnedTokenAddress": "0x9Bf5cfda3179D70C3B43eAd4603efcB18B52899e",
+      "earnContractAddress": "0x9Bf5cfda3179D70C3B43eAd4603efcB18B52899e",
+      "oracle": "lps",
+      "oracleId": "dogemuskswap-dc-wwdoge",
+      "status": "active",
+      "platformId": "muskswap",
+      "strategyTypeId": "lp",
+      "assets": ["DC", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://muskswap.dog/add/0x7B4328c127B85369D9f82ca0503B000D09CF9180/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101?chainId=2000",
+      "buyTokenUrl":
+        "https://muskswap.dog/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "dogemuskswap-usdt-wwdoge",
+      "name": "USDT-WWDOGE LP",
+      "token": "USDT-WWDOGE LP",
+      "tokenAddress": "0xFf56D2cfF64455C149726E92DdF75f4afd52eEA8",
+      "tokenDecimals": 18,
+      "tokenProviderId": "muskswap",
+      "earnedToken": "dogemuskswap-usdt-wwdoge",
+      "earnedTokenAddress": "0x056bF84ebc1851151cB4D8B9ec9341aF1414538F",
+      "earnContractAddress": "0x056bF84ebc1851151cB4D8B9ec9341aF1414538F",
+      "oracle": "lps",
+      "oracleId": "dogemuskswap-usdt-wwdoge",
+      "status": "active",
+      "platformId": "muskswap",
+      "strategyTypeId": "lp",
+      "assets": ["USDT", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://muskswap.dog/add/0xE3F5a90F9cb311505cd691a46596599aA1A0AD7D/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101?chainId=2000",
+      "buyTokenUrl":
+        "https://muskswap.dog/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "dogemuskswap-usdc-wwdoge",
+      "name": "USDC-WWDOGE LP",
+      "token": "USDC-WWDOGE LP",
+      "tokenAddress": "0xd6491eD40620fA8d3E1fc9AB755e1f065Af6eC3D",
+      "tokenDecimals": 18,
+      "tokenProviderId": "muskswap",
+      "earnedToken": "dogemuskswap-usdc-wwdoge",
+      "earnedTokenAddress": "0x2ed9A1d1898B13670540201CB85B82D74eDFe861",
+      "earnContractAddress": "0x2ed9A1d1898B13670540201CB85B82D74eDFe861",
+      "oracle": "lps",
+      "oracleId": "dogemuskswap-usdc-wwdoge",
+      "status": "active",
+      "platformId": "muskswap",
+      "strategyTypeId": "lp",
+      "assets": ["USDC", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://muskswap.dog/add/0x765277EebeCA2e31912C9946eAe1021199B39C61/0xB7ddC6414bf4F5515b52D8BdD69973Ae205ff101?chainId=2000",
+      "buyTokenUrl":
+        "https://muskswap.dog/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "dogemuskswap-wbtc-usdc",
+      "name": "WBTC-USDC LP",
+      "token": "WBTC-USDC LP",
+      "tokenAddress": "0xa0A8691FbBae41E5850BeDFEf5bF85DF4f2C7f47",
+      "tokenDecimals": 18,
+      "tokenProviderId": "muskswap",
+      "earnedToken": "dogemuskswap-wbtc-usdc",
+      "earnedTokenAddress": "0x9af5119c15Fc79bC38D41938178eb7Da36Ec1177",
+      "earnContractAddress": "0x9af5119c15Fc79bC38D41938178eb7Da36Ec1177",
+      "oracle": "lps",
+      "oracleId": "dogemuskswap-wbtc-usdc",
+      "status": "active",
+      "platformId": "muskswap",
+      "strategyTypeId": "lp",
+      "assets": ["WBTC", "USDC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://muskswap.dog/add/0xfA9343C3897324496A05fC75abeD6bAC29f8A40f/0x765277EebeCA2e31912C9946eAe1021199B39C61?chainId=2000",
+      "buyTokenUrl":
+        "https://muskswap.dog/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "dogemuskswap-weth-usdc",
+      "name": "WETH-USDC LP",
+      "token": "WETH-USDC LP",
+      "tokenAddress": "0x7088c08aA2A653F65dBC078a4A3ccFa8518C82C9",
+      "tokenDecimals": 18,
+      "tokenProviderId": "muskswap",
+      "earnedToken": "dogemuskswap-weth-usdc",
+      "earnedTokenAddress": "0x50A4bFffeF8B94A292c85CA60728395f492f7Cc3",
+      "earnContractAddress": "0x50A4bFffeF8B94A292c85CA60728395f492f7Cc3",
+      "oracle": "lps",
+      "oracleId": "dogemuskswap-weth-usdc",
+      "status": "active",
+      "platformId": "muskswap",
+      "strategyTypeId": "lp",
+      "assets": ["WETH", "USDC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://muskswap.dog/add/0x9F4614E4Ea4A0D7c4B1F946057eC030beE416cbB/0x765277EebeCA2e31912C9946eAe1021199B39C61?chainId=2000",
+      "buyTokenUrl":
+        "https://muskswap.dog/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "wojak-wojk-wwdoge",
+      "name": "WOJK-WWDOGE LP",
+      "token": "WOJK-WWDOGE LP",
+      "tokenAddress": "0xf4da9059f5bb18b50773fe1725b94fc189e1b75c",
+      "tokenDecimals": 18,
+      "tokenProviderId": "wojak",
+      "earnedToken": "wojak-wojk-wwdoge",
+      "earnedTokenAddress": "0xb75DA028Ff19E8487eE2a5C90869193Ac73e3F5F",
+      "earnContractAddress": "0xb75DA028Ff19E8487eE2a5C90869193Ac73e3F5F",
+      "oracle": "lps",
+      "oracleId": "wojak-wojk-wwdoge",
+      "status": "active",
+      "platformId": "wojak",
+      "strategyTypeId": "lp",
+      "assets": ["WOJK", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://wojak.fi/add",
+      "buyTokenUrl":
+        "https://wojak.fi/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "wojak-usdc-wwdoge",
+      "name": "USDC-WWDOGE LP",
+      "token": "USDC-WWDOGE LP",
+      "tokenAddress": "0xcdbe962de3bdc40e790e48657721295c991d50e3",
+      "tokenDecimals": 18,
+      "tokenProviderId": "wojak",
+      "earnedToken": "wojak-usdc-wwdoge",
+      "earnedTokenAddress": "0x993a84063C6e82bD6cAc6B580880867c62936dA8",
+      "earnContractAddress": "0x993a84063C6e82bD6cAc6B580880867c62936dA8",
+      "oracle": "lps",
+      "oracleId": "wojak-usdc-wwdoge",
+      "status": "active",
+      "platformId": "wojak",
+      "strategyTypeId": "lp",
+      "assets": ["USDC", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://wojak.fi/add",
+      "buyTokenUrl":
+        "https://wojak.fi/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "wojak-wojk-usdc",
+      "name": "WOJK-USDC LP",
+      "token": "WOJK-USDC LP",
+      "tokenAddress": "0xc1fabe61b9cfc005a51e1ea899c3d65fb6392497",
+      "tokenDecimals": 18,
+      "tokenProviderId": "wojak",
+      "earnedToken": "wojak-wojk-usdc",
+      "earnedTokenAddress": "0x3f94CA8FcAdeC9F84A99272C345FB019A559a9d8",
+      "earnContractAddress": "0x3f94CA8FcAdeC9F84A99272C345FB019A559a9d8",
+      "oracle": "lps",
+      "oracleId": "wojak-wojk-usdc",
+      "status": "active",
+      "platformId": "wojak",
+      "strategyTypeId": "lp",
+      "assets": ["WOJK", "USDC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://wojak.fi/add",
+      "buyTokenUrl":
+        "https://wojak.fi/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "wojak-usdc-usdt",
+      "name": "USDC-USDT LP",
+      "token": "USDC-USDT LP",
+      "tokenAddress": "0x4c7a746b038bf284316195733da8839959a550a0",
+      "tokenDecimals": 18,
+      "tokenProviderId": "wojak",
+      "earnedToken": "wojak-usdc-usdt",
+      "earnedTokenAddress": "0x998DE7AcbcdAD1c242B38DA95175dC6ed6d39e64",
+      "earnContractAddress": "0x998DE7AcbcdAD1c242B38DA95175dC6ed6d39e64",
+      "oracle": "lps",
+      "oracleId": "wojak-usdc-usdt",
+      "status": "active",
+      "platformId": "wojak",
+      "strategyTypeId": "lp",
+      "assets": ["USDC", "USDT"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://wojak.fi/add",
+      "buyTokenUrl":
+        "https://wojak.fi/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "wojak-busd-usdc",
+      "name": "BUSD-USDC LP",
+      "token": "BUSD-USDC LP",
+      "tokenAddress": "0x311f8804aeecc98da11c128c96182c4b3e6a34e2",
+      "tokenDecimals": 18,
+      "tokenProviderId": "wojak",
+      "earnedToken": "wojak-busd-usdc",
+      "earnedTokenAddress": "0x1eEE3e9238a176B220235BBCC9911BdFDd07e7CF",
+      "earnContractAddress": "0x1eEE3e9238a176B220235BBCC9911BdFDd07e7CF",
+      "oracle": "lps",
+      "oracleId": "wojak-busd-usdc",
+      "status": "active",
+      "platformId": "wojak",
+      "strategyTypeId": "lp",
+      "assets": ["BUSD", "USDC"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://wojak.fi/add",
+      "buyTokenUrl":
+        "https://wojak.fi/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "wojak-usdc-eth",
+      "name": "USDC-ETH LP",
+      "token": "USDC-ETH LP",
+      "tokenAddress": "0xefce65a87c385f8c3b5de0f7cdeae7633d72e14b",
+      "tokenDecimals": 18,
+      "tokenProviderId": "wojak",
+      "earnedToken": "wojak-usdc-eth",
+      "earnedTokenAddress": "0x4C0dC7AFc90e57951553c1C4895977Fbe64b8eB4",
+      "earnContractAddress": "0x4C0dC7AFc90e57951553c1C4895977Fbe64b8eB4",
+      "oracle": "lps",
+      "oracleId": "wojak-usdc-eth",
+      "status": "active",
+      "platformId": "wojak",
+      "strategyTypeId": "lp",
+      "assets": ["USDC", "ETH"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://wojak.fi/add",
+      "buyTokenUrl":
+        "https://wojak.fi/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "wojak-usdc-bnb",
+      "name": "USDC-BNB LP",
+      "token": "USDC-BNB LP",
+      "tokenAddress": "0x1e7bf76e85bae55338924aba733d2deb68716b31",
+      "tokenDecimals": 18,
+      "tokenProviderId": "wojak",
+      "earnedToken": "wojak-usdc-bnb",
+      "earnedTokenAddress": "0xAd44553860E4839e297342848cf12FB3663bad33",
+      "earnContractAddress": "0xAd44553860E4839e297342848cf12FB3663bad33",
+      "oracle": "lps",
+      "oracleId": "wojak-usdc-bnb",
+      "status": "active",
+      "platformId": "wojak",
+      "strategyTypeId": "lp",
+      "assets": ["USDC", "BNB"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://wojak.fi/add",
+      "buyTokenUrl":
+        "https://wojak.fi/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  },
+  {
+      "id": "wojak-dc-wwdoge",
+      "name": "DC-WWDOGE LP",
+      "token": "DC-WWDOGE LP",
+      "tokenAddress": "0xf63fb7511a26e442cb890d13f7bb7d7012f4941a",
+      "tokenDecimals": 18,
+      "tokenProviderId": "wojak",
+      "earnedToken": "wojak-dc-wwdoge",
+      "earnedTokenAddress": "0x5dAf22a2e64f5b7D9f7EfadA82C3912C26590321",
+      "earnContractAddress": "0x5dAf22a2e64f5b7D9f7EfadA82C3912C26590321",
+      "oracle": "lps",
+      "oracleId": "wojak-dc-wwdoge",
+      "status": "active",
+      "platformId": "wojak",
+      "strategyTypeId": "lp",
+      "assets": ["DC", "DOGE"],
+      "risks": [
+        "COMPLEXITY_LOW"
+      ],
+      "addLiquidityUrl":
+        "https://wojak.fi/add",
+      "buyTokenUrl":
+        "https://wojak.fi/swap",
+      "network": "dogechain",
+      "createdAt": 2316814
+  }
+]
