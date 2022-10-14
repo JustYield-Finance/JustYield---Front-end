@@ -34,16 +34,15 @@ export function TokenWithoutBalance({
       <Box>
         <AssetsImage
           chainId={vault.chainId}
-          //assetIds={token.address === depositToken.address ? vault.assetIds : [token.id]}
-          assetIds={token.address === depositToken.address ? ["BTC"] : [token.id]}
+          assetIds={token.address === depositToken.address ? vault.assetIds : [token.id]}
+          //assetIds={token.address === depositToken.address ? ["BTC"] : [token.id]}
           size={variant === 'sm' ? 35 : 42}
         />
       </Box>
       <Box flexGrow={1} pl={1}>
         <div className={classes.assetCount}>
-          BTC
           {
-            //token.symbol
+            token.symbol
           }
         </div>
       </Box>
