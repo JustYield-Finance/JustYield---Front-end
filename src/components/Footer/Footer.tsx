@@ -42,11 +42,11 @@ const socialLinks = [
     path: 'https://github.com/JustYield-Finance',
     Icon: IconGithub,
   },
-  /*{
+  {
     title: 'Telegram',
-    path: 'https://t.me/justyield',
+    path: 'https://t.me/JustYield',
     Icon: IconTelegram,
-  },*/
+  },
   {
     title: 'Discord',
     path: 'https://discord.gg/bbdvQJ4Avg',
