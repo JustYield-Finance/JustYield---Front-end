@@ -80,7 +80,8 @@ export const styles = (theme: Theme) => ({
   'vaultNetwork-optimism': {
     backgroundColor: '#ff0420',
   },
+  /*
   'vaultNetwork-dogechain': {
     backgroundColor: '#a83dfe',
-  },
+  },*/
 });

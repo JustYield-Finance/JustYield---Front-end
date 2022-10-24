@@ -447,6 +447,7 @@ export const config = {
       'USD+',
     ],
   },
+  /*
   dogechain: {
     name: 'Dogechain',
     chainId: 2000,
@@ -475,7 +476,7 @@ export const config = {
       'USDCm',
       'USDTs',
     ],
-  },
+  },*/
 };
 
 /*
