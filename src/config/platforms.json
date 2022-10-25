@@ -913,5 +913,10 @@
     "id": "yodeswap",
     "name": "YodeSwap",
     "filter": true
+  },
+  {
+    "id": "circle",
+    "name": "Circle",
+    "filter": true
   }
 ]

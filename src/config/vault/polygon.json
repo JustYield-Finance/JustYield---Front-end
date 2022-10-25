@@ -1,3 +1,32 @@
 [
-  
+    {
+        "id": "single-usdc",
+        "name": "USDC",
+        "token": "USDC",
+        "tokenAddress": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+        "tokenDecimals": 6,
+        "tokenProviderId": "circle",
+        "earnedToken": "jyStakedUSDC",
+        "earnedTokenAddress": "0x59b09b2F6eDbD7B778179bdf868791dd29698b6e",
+        "earnContractAddress": "0x59b09b2F6eDbD7B778179bdf868791dd29698b6e",
+        "oracle": "lps",
+        "oracleId": "single-usdc",
+        "status": "active",
+        "platformId": "circle",
+        "strategyTypeId": "single-lp",
+        "assets": ["USDC"],
+        "risks": [
+            "BATTLE_TESTED",
+            "IL_NONE",
+            "MCAP_LARGE",
+            "AUDIT",
+            "CONTRACTS_VERIFIED"
+        ],
+        "addLiquidityUrl":
+          "",
+        "buyTokenUrl":
+          "https://quickswap.exchange/#/swap?outputCurrency=0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+        "network": "polygon",
+        "createdAt": 1658491884
+    }
 ]
