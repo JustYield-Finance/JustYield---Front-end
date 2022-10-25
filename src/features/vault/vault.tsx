@@ -153,26 +153,6 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
               <div>
                 <NexusCard />
               </div>
-              {isQidao && (
-                <div>
-                  <QiDao vaultId={vaultId} />
-                </div>
-              )}
-              {isMoonpot && (
-                <div>
-                  <Moonpot vaultId={vaultId} />
-                </div>
-              )}
-              {isInsurace && (
-                <div>
-                  <InsuraceCard />
-                </div>
-              )}
-              {isSolace && (
-                <div>
-                  <SolaceCard />
-                </div>
-              )}
             </div>
             <div className={classes.columnInfo}>
               <Hidden smDown>
