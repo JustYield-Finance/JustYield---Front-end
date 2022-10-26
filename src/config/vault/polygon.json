@@ -11,7 +11,7 @@
         "earnContractAddress": "0x59b09b2F6eDbD7B778179bdf868791dd29698b6e",
         "oracle": "lps",
         "oracleId": "single-usdc",
-        "status": "active",
+        "status": "paused",
         "platformId": "circle",
         "strategyTypeId": "single-lp",
         "assets": ["USDC"],
