@@ -12,7 +12,9 @@ export type VaultTag =
   | 'boost'
   | 'stable'
   | 'eol'
-  | 'paused';
+  | 'paused'
+  | 'multistrat'
+  | 'multireward';
 
 /**
  * A vault is anything you can stake stuff into

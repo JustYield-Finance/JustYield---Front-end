@@ -88,6 +88,9 @@ export const selectVaultPricePerFullShare = (state: BeefyState, vaultId: VaultEn
 export const selectVaultStrategyAddress = (state: BeefyState, vaultId: VaultEntity['id']) =>
   state.entities.vaults.contractData.byVaultId[vaultId]?.strategyAddress || null;
 
+export const selectVaultStrategyAddressList = (state: BeefyState, vaultId: VaultEntity['id']) =>
+  state.entities.vaults.contractData.byVaultId[vaultId]?.strategyAddress || null;
+
 export const selectAllGovVaultsByChainId = createSelector(
   (state: BeefyState) => state.entities.vaults.byId,
   selectVaultByChainId,

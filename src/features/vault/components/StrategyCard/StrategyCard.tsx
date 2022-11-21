@@ -9,7 +9,7 @@ import shield from './shield.svg';
 import { StrategyDescription } from './StrategyDescription';
 import { selectVaultTotalApy } from '../../../data/selectors/apy';
 import { isGovVault, shouldVaultShowInterest, VaultEntity } from '../../../data/entities/vault';
-import { selectVaultById, selectVaultStrategyAddress } from '../../../data/selectors/vaults';
+import { selectVaultById, selectVaultStrategyAddress, selectVaultStrategyAddressList } from '../../../data/selectors/vaults';
 import { selectChainById } from '../../../data/selectors/chains';
 import { selectIsVaultBoosted } from '../../../data/selectors/boosts';
 import { StatLoader } from '../../../../components/StatLoader';
@@ -25,6 +25,7 @@ function StrategyCardComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
   const values = useAppSelector(state => selectVaultTotalApy(state, vaultId));
   const formatted = formattedTotalApy(values, <StatLoader />);
   const stratAddr = useAppSelector(state => selectVaultStrategyAddress(state, vaultId));
+  const stratAddrList = useAppSelector(state => selectVaultStrategyAddressList(state, vaultId));
   const isBoosted = useAppSelector(state => selectIsVaultBoosted(state, vaultId));
   const isVaultAudited = vault.risks.includes('AUDIT');
   const showApy = shouldVaultShowInterest(vault);
@@ -58,6 +59,9 @@ function StrategyCardComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
         <div className={classes.text}>
           <StrategyDescription vaultId={vaultId} />
         </div>
+        {/*<div className={classes.apysContainer}>
+          <div className={classes.apyTitle}>{t('Vault-MultiStrategies')}</div>
+  </div>*/}
         {showApy ? (
           <div className={classes.apysContainer}>
             <div className={classes.apyTitle}>{t('Vault-ApyBreakdown')}</div>

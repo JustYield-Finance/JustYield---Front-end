@@ -149,10 +149,6 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
                 </div>
                 {dw === 'deposit' ? <Deposit vaultId={vaultId} /> : <Withdraw vaultId={vaultId} />}
               </div>
-              <MinterCards vaultId={vaultId} />
-              <div>
-                <NexusCard />
-              </div>
             </div>
             <div className={classes.columnInfo}>
               <Hidden smDown>

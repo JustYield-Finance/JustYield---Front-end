@@ -32,7 +32,7 @@
   "Vault-network": "Netzwerk",
   "Vault-Strategy": "Strategie",
   "Vault-ApyBreakdown": "APY Aufgliederung",
-
+  "Vault-MultiStrategies": "Strategies",
   "Deposit-Verb": "Anlegen",
 
   "Network-ConnectWallet": "Mit Wallet verbinden",
@@ -62,7 +62,7 @@
   "Safety-HowCalc": "Wie ist es kalkuliert?",
   "Safety-Meaning": "Was bedeutet das?",
 
-  "Strat-Address": "AutoCompound-Strategie",
+  "Strat-Address": "Current Strategy",
 
   "Token-Detail": "Einzelheiten des Anlageguts",
   "Token-NoDescrip": "Keine Beschreibung vorhanden.",
