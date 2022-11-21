@@ -12,8 +12,9 @@
         "oracle": "lps",
         "oracleId": "bsc-single-busd",
         "status": "active",
+        "isMultiStrat": "true",
         "platformId": "circle",
-        "strategyTypeId": "single-lp",
+        "strategyTypeId": "multi",
         "assets": ["BUSD"],
         "risks": [
             "BATTLE_TESTED",

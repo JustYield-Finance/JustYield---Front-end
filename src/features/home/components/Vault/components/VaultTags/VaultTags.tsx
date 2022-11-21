@@ -9,6 +9,7 @@ import {
   isGovVault,
   isVaultPaused,
   isVaultRetired,
+  isMultiStratVault,
   VaultEntity,
 } from '../../../../../data/entities/vault';
 import { selectVaultById } from '../../../../../data/selectors/vaults';
@@ -94,7 +95,7 @@ export const VaultTags = memo<VaultTagsProps>(function VaultTags({ vaultId }) {
   // Tag 2: Retired -> Paused -> Boosted > Earnings
   return (
     <div className={classes.vaultTags}>
-      <VaultPlatformTag vaultId={vaultId} />
+      {/*<VaultPlatformTag vaultId={vaultId} />*/}
       {isVaultRetired(vault) ? (
         <VaultTag className={classes.vaultTagRetired}>{t('VaultTag-Retired')}</VaultTag>
       ) : isVaultPaused(vault) ? (
@@ -103,6 +104,8 @@ export const VaultTags = memo<VaultTagsProps>(function VaultTags({ vaultId }) {
         <VaultBoostTag boostId={boostId} />
       ) : isGovVault(vault) ? (
         <VaultEarnTag chainId={vault.chainId} earnedTokenAddress={vault.earnedTokenAddress} />
+      ) : isMultiStratVault(vault) ? (
+        <VaultTag className={classes.vaultTagMultiStrat}>{t('VaultTag-MultiStrat')}</VaultTag>
       ) : null}
     </div>
   );

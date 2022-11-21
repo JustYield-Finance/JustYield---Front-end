@@ -9,6 +9,7 @@ export interface VaultConfig {
   logo?: string | null;
   name: string;
   token: string;
+  isMultiStrat: 'true' | 'false';
   tokenAddress?: string | null;
   tokenDecimals: number;
   tokenProviderId?: PlatformEntity['id'];

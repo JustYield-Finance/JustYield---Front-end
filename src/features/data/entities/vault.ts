@@ -47,6 +47,8 @@ export interface VaultStandard {
 
   isGovVault: false;
 
+  isMultiStrat: 'true' | 'false';
+
   /**
    * The protocol this vault rely on (Curve, boo finance, etc)
    */
@@ -108,6 +110,8 @@ export interface VaultGov {
 
   isGovVault: true;
 
+  isMultiStrat: 'true' | 'false';
+
   platformId: PlatformEntity['id'];
 
   status: 'active' | 'eol' | 'paused';
@@ -149,6 +153,10 @@ export function isVaultActive(vault: VaultEntity) {
 
 export function isVaultPaused(vault: VaultEntity) {
   return vault.status === 'paused';
+}
+
+export function isMultiStratVault(vault: VaultEntity) {
+  return vault.isMultiStrat === 'true';
 }
 
 export function isVaultPausedOrRetired(vault: VaultEntity) {

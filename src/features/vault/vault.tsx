@@ -113,12 +113,12 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
                 <div className={classes.platformLabel}>
                   {t('Chain')} <span>{chain.name}</span>
                 </div>
-                <div className={classes.platformLabel}>
+                {/*<div className={classes.platformLabel}>
                   {t('Platform')}{' '}
                   <span>
                     <VaultPlatform vaultId={vaultId} />
                   </span>
-                </div>
+                </div>*/}
               </div>
             </div>
           </div>

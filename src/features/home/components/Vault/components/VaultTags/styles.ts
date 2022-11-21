@@ -37,4 +37,7 @@ export const styles = (theme: Theme) => ({
   vaultTagEarn: {
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
   },
+  vaultTagMultiStrat: {
+    backgroundColor: 'rgba(255, 215, 0, 0.3)',
+  },
 });
