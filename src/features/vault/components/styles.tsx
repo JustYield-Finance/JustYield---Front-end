@@ -6,6 +6,12 @@ export const styles = (theme: Theme) => ({
     color: theme.palette.text.disabled,
     marginBottom: '4px',
   },
+  balanceText2: {
+    ...theme.typography['subline-sm'],
+    color: theme.palette.text.disabled,
+    marginTop: '12px',
+    marginBottom: '4px',
+  },
   earnText: {
     ...theme.typography['subline-sm'],
     color: theme.palette.text.disabled,

@@ -187,6 +187,7 @@
   "Deposit-Verb": "Deposit",
   "Bounty-Verb": "Bounty",
   "Compound-Verb": "Bounty",
+  "Claim-Bounty": "Claim Bounty and Compound",
   "Pending-Verb": "Pending Rewards",
   "Compound-Text": "You can claim this bounty by executing a transaction allowing pending rewards to be reinjected into the vault. Bounty tokens will be available in your wallet",
   "Compound-Action": "Process",

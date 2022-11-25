@@ -17,11 +17,13 @@ export function BountyWithBalance({
   vaultId,
   balance,
   variant = 'lg',
+  decimals = 6,
 }: {
   token: TokenEntity;
   vaultId: VaultEntity['id'];
   balance: BigNumber;
   variant?: 'sm' | 'lg';
+  decimals?: number;
 }) {
   const classes = useStyles();
   const vault = useAppSelector(state => selectVaultById(state, vaultId));
@@ -33,7 +35,7 @@ export function BountyWithBalance({
     <Box className={classes.balanceContainer}>
       <Box>
         <div className={classes.assetCount}>
-          {formatBigDecimals(balance, 6)}
+          {formatBigDecimals(balance, decimals)}
         </div>
       </Box>
       <Box flexGrow={1} pl={1}>

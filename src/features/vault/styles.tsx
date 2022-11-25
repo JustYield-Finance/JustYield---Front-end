@@ -75,6 +75,26 @@ export const styles = (theme: Theme) => ({
       },
     },
   },
+  tabs3: {
+    backgroundColor: theme.palette.background.vaults.inactive,
+    borderTopLeftRadius: '12px',
+    borderTopRightRadius: '12px',
+    '& .MuiButton-root': {
+      color: theme.palette.text.disabled,
+      background: 'none',
+      width: '33%',
+      padding: 0,
+      margin: 0,
+      height: '60px',
+      borderTopLeftRadius: '12px',
+      borderTopRightRadius: '12px',
+      borderBottomLeftRadius: 0,
+      borderBottomRightRadius: 0,
+      '&:hover': {
+        background: 'none',
+      },
+    },
+  },
   selected: {
     borderBottom: `solid 2px ${theme.palette.text.disabled}`,
     '& .MuiButton-label': {
