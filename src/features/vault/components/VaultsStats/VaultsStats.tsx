@@ -12,8 +12,8 @@ import { VaultDeposited } from '../../../../components/VaultDeposited/VaultDepos
 import { GovVaultRewards } from '../../../../components/GovVaultRewards/GovVaultRewards';
 import { getBeefyApi } from '../../../data/apis/instances';
 import { useAppSelector } from '../../../../store';
-import { selectChainNativeToken } from '../../../data/selectors/tokens';
-import { formatBigDecimals } from '../../../../helpers/format';
+import { selectChainNativeToken, selectTokenPriceByAddress } from '../../../data/selectors/tokens';
+import { formatBigDecimals, formatBigUsd } from '../../../../helpers/format';
 import { AssetsImage } from '../../../../components/AssetsImage';
 import { BountyWithBalance } from '../BountyWithBalance';
 import BigNumber from 'bignumber.js';
@@ -29,6 +29,7 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
   const vault = useAppSelector(state => selectVaultById(state, vaultId));
   //console.log(vault);
   const native = useAppSelector(state => selectChainNativeToken(state, vault.chainId));
+  const nativeUsd = useAppSelector(state => selectTokenPriceByAddress(state, vault.chainId, native.address));
   useAppSelector(state => beefyState = state);
 
   const [pendingCompound, setPendingCompound] = useState(new BigNumber(0));
@@ -53,7 +54,7 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
     <div className={classes.container}>
       <div className={classes.interestStats}>
         <Box className={classes.interestStatsBox}>
-          <Box width={'33%'} className={classes.stat3}>
+          <Box width={'25%'} className={classes.stat3}>
             <VaultTvl vaultId={vaultId} />
           </Box>
           <Box className={classes.stat}>
@@ -62,10 +63,22 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
               <YearlyApyStats vaultId={vault.id} />
             </Box>
           </Box>
-          <Box display="flex">
+          <Box className={classes.stat}>
             <Divider className={classes.divider} orientation="vertical" />
             <Box className={classes.stat3}>
               <DailyApyStats vaultId={vault.id} />
+            </Box>
+          </Box>
+          <Box className={classes.stat}>
+            <Divider className={classes.divider} orientation="vertical" />
+            <Box className={classes.stat3}>
+              <ValueBlock 
+                label={t('Pending-Verb')} 
+                value={
+                  formatBigUsd(new BigNumber(1000000).dividedBy(111).multipliedBy(pendingCompound).dividedBy(45).multipliedBy(nativeUsd))
+                }
+                usdValue={null}
+              />
             </Box>
           </Box>
         </Box>

@@ -40,4 +40,7 @@ export const styles = (theme: Theme) => ({
   vaultTagMultiStrat: {
     backgroundColor: 'rgba(255, 215, 0, 0.3)',
   },
+  vaultTagMultiReward: {
+    backgroundColor: 'rgba(46, 172, 184, 0.3)',
+  },
 });

@@ -12,6 +12,9 @@ export const styles = (theme: Theme) => ({
     marginTop: '12px',
     marginBottom: '4px',
   },
+  compoundBox: {
+    marginTop: '12px',
+  },
   stakedInValue: {
     ...theme.typography['body-lg-med'],
     display: 'flex',
@@ -63,6 +66,19 @@ export const styles = (theme: Theme) => ({
     position: 'absolute' as const,
     top: '12px',
     right: '12px',
+  },
+  label: {
+    ...theme.typography['subline-lg'],
+  },
+  checkbox: {
+    color: '#7b7452',
+  },
+  averageLine: {
+    height: '15px',
+    width: '2px',
+    backgroundColor: '#59A662',
+    borderRadius: '2px',
+    marginRight: theme.spacing(0.5),
   },
   btnSubmit: {
     color: theme.palette.text.primary,

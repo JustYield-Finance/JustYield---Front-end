@@ -42,10 +42,11 @@ import { MaxNativeDepositAlert } from '../MaxNativeDepositAlert';
 import { ZapPriceImpact, ZapPriceImpactProps } from '../ZapPriceImpactNotice';
 import { isFulfilled } from '../../../data/reducers/data-loader-types';
 import { FeeBreakdown } from '../FeeBreakdown';
+import { LabelledCheckbox } from '../../../../components/LabelledCheckbox';
 
 const useStyles = makeStyles(styles);
 
-export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
+export const MultiRewardDeposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
   const classes = useStyles();
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
@@ -187,6 +188,11 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
     startStepper(steps);
   };
 
+  const [compound, setCompound] = useState(true);
+  const handleCompound = (e) => {
+    setCompound(e);
+  };
+
   return (
     <>
       <Box p={3}>
@@ -256,8 +262,6 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
             </Button>
           </Paper>
         </Box>
-        {
-        /*
         <Box mb={1} className={classes.earnText}>
           Earn:
         </Box>
@@ -277,8 +281,6 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
             disabled={!formReady}
           />
         </RadioGroup>
-        */
-        }
         {formState.isZap ? (
           <>
             <ZapBreakdown
@@ -295,6 +297,19 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
         ) : null}
         <FeeBreakdown vaultId={vaultId} />
         <MaxNativeDepositAlert />
+        <Box mb={1} className={classes.compoundBox}>
+          <LabelledCheckbox
+            labelClass={classes.label}
+            checkboxClass={classes.checkbox}
+            checked={compound}
+            onChange={e => handleCompound(e)}
+            label={
+              <>
+                <Box className={classes.averageLine} />{t('Compound')} W{native.symbol}
+              </>
+            }
+          />
+        </Box>
         <Box mt={3}>
           {vault.chainId === 'emerald' ? <EmeraldGasNotice /> : null}
           {vault.status !== 'active' ? (

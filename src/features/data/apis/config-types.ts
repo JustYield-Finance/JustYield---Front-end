@@ -10,6 +10,7 @@ export interface VaultConfig {
   name: string;
   token: string;
   isMultiStrat: 'true' | 'false';
+  isMultiReward: 'true' | 'false';
   tokenAddress?: string | null;
   tokenDecimals: number;
   tokenProviderId?: PlatformEntity['id'];

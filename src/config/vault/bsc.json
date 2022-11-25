@@ -13,6 +13,7 @@
         "oracleId": "bsc-single-busd",
         "status": "active",
         "isMultiStrat": "true",
+        "isMultiReward": "false",
         "platformId": "circle",
         "strategyTypeId": "multi",
         "assets": ["BUSD"],

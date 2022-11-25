@@ -11,6 +11,7 @@ import {
   isVaultRetired,
   isMultiStratVault,
   VaultEntity,
+  isMultiRewardVault,
 } from '../../../../../data/entities/vault';
 import { selectVaultById } from '../../../../../data/selectors/vaults';
 import { makeStyles } from '@material-ui/core';
@@ -96,17 +97,27 @@ export const VaultTags = memo<VaultTagsProps>(function VaultTags({ vaultId }) {
   return (
     <div className={classes.vaultTags}>
       {/*<VaultPlatformTag vaultId={vaultId} />*/}
-      {isVaultRetired(vault) ? (
-        <VaultTag className={classes.vaultTagRetired}>{t('VaultTag-Retired')}</VaultTag>
-      ) : isVaultPaused(vault) ? (
-        <VaultTag className={classes.vaultTagPaused}>{t('VaultTag-Paused')}</VaultTag>
-      ) : boostId ? (
-        <VaultBoostTag boostId={boostId} />
-      ) : isGovVault(vault) ? (
-        <VaultEarnTag chainId={vault.chainId} earnedTokenAddress={vault.earnedTokenAddress} />
-      ) : isMultiStratVault(vault) ? (
-        <VaultTag className={classes.vaultTagMultiStrat}>{t('VaultTag-MultiStrat')}</VaultTag>
-      ) : null}
+      {
+        isVaultRetired(vault) ? (
+          <VaultTag className={classes.vaultTagRetired}>{t('VaultTag-Retired')}</VaultTag>
+        ) : isVaultPaused(vault) ? (
+          <VaultTag className={classes.vaultTagPaused}>{t('VaultTag-Paused')}</VaultTag>
+        ) : boostId ? (
+          <VaultBoostTag boostId={boostId} />
+        ) : isGovVault(vault) ? (
+          <VaultEarnTag chainId={vault.chainId} earnedTokenAddress={vault.earnedTokenAddress} />
+        ) : null
+      }
+      {
+        isMultiStratVault(vault) && !isVaultRetired(vault) && !isVaultPaused(vault) ? (
+          <VaultTag className={classes.vaultTagMultiStrat}>{t('VaultTag-MultiStrat')}</VaultTag>
+        ) : null
+      } 
+      {
+        isMultiRewardVault(vault) && !isVaultRetired(vault) && !isVaultPaused(vault) ? (
+          <VaultTag className={classes.vaultTagMultiReward}>{t('VaultTag-MultiReward')}</VaultTag>
+        ) : null
+      }
     </div>
   );
 });

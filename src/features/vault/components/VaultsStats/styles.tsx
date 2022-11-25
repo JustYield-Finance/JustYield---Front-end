@@ -42,7 +42,7 @@ export const styles = (theme: Theme) => ({
   },
   stat: {
     display: 'flex',
-    width: '33%',
+    width: '25%',
     paddingTop: 0,
     paddingBottom: 0,
     marginRight: theme.spacing(4),

@@ -2,7 +2,7 @@ import React, { memo, useMemo } from 'react';
 import { makeStyles } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { styles } from './styles';
-import { VaultEntity, isMultiStratVault } from '../../features/data/entities/vault';
+import { VaultEntity, isMultiStratVault, isMultiRewardVault } from '../../features/data/entities/vault';
 import { selectVaultById } from '../../features/data/selectors/vaults';
 import { selectIsVaultPreStakedOrBoosted } from '../../features/data/selectors/boosts';
 import { selectIsVaultMoonpot } from '../../features/data/selectors/partners';
@@ -42,6 +42,13 @@ const _DisplayTags = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
         isMultiStratVault(vault) ? (
           <div className={classes.tag}>
             {t('VaultTag-MultiStrat')}
+          </div>
+        ) : null
+      }
+      {
+        isMultiRewardVault(vault) ? (
+          <div className={classes.tag}>
+            {t('VaultTag-MultiReward')}
           </div>
         ) : null
       }

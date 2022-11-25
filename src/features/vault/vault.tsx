@@ -23,7 +23,7 @@ import {
   selectVaultIdIgnoreCase,
 } from '../data/selectors/vaults';
 import { selectIsVaultPreStakedOrBoosted } from '../data/selectors/boosts';
-import { isGovVault, VaultEntity } from '../data/entities/vault';
+import { isGovVault, isMultiRewardVault, VaultEntity } from '../data/entities/vault';
 import { selectChainById } from '../data/selectors/chains';
 import {
   selectIsVaultInsurace,
@@ -43,6 +43,7 @@ import { VaultMeta } from './components/VaultMeta';
 import { useAppSelector } from '../../store';
 import { VaultPlatform } from '../../components/VaultPlatform';
 import { LiquidityPoolBreakdownLoader } from './components/LiquidityPoolBreakdown';
+import { MultiRewardDeposit } from './components/MultiRewardDeposit';
 
 const useStyles = makeStyles(styles);
 const PageNotFound = lazy(() => import(`../../features/pagenotfound`));
@@ -154,7 +155,28 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
                     {t('Bounty-Verb')}
                   </Button>*/}
                 </div>
-                {dw === 'deposit' ? <Deposit vaultId={vaultId} /> : (dw === 'withdraw' ? <Withdraw vaultId={vaultId} /> : <Bounty vaultId={vaultId} />)}
+                {
+                  !isMultiRewardVault(vault) ?
+                    (
+                      dw === 'deposit' ? 
+                      <Deposit vaultId={vaultId} /> : 
+                      (
+                        dw === 'withdraw' ? 
+                        <Withdraw vaultId={vaultId} /> : 
+                        <Bounty vaultId={vaultId} />
+                      )
+                    ) 
+                    :
+                    (
+                      dw === 'deposit' ? 
+                      <MultiRewardDeposit vaultId={vaultId} /> : 
+                      (
+                        dw === 'withdraw' ? 
+                        <Withdraw vaultId={vaultId} /> : 
+                        <Bounty vaultId={vaultId} />
+                      )
+                    )
+                }
               </div>
             </div>
             <div className={classes.columnInfo}>
