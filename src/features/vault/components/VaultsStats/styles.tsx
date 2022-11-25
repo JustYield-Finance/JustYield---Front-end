@@ -93,4 +93,19 @@ export const styles = (theme: Theme) => ({
       marginRight: theme.spacing(2.5),
     },
   },
+  btnSubmit: {
+    color: theme.palette.text.primary,
+    backgroundColor: theme.palette.primary.main,
+    padding: '3px 6px',
+    borderRadius: '8px',
+    '&:hover': {
+      backgroundColor: '#389D44',
+    },
+    '&.Mui-disabled': {
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    },
+    '& + $btnSubmit': {
+      marginTop: '12px',
+    },
+  }
 });

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-import { Box, Divider, Grid, makeStyles } from '@material-ui/core';
+import { Button, Box, Divider, Grid, makeStyles } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { styles } from './styles';
 import { isGovVault, VaultEntity } from '../../../data/entities/vault';
-import { selectVaultById } from '../../../data/selectors/vaults';
+import { selectVaultById, selectVaultStrategyPendingBounty } from '../../../data/selectors/vaults';
 import { DailyApyStats, YearlyApyStats } from '../../../../components/ApyStats';
 import { ValueBlock } from '../../../../components/ValueBlock/ValueBlock';
 import { VaultTvl } from '../../../../components/VaultTvl/VaultTvl';
@@ -12,14 +12,42 @@ import { VaultDeposited } from '../../../../components/VaultDeposited/VaultDepos
 import { GovVaultRewards } from '../../../../components/GovVaultRewards/GovVaultRewards';
 import { getBeefyApi } from '../../../data/apis/instances';
 import { useAppSelector } from '../../../../store';
+import { selectChainNativeToken } from '../../../data/selectors/tokens';
+import { formatBigDecimals } from '../../../../helpers/format';
+import { AssetsImage } from '../../../../components/AssetsImage';
+import { BountyWithBalance } from '../BountyWithBalance';
+import BigNumber from 'bignumber.js';
 
 const useStyles = makeStyles(styles);
+var intervalStarted = false;
+var beefyState;
 
 function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
   const lastHarvestStr = useLastHarvestStr(vaultId);
   const classes = useStyles();
   const { t } = useTranslation();
   const vault = useAppSelector(state => selectVaultById(state, vaultId));
+  //console.log(vault);
+  const native = useAppSelector(state => selectChainNativeToken(state, vault.chainId));
+  useAppSelector(state => beefyState = state);
+
+  const [pendingCompound, setPendingCompound] = useState(new BigNumber(0));
+
+  intervalStarted = false;
+
+  useEffect(() => {
+    if(!intervalStarted){
+      // Display for the first time
+      var pendingBounty = selectVaultStrategyPendingBounty(beefyState, vaultId);
+      setPendingCompound(pendingBounty == null ? new BigNumber(0) : pendingBounty);
+      setInterval(() => {
+        // Updates display every 3 second
+        const pendingBounty = selectVaultStrategyPendingBounty(beefyState, vaultId);
+        setPendingCompound(pendingBounty == null ? new BigNumber(0) : pendingBounty);
+      }, 1000);
+      intervalStarted = true;
+    }
+  });
 
   return (
     <div className={classes.container}>
@@ -63,12 +91,35 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
               )}
             </>
           ) : (
-            <Grid item xs={6}>
+            <Grid item xs={6} >
               <Box className={classes.stat4}>
                 <GovVaultRewards vaultId={vaultId} />
               </Box>
             </Grid>
           )}
+          {!isGovVault(vault) ? (
+            <Divider flexItem={true} className={classes.divider1} orientation="vertical" />
+          ) : null}
+          {!isGovVault(vault) ? (
+            <>
+              {lastHarvestStr !== 'never' && (
+                <Grid item xs={6}>
+                  <Box className={classes.stat4}>
+                    <ValueBlock 
+                      label={t('Compound-Verb')} 
+                      value={<BountyWithBalance token={native} vaultId={vaultId} balance={pendingCompound} />}
+                      tooltip={
+                        {
+                          content: t('Compound-Text')
+                        }
+                      }
+                    />
+                  </Box>
+                </Grid>
+              )}
+            </>
+          ) : null
+          }
         </Grid>
       </div>
     </div>

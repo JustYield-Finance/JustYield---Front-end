@@ -29,6 +29,8 @@ export interface StandardVaultContractData {
    */
   pricePerFullShare: BigNumber;
 
+  callReward: BigNumber;
+
   /**
    * The strategy address
    */

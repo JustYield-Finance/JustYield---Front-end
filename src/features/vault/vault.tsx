@@ -7,6 +7,7 @@ import { AssetsImage } from '../../components/AssetsImage';
 import { styles } from './styles';
 import { Deposit } from './components/Deposit';
 import { Withdraw } from './components/Withdraw';
+import { Bounty } from './components/Bounty';
 import { TokenCard } from './components/TokenCard';
 import { StrategyCard } from './components/StrategyCard';
 import { SafetyCard } from './components/SafetyCard';
@@ -146,8 +147,14 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
                   >
                     {t('Withdraw-Verb')}
                   </Button>
+                  {/*<Button
+                    onClick={() => setDw('bounty')}
+                    className={dw === 'bounty' ? classes.selected : ''}
+                  >
+                    {t('Bounty-Verb')}
+                  </Button>*/}
                 </div>
-                {dw === 'deposit' ? <Deposit vaultId={vaultId} /> : <Withdraw vaultId={vaultId} />}
+                {dw === 'deposit' ? <Deposit vaultId={vaultId} /> : (dw === 'withdraw' ? <Withdraw vaultId={vaultId} /> : <Bounty vaultId={vaultId} />)}
               </div>
             </div>
             <div className={classes.columnInfo}>

@@ -63,6 +63,7 @@ export type VaultsState = NormalizedEntity<VaultEntity> & {
       [vaultId: VaultEntity['id']]: {
         strategyAddress: string;
         pricePerFullShare: BigNumber;
+        callReward: BigNumber;
       };
     };
   };
@@ -135,6 +136,7 @@ function addContractDataToState(
       sliceState.contractData.byVaultId[vaultId] = {
         pricePerFullShare: vaultContractData.pricePerFullShare,
         strategyAddress: vaultContractData.strategy,
+        callReward: vaultContractData.callReward,
       };
     }
 
@@ -148,6 +150,9 @@ function addContractDataToState(
     }
     if (sliceState.contractData.byVaultId[vaultId].strategyAddress !== vaultContractData.strategy) {
       sliceState.contractData.byVaultId[vaultId].strategyAddress = vaultContractData.strategy;
+    }
+    if (!sliceState.contractData.byVaultId[vaultId].callReward.isEqualTo(vaultContractData.callReward)){
+      sliceState.contractData.byVaultId[vaultId].callReward = vaultContractData.callReward;
     }
   }
 }

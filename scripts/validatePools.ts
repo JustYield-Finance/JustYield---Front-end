@@ -394,6 +394,7 @@ const populateStrategyData = async (chain, pools, web3) => {
       beefyFeeRecipient: stratContract.methods.beefyFeeRecipient(),
       beefyFeeConfig: stratContract.methods.beefyFeeConfig(),
       owner: stratContract.methods.owner(),
+      callReward: stratContract.methods.callReward(),
     };
   });
 
@@ -406,6 +407,7 @@ const populateStrategyData = async (chain, pools, web3) => {
       beefyFeeRecipient: results[i].beefyFeeRecipient,
       beefyFeeConfig: results[i].beefyFeeConfig,
       stratOwner: results[i].owner,
+      callReward: results[i].callReward,
     };
   });
 };

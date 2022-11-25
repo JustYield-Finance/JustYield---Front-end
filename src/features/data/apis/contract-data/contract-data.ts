@@ -1,4 +1,5 @@
 import _BeefyV2AppMulticallAbi from '../../../../config/abi/BeefyV2AppMulticall.json';
+import _strategyAbi from '../../../../config/abi/strategy.json';
 import { AbiItem } from 'web3-utils';
 import Web3 from 'web3';
 import { VaultGov, VaultStandard } from '../../entities/vault';
@@ -18,10 +19,11 @@ import {
 import { featureFlag_getContractDataApiChunkSize } from '../../utils/feature-flags';
 import { BeefyState } from '../../../../redux-types';
 import { selectVaultById } from '../../selectors/vaults';
-import { selectTokenByAddress } from '../../selectors/tokens';
+import { selectTokenByAddress, selectChainNativeToken } from '../../selectors/tokens';
 
 // fix ts types
 const BeefyV2AppMulticallAbi = _BeefyV2AppMulticallAbi as AbiItem | AbiItem[];
+const StrategyAbi = _strategyAbi as AbiItem | AbiItem[];
 
 export class ContractDataAPI<T extends ChainEntity> implements IContractDataApi {
   constructor(protected web3: Web3, protected chain: T) {}
@@ -78,7 +80,8 @@ export class ContractDataAPI<T extends ChainEntity> implements IContractDataApi 
       const batchRes = results[resultsIdx].map((vaultRes, elemidx) =>
         this.standardVaultFormatter(state, vaultRes, vaultBatch[elemidx])
       );
-      res.standardVaults = res.standardVaults.concat(batchRes);
+      const batchResAwaited = await Promise.all([...batchRes]);
+      res.standardVaults = res.standardVaults.concat(batchResAwaited);
       resultsIdx++;
     }
     for (const vaultBatch of govVaultBatches) {
@@ -92,7 +95,7 @@ export class ContractDataAPI<T extends ChainEntity> implements IContractDataApi 
     return res;
   }
 
-  protected standardVaultFormatter(
+  protected async standardVaultFormatter(
     state: BeefyState,
     result: AllValuesAsString<StandardVaultContractData>,
     standardVault: VaultStandard
@@ -100,11 +103,20 @@ export class ContractDataAPI<T extends ChainEntity> implements IContractDataApi 
     const vault = selectVaultById(state, standardVault.id);
     const mooToken = selectTokenByAddress(state, vault.chainId, vault.earnContractAddress);
     const depositToken = selectTokenByAddress(state, vault.chainId, vault.depositTokenAddress);
+    const native = selectChainNativeToken(state, vault.chainId);
+
+    const stratContract = new this.web3.eth.Contract(
+      StrategyAbi,
+      result.strategy
+    );
+    const callRewardResult = await stratContract.methods.callReward().call();
+
     return {
       id: standardVault.id,
       balance: new BigNumber(result.balance).shiftedBy(-depositToken.decimals),
       /** always 18 decimals for PPFS */
       pricePerFullShare: new BigNumber(result.pricePerFullShare).shiftedBy(-mooToken.decimals),
+      callReward: new BigNumber(callRewardResult).shiftedBy(-native.decimals),
       strategy: result.strategy,
     } as StandardVaultContractData;
   }
