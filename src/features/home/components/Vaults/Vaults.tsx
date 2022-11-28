@@ -6,13 +6,19 @@ import { VaultsList } from './components/VaultsList';
 
 const useStyles = makeStyles(styles);
 
-export const Vaults = memo(function Vaults() {
+type VaultTypeProps = {
+  vaultType?: string;
+};
+
+export const Vaults = memo<VaultTypeProps>(function Vaults({
+  vaultType,
+}) {
   const classes = useStyles();
 
   return (
     <div className={classes.vaults}>
       <VaultsHeader />
-      <VaultsList />
+      <VaultsList vaultType={vaultType} />
     </div>
   );
 });

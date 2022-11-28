@@ -16,6 +16,8 @@
   "Back": "Back",
   "Header-Home": "Home",
   "Header-Vaults": "Vaults",
+  "Header-Vaults-Single": "Single Assets Vaults",
+  "Header-Vaults-LP": "LPs Vaults",
   "Header-Proposals": "Proposals",
   "Header-BuyCrypto": "Buy Crypto",
   "Header-BridgeBifi": "Bridge YIELD",

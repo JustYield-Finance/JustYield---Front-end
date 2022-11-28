@@ -67,6 +67,8 @@ const NavLinks = memo(function () {
     //{ title: t('Header-BridgeBifi'), url: '/bridge', badge: true },
     //{ title: t('Header-News'), url: 'https://justyield.com/articles/' },
     //{ title: t('Header-Docs'), url: 'https://docs.justyield.finance' }
+    { title: t('Header-Vaults-Single'), url: '/single' },
+    { title: t('Header-Vaults-LP'), url: '/lps' }
   ];
   return (
     <>

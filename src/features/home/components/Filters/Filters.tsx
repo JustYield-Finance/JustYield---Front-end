@@ -23,12 +23,10 @@ export const Filters = memo(function Filters() {
       {desktopView ? (
         <>
           <VaultCategoryButtonFilter className={classes.vaultCategory} />
-          <VaultTypeButtonFilter className={classes.vaultType} />
         </>
       ) : (
         <>
           <ChainDropdownFilter className={classes.chain} />
-          <VaultTypeDropdownFilter className={classes.vaultType} />
         </>
       )}
       <ExtendedFiltersButton
