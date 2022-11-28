@@ -216,7 +216,22 @@ export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
   };
 
   const handleClaimBounty = () => {
+    const steps: Step[] = [];
+    if (!isWalletConnected) {
+      return dispatch(askForWalletConnection());
+    }
+    if (!isWalletOnVaultChain) {
+      return dispatch(askForNetworkChange({ chainId: vault.chainId }));
+    }
 
+    steps.push({
+      step: 'harvest',
+      message: t('Vault-TxnConfirm', { type: t('Harvest-noun') }),
+      action: walletActions.harvest(vault),
+      pending: false,
+    });
+
+    startStepper(steps);
   };
 
   const handleClaim = () => {
@@ -380,7 +395,7 @@ export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
                 className={classes.depositTokenContainer}
                 value={native.id}
                 control={formState.zapOptions !== null ? <Radio /> : <div style={{ width: 12 }} />}
-                label={<BountyWithBalance token={native} vaultId={vaultId} balance={pendingCompound} decimals={12} />}
+                label={<BountyWithBalance token={native} vaultId={vaultId} balance={pendingCompound} decimals={12} usdValue={pendingCompound.multipliedBy(nativeUsd)} />}
                 disabled={!formReady}
               />
             </RadioGroup>
@@ -405,7 +420,6 @@ export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
                   onClick={handleClaimBounty}
                   className={classes.btnSubmit}
                   fullWidth={true}
-                  disabled={true}
                 >
                   {t('Claim-Bounty')}
                 </Button>

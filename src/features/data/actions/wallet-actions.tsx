@@ -395,6 +395,46 @@ const withdraw = (vault: VaultEntity, oracleAmount: BigNumber, max: boolean) => 
   });
 };
 
+const harvest = (vault: VaultEntity) => {
+  return captureWalletErrors(async (dispatch, getState) => {
+    dispatch({ type: WALLET_ACTION_RESET });
+    const state = getState();
+    const address = selectWalletAddress(state);
+    if (!address) {
+      return;
+    }
+
+    const walletApi = await getWalletConnectionApiInstance();
+    const web3 = await walletApi.getConnectedWeb3Instance();
+
+    const depositToken = selectTokenByAddress(state, vault.chainId, vault.depositTokenAddress);
+    const mooToken = selectErc20TokenByAddress(state, vault.chainId, vault.earnedTokenAddress);
+    const native = selectChainNativeToken(state, vault.chainId);
+    const contractAddr = mooToken.address;
+    const contract = new web3.eth.Contract(vaultAbi as any, contractAddr);
+
+    const gasPrices = await getGasPriceOptions(web3);
+
+    const maxAmount = web3.utils.toWei('8000000000', 'ether');
+    const bigMaxAmount = new BigNumber(maxAmount).shiftedBy(-native.decimals);
+
+    const transaction = (() => {
+      return contract.methods.harvest().send({ from: address, ...gasPrices });
+    })();
+
+    bindTransactionEvents(
+      dispatch,
+      transaction,
+      { spender: contractAddr, amount: bigMaxAmount, token: depositToken },
+      {
+        chainId: vault.chainId,
+        spenderAddress: contractAddr,
+        tokens: getVaultTokensToRefresh(state, vault),
+      }
+    );
+  });
+};
+
 const stakeGovVault = (vault: VaultGov, amount: BigNumber) => {
   return captureWalletErrors(async (dispatch, getState) => {
     dispatch({ type: WALLET_ACTION_RESET });
@@ -891,6 +931,7 @@ export const walletActions = {
   mintDeposit,
   burnWithdraw,
   bridge,
+  harvest,
 };
 
 function captureWalletErrors<ReturnType>(
