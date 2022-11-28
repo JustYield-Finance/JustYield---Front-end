@@ -185,6 +185,15 @@ export const MultiRewardDeposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) 
       }
     }
 
+    if(compound) {
+      steps.push({
+        step: 'harvest',
+        message: t('Vault-TxnConfirm', { type: t('Harvest-noun') }),
+        action: walletActions.harvest(vault),
+        pending: false,
+      });
+    }
+
     startStepper(steps);
   };
 
@@ -299,7 +308,7 @@ export const MultiRewardDeposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) 
         <MaxNativeDepositAlert />
         <Box mb={1} className={classes.compoundBox}>
           <LabelledCheckbox
-            labelClass={classes.label}
+            labelClass={classes.labelCheckbox}
             checkboxClass={classes.checkbox}
             checked={compound}
             onChange={e => handleCompound(e)}

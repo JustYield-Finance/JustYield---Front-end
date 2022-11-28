@@ -42,6 +42,7 @@ import { MaxNativeDepositAlert } from '../MaxNativeDepositAlert';
 import { ZapPriceImpact, ZapPriceImpactProps } from '../ZapPriceImpactNotice';
 import { isFulfilled } from '../../../data/reducers/data-loader-types';
 import { FeeBreakdown } from '../FeeBreakdown';
+import { LabelledCheckbox } from '../../../../components/LabelledCheckbox';
 
 const useStyles = makeStyles(styles);
 
@@ -184,7 +185,21 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
       }
     }
 
+    if(compound) {
+      steps.push({
+        step: 'harvest',
+        message: t('Vault-TxnConfirm', { type: t('Harvest-noun') }),
+        action: walletActions.harvest(vault),
+        pending: false,
+      });
+    }
+
     startStepper(steps);
+  };
+
+  const [compound, setCompound] = useState(true);
+  const handleCompound = (e) => {
+    setCompound(e);
   };
 
   return (
@@ -295,6 +310,19 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
         ) : null}
         <FeeBreakdown vaultId={vaultId} />
         <MaxNativeDepositAlert />
+        <Box mb={1} className={classes.compoundBox}>
+          <LabelledCheckbox
+            labelClass={classes.labelCheckbox}
+            checkboxClass={classes.checkbox}
+            checked={compound}
+            onChange={e => handleCompound(e)}
+            label={
+              <>
+                <Box className={classes.averageLine} />{t('Compound')} W{native.symbol}
+              </>
+            }
+          />
+        </Box>
         <Box mt={3}>
           {vault.chainId === 'emerald' ? <EmeraldGasNotice /> : null}
           {vault.status !== 'active' ? (

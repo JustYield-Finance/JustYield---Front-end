@@ -106,7 +106,7 @@
   "VaultTag-Moonpot": "Moonpot",
   "VaultTag-Retired": "Retired",
   "VaultTag-MultiStrat": "Multi-Strategies",
-  "Compound": "Get partial fee refund in ",
+  "Compound": "Compound vault to get partial fee refund in ",
   "VaultTag-MultiReward": "Multi-Rewards",
   "VaultTag-EarnToken": "Earn {{token}}",
   "VaultTag-PartnerBoost": "{{partner}} Boost",

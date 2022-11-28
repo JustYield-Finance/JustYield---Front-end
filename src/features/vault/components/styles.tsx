@@ -76,6 +76,9 @@ export const styles = (theme: Theme) => ({
   label: {
     ...theme.typography['subline-lg'],
   },
+  labelCheckbox: {
+    ...theme.typography['body-sm-med'],
+  },
   checkbox: {
     color: '#7b7452',
   },

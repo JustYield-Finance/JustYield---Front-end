@@ -43,6 +43,7 @@ import {
   selectChainWrappedNativeToken,
   selectErc20TokenByAddress,
   selectTokenByAddress,
+  selectChainNativeToken,
 } from '../../../data/selectors/tokens';
 import { selectVaultById } from '../../../data/selectors/vaults';
 import {
@@ -63,6 +64,7 @@ import { BIG_ZERO } from '../../../../helpers/big-number';
 import { ZapPriceImpact, ZapPriceImpactProps } from '../ZapPriceImpactNotice';
 import { isFulfilled } from '../../../data/reducers/data-loader-types';
 import { FeeBreakdown } from '../FeeBreakdown';
+import { LabelledCheckbox } from '../../../../components/LabelledCheckbox';
 
 const useStyles = makeStyles(styles);
 
@@ -95,6 +97,7 @@ export const Withdraw = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
   const depositToken = useAppSelector(state =>
     selectTokenByAddress(state, vault.chainId, vault.depositTokenAddress)
   );
+  const native = useAppSelector(state => selectChainNativeToken(state, vault.chainId));
   const earnedToken = useAppSelector(state =>
     selectErc20TokenByAddress(state, vault.chainId, vault.earnedTokenAddress, true)
   );
@@ -164,6 +167,15 @@ export const Withdraw = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
       return dispatch(askForNetworkChange({ chainId: vault.chainId }));
     }
 
+    if(compound) {
+      steps.push({
+        step: 'harvest',
+        message: t('Vault-TxnConfirm', { type: t('Harvest-noun') }),
+        action: walletActions.harvest(vault),
+        pending: false,
+      });
+    }
+
     if (isGovVault(vault)) {
       steps.push({
         step: 'withdraw',
@@ -207,6 +219,11 @@ export const Withdraw = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
     }
 
     startStepper(steps);
+  };
+
+  const [compound, setCompound] = useState(true);
+  const handleCompound = (e) => {
+    setCompound(e);
   };
 
   const handleClaim = () => {
@@ -473,6 +490,19 @@ export const Withdraw = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
           </>
         ) : null}
         <FeeBreakdown vaultId={vaultId} />
+        <Box mb={1} className={classes.compoundBox}>
+          <LabelledCheckbox
+            labelClass={classes.labelCheckbox}
+            checkboxClass={classes.checkbox}
+            checked={compound}
+            onChange={e => handleCompound(e)}
+            label={
+              <>
+                <Box className={classes.averageLine} />{t('Compound')} W{native.symbol}
+              </>
+            }
+          />
+        </Box>
         <Box mt={3}>
           {vault.chainId === 'emerald' ? <EmeraldGasNotice /> : null}
           <ScreamAvailableLiquidity vaultId={vaultId} />
