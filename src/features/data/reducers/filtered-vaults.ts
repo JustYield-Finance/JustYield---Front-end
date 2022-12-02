@@ -16,6 +16,7 @@ export type FilteredVaultsState = {
   sort: 'tvl' | 'apy' | 'daily' | 'safetyScore' | 'default' | 'depositValue' | 'walletValue';
   sortDirection: 'asc' | 'desc';
   vaultCategory: 'all' | 'featured' | 'stable' | 'bluechip' | 'beefy';
+  vaultCategoryReduced: 'all' | 'stable';
   userCategory: 'all' | 'eligible' | 'deposited';
   vaultType: 'all' | 'lps' | 'single';
   searchText: string;
@@ -33,6 +34,7 @@ const initialFilteredVaultsState: FilteredVaultsState = {
   sort: 'default',
   sortDirection: 'desc',
   vaultCategory: 'all',
+  vaultCategoryReduced: 'all',
   userCategory: 'all',
   vaultType: 'all',
   searchText: '',

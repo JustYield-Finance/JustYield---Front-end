@@ -14,6 +14,8 @@ export const styles = (theme: Theme) => ({
     alignItems: 'center',
     borderTopLeftRadius: '8px',
     borderTopRightRadius: '8px',
+    borderBottomLeftRadius: '8px',
+    borderBottomRightRadius: '8px',
     backgroundClip: 'padding-box',
     [theme.breakpoints.up('sm')]: {
       gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',

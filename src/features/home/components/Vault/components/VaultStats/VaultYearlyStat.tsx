@@ -27,8 +27,8 @@ export const VaultYearlyStat = memo(connect(mapStateToProps)(VaultValueStat));
 
 function mapStateToProps(state: BeefyState, { vaultId }: VaultYearlyStatProps) {
   const isGovVault = selectIsVaultGov(state, vaultId);
-  const label = isGovVault ? 'VaultStat-APR' : 'VaultStat-APY';
-
+  //const label = isGovVault ? 'VaultStat-APR' : 'VaultStat-APY';
+  const label = '';
   const shouldShowInterest = selectVaultShouldShowInterest(state, vaultId);
   if (!shouldShowInterest) {
     return {
@@ -37,6 +37,7 @@ function mapStateToProps(state: BeefyState, { vaultId }: VaultYearlyStatProps) {
       subValue: null,
       blur: false,
       loading: false,
+      bold: true,
     };
   }
 
@@ -48,6 +49,7 @@ function mapStateToProps(state: BeefyState, { vaultId }: VaultYearlyStatProps) {
       subValue: null,
       blur: false,
       loading: true,
+      bold: true,
     };
   }
 
@@ -59,6 +61,7 @@ function mapStateToProps(state: BeefyState, { vaultId }: VaultYearlyStatProps) {
       subValue: null,
       blur: false,
       loading: false,
+      bold: true,
     };
   }
 
@@ -73,7 +76,8 @@ function mapStateToProps(state: BeefyState, { vaultId }: VaultYearlyStatProps) {
     blur: false,
     loading: !isLoaded,
     boosted: isBoosted,
-    tooltip: <YearlyTooltipContent vaultId={vaultId} isBoosted={isBoosted} rates={formatted} />,
+    bold: true,
+    //tooltip: <YearlyTooltipContent vaultId={vaultId} isBoosted={isBoosted} rates={formatted} />,
   };
 }
 

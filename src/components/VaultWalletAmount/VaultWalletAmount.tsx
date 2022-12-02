@@ -52,9 +52,9 @@ const _VaultWalletAmount = connect(
 
     return (
       <ValueBlock
-        label={t('WALLET')}
+        label={t('')}
         value={userOracleInWallet}
-        usdValue={hasInWallet ? userOracleInWalletUsd : null}
+        usdValue={hasInWallet ? ' (' + userOracleInWalletUsd + ')' : null}
         blurred={blurred}
         loading={loading}
       />

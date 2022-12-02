@@ -5,6 +5,10 @@ export const styles = (theme: Theme) => ({
     ...theme.typography['body-lg-med'],
     color: '#2f2f25',
   },
+  valueBold: {
+    ...theme.typography['h1'],
+    color: '#757157',
+  },
   subValue: {
     ...theme.typography['body-sm'],
     color: '#757157',

@@ -1,5 +1,6 @@
 import { useMediaQuery } from '@material-ui/core';
 import { Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core';
 import React, {
   CSSProperties,
   memo,
@@ -12,7 +13,11 @@ import React, {
 import { debounce } from 'lodash';
 import { useInView } from 'react-intersection-observer';
 import { Vault } from '../../../Vault';
+import { VaultV2 } from '../../../VaultV2';
 import { VaultEntity } from '../../../../../data/entities/vault';
+import { styles } from './styles';
+
+const useStyles = makeStyles(styles);
 
 function useVaultHeightEstimate() {
   const smUp = useMediaQuery((theme: Theme) => theme.breakpoints.up('sm'));
@@ -60,6 +65,7 @@ export const VirtualVaultsList = memo<VirtualVaultsListProps>(function ({ vaultI
   const bottomRef = useRef<HTMLDivElement>();
   const vaultHeightEstimate = useVaultHeightEstimate();
   const renderVaultIds = useMemo(() => vaultIds.slice(0, renderCount), [vaultIds, renderCount]);
+  const classes = useStyles();
   const remainingVaults = useMemo(() => {
     return Math.max(0, totalVaults - renderCount);
   }, [totalVaults, renderCount]);
@@ -70,7 +76,7 @@ export const VirtualVaultsList = memo<VirtualVaultsListProps>(function ({ vaultI
       borderBottomRightRadius: '8px',
       backgroundSize: `100% ${vaultHeightEstimate}px`,
       backgroundRepeat: 'repeat-y',
-      backgroundImage: `linear-gradient(to bottom, #d2ceac 0px, #d2ceac ${
+      backgroundImage: `linear-gradient(to bottom, #d2ceac 0px, #fff ${
         vaultHeightEstimate - 2
       }px,  #c9c49c ${vaultHeightEstimate - 2}px, #c9c49c 100%)`,
     };
@@ -142,11 +148,25 @@ export const VirtualVaultsList = memo<VirtualVaultsListProps>(function ({ vaultI
 
   return (
     <>
-      <div ref={containerRef}>
+      {/*
+      <div className={classes.selector}>
         {renderVaultIds.map(vaultId => (
-          <Vault vaultId={vaultId} key={vaultId} />
+          <div className={classes.selectorContainer}>
+            <div className={classes.selectorContent}>
+              <Vault vaultId={vaultId} key={vaultId} />
+            </div>
+            <div className={classes.flap}></div>
+          </div>
         ))}
       </div>
+      */}
+
+      <div className={classes.newVirtualVaultsList}>
+        {renderVaultIds.map(vaultId => (
+          <VaultV2 vaultId={vaultId} key={vaultId} />
+        ))}
+      </div>
+      
       <div ref={bottomRef} />
       <div style={placeholderStyle} ref={placeholderRef} />
     </>

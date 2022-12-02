@@ -26,7 +26,8 @@ export type VaultDailyStatProps = {
 export const VaultDailyStat = memo(connect(mapStateToProps)(VaultValueStat));
 
 function mapStateToProps(state: BeefyState, { vaultId }: VaultDailyStatProps): VaultValueStatProps {
-  const label = 'VaultStat-DAILY';
+  //const label = 'VaultStat-DAILY';
+  const label = '';
 
   const shouldShowInterest = selectVaultShouldShowInterest(state, vaultId);
   if (!shouldShowInterest) {
@@ -72,7 +73,7 @@ function mapStateToProps(state: BeefyState, { vaultId }: VaultDailyStatProps): V
     blur: false,
     loading: !isLoaded,
     boosted: isBoosted,
-    tooltip: <DailyContentTooltip vaultId={vaultId} isBoosted={isBoosted} rates={formatted} />,
+    //tooltip: <DailyContentTooltip vaultId={vaultId} isBoosted={isBoosted} rates={formatted} />,
   };
 }
 

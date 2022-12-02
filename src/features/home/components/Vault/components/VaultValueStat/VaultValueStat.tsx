@@ -15,6 +15,7 @@ export type VaultValueStatProps = {
   blur?: boolean;
   loading: boolean;
   boosted?: boolean;
+  bold?: boolean;
 };
 export const VaultValueStat = memo<VaultValueStatProps>(function VaultValueStat({
   label,
@@ -24,6 +25,7 @@ export const VaultValueStat = memo<VaultValueStatProps>(function VaultValueStat(
   blur,
   loading,
   boosted,
+  bold,
 }) {
   const classes = useStyles();
   const { t } = useTranslation();
@@ -38,6 +40,7 @@ export const VaultValueStat = memo<VaultValueStatProps>(function VaultValueStat(
             className={clsx(classes.value, {
               [classes.blurValue]: blur,
               [classes.boostedValue]: boosted,
+              [classes.valueBold]: bold,
             })}
           >
             {value}

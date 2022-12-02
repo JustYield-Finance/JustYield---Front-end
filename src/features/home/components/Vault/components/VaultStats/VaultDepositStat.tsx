@@ -19,7 +19,8 @@ export type VaultDepositStatProps = {
 export const VaultDepositStat = memo(connect(mapStateToProps)(VaultValueStat));
 
 function mapStateToProps(state: BeefyState, { vaultId }: VaultDepositStatProps) {
-  const label = 'VaultStat-DEPOSITED';
+  //const label = 'VaultStat-DEPOSITED';
+  const label = '';
   const vault = selectVaultById(state, vaultId);
   const hideBalance = selectIsBalanceHidden(state);
 

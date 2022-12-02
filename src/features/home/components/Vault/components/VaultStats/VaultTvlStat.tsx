@@ -14,7 +14,8 @@ export type VaultTvlStatProps = {
 export const VaultTvlStat = memo(connect(mapStateToProps)(VaultValueStat));
 
 function mapStateToProps(state: BeefyState, { vaultId }: VaultTvlStatProps) {
-  const label = 'VaultStat-TVL';
+  //const label = 'VaultStat-TVL';
+  const label = '';
   const vault = selectVaultById(state, vaultId);
   const isLoaded =
     state.ui.dataLoader.byChainId[vault.chainId]?.contractData.alreadyLoadedOnce &&

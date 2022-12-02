@@ -20,9 +20,8 @@ export const styles = (theme: Theme) => ({
     color: '#247ccd',
   },
   vaultNetwork: {
-    position: 'absolute' as const,
-    top: '-2px',
-    left: '-2px',
+    position: 'relative' as const,
+    zIndex: 999999,
     width: '28px',
     height: '28px',
     border: 'solid 2px #c9c49c',
