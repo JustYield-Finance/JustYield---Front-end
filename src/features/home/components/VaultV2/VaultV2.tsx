@@ -2,7 +2,11 @@ import React, { memo, useMemo } from 'react';
 import { isVaultPaused, isVaultRetired, VaultEntity } from '../../../data/entities/vault';
 import { makeStyles } from '@material-ui/core';
 import { styles } from './styles';
-import { selectIsVaultGov, selectIsVaultRetired, selectVaultById } from '../../../data/selectors/vaults';
+import {
+  selectIsVaultGov,
+  selectIsVaultRetired,
+  selectVaultById,
+} from '../../../data/selectors/vaults';
 import clsx from 'clsx';
 import { useAppSelector } from '../../../../store';
 import { Link } from 'react-router-dom';
@@ -18,6 +22,7 @@ import { VaultDepositStat } from '../Vault/components/VaultStats/VaultDepositSta
 import { VaultWalletAmount } from '../../../../components/VaultWalletAmount/VaultWalletAmount';
 import { VaultNetwork } from '../Vault/components/VaultIdentity';
 import { VaultTag } from '../Vault/components/VaultTags/VaultTag';
+import { VaultIcon } from '../Vault/components/VaultIcon';
 
 const useStyles = makeStyles(styles);
 
@@ -57,26 +62,27 @@ export const VaultV2 = memo<VaultProps>(function Vault({ vaultId }) {
         <div className="card">
           <VaultNetwork chainId={vault.chainId} />
           <div className="imgBx">
-            {uris.map((uri, i) =>
+            <VaultIcon vaultId={vaultId} />
+            {/*uris.map((uri, i) =>
               uri ? (
                 <img
                   src={uri}
                   key={uri}
                 />
               ) : null
-            )}
+              )*/}
           </div>
           <div className="contentBx">
-            <h2><VaultYearlyStat vaultId={vaultId} /></h2>
-            {
-              isVaultRetired(vault) ? (
-                <VaultTag className={classes.vaultTagRetired}>{t('VaultTag-Retired')}</VaultTag>
-              ) : isVaultPaused(vault) ? (
-                <VaultTag className={classes.vaultTagPaused}>{t('VaultTag-Paused')}</VaultTag>
-              ) : null
-            }
+            <h2>
+              <VaultYearlyStat vaultId={vaultId} />
+            </h2>
+            {isVaultRetired(vault) ? (
+              <VaultTag className={classes.vaultTagRetired}>{t('VaultTag-Retired')}</VaultTag>
+            ) : isVaultPaused(vault) ? (
+              <VaultTag className={classes.vaultTagPaused}>{t('VaultTag-Paused')}</VaultTag>
+            ) : null}
             <h2>{vault.name}</h2>
-            
+
             <div className="size">
               <h3>Daily :</h3>
               <VaultDailyStat vaultId={vaultId} />

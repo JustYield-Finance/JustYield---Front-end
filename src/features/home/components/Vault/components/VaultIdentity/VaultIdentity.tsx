@@ -47,8 +47,8 @@ export const VaultNetwork = memo<VaultNetworkProps>(function VaultNetwork({ chai
       <img
         alt={chain.name}
         src={require(`../../../../../../images/networks/${chainId}.svg`).default}
-        width={24}
-        height={24}
+        width={50}
+        height={50}
       />
     </div>
   );

@@ -4,6 +4,7 @@ import { selectFilterChainIds } from '../../../../../data/selectors/filtered-vau
 import { ChainEntity } from '../../../../../data/entities/chain';
 import { filteredVaultsActions } from '../../../../../data/reducers/filtered-vaults';
 import { ChainButtonSelector } from './ChainButtonSelector';
+import { ChainButtonAnimated } from './ChainButtonAnimated';
 
 export type ChainButtonFilterProps = {
   className?: string;
@@ -22,7 +23,7 @@ export const ChainButtonFilter = memo<ChainButtonFilterProps>(function ChainButt
   );
 
   return (
-    <ChainButtonSelector
+    <ChainButtonAnimated
       selected={selectedChainIds}
       onChange={handleChainSelectorChange}
       className={className}

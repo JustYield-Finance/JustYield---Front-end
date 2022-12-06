@@ -19,7 +19,7 @@ export const ExtendedFilters = memo<ExtendedFiltersProps>(function ({ desktopVie
   return (
     <div className={classes.extendedFilters}>
       <ShownVaultsCount className={classes.shownVaultsCount} />
-      <PlatformDropdownFilter className={classes.select} />
+      {/*<PlatformDropdownFilter className={classes.select} />*/}
       {!desktopView ? <VaultCategoryDropdownFilter className={classes.select} /> : null}
       <CheckboxFilter
         className={classes.checkbox}
@@ -27,7 +27,7 @@ export const ExtendedFilters = memo<ExtendedFiltersProps>(function ({ desktopVie
         label={t('Filter-Retired')}
       />
       <CheckboxFilter className={classes.checkbox} filter="onlyPaused" label={t('Filter-Paused')} />
-      <CheckboxFilter className={classes.checkbox} filter="onlyBoosted" label={t('Filter-Boost')} />
+      {/*<CheckboxFilter className={classes.checkbox} filter="onlyBoosted" label={t('Filter-Boost')} />*/}
     </div>
   );
 });

@@ -21,14 +21,14 @@ export const styles = (theme: Theme) => ({
   },
   vaultNetwork: {
     position: 'relative' as const,
-    zIndex: 999999,
-    width: '28px',
-    height: '28px',
+    zIndex: 10,
+    width: '56px',
+    height: '56px',
     border: 'solid 2px #c9c49c',
     borderBottomRightRadius: '16px',
     '& img': {
-      width: '22px',
-      height: '22px',
+      width: '50px',
+      height: '50px',
     },
   },
   'vaultNetwork-bsc': {

@@ -70,10 +70,10 @@ const SORT_COLUMNS: {
   sortKey: FilteredVaultsState['sort'];
   TooltipComponent?: FC;
 }[] = [
-  { label: 'Filter-SortWallet', sortKey: 'walletValue' },
-  { label: 'Filter-SortDeposited', sortKey: 'depositValue' },
   { label: 'Filter-SortApy', sortKey: 'apy' },
   { label: 'Filter-SortDaily', sortKey: 'daily' },
+  { label: 'Filter-SortWallet', sortKey: 'walletValue' },
+  { label: 'Filter-SortDeposited', sortKey: 'depositValue' },
   { label: 'Filter-SortTvl', sortKey: 'tvl' },
   //{ label: 'Filter-SortSafety', sortKey: 'safetyScore' },
 ];
@@ -117,13 +117,11 @@ const SortDropdown = memo(function SortDropdown() {
   const value = useAppSelector(selectFilterSearchSortField);
   const options = useMemo<Record<FilteredVaultsState['sort'], string>>(() => {
     return {
-      default: t('Filter-SortDefault'),
-      walletValue: t('Filter-SortWallet'),
-      depositValue: t('Filter-SortDeposited'),
       apy: t('Filter-SortApy'),
       daily: t('Filter-SortDaily'),
+      walletValue: t('Filter-SortWallet'),
+      depositValue: t('Filter-SortDeposited'),
       tvl: t('Filter-SortTvl'),
-      safetyScore: t('Filter-SortSafety'),
     };
   }, [t]);
 
@@ -142,7 +140,7 @@ const SortDropdown = memo(function SortDropdown() {
       options={options}
       borderless={true}
       fullWidth={true}
-      defaultValue={'default'}
+      defaultValue={'apy'}
       selectClass={classes.sortDropdown}
     />
   );

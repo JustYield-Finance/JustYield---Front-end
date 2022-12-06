@@ -13,7 +13,7 @@ export type FilteredVaultsState = {
    * to reset their local copy. The search text is (for now) the only example.
    **/
   reseted: boolean;
-  sort: 'tvl' | 'apy' | 'daily' | 'safetyScore' | 'default' | 'depositValue' | 'walletValue';
+  sort: 'tvl' | 'apy' | 'daily' | 'depositValue' | 'walletValue';
   sortDirection: 'asc' | 'desc';
   vaultCategory: 'all' | 'featured' | 'stable' | 'bluechip' | 'beefy';
   vaultCategoryReduced: 'all' | 'stable';
@@ -31,7 +31,7 @@ export type FilteredVaultBooleanKeys = KeysOfType<Omit<FilteredVaultsState, 'res
 
 const initialFilteredVaultsState: FilteredVaultsState = {
   reseted: true,
-  sort: 'default',
+  sort: 'apy',
   sortDirection: 'desc',
   vaultCategory: 'all',
   vaultCategoryReduced: 'all',

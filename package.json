@@ -36,6 +36,7 @@
     "re-reselect": "^4.0.0",
     "react": "^17.0.1",
     "react-animate-height": "^2.0.23",
+    "react-circular-menu": "^2.3.8",
     "react-content-loader": "^6.0.3",
     "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "^17.0.1",
@@ -50,6 +51,7 @@
     "recharts": "^2.0.7",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^5.3.6",
     "web3": "^1.7.0"
   },
   "resolutions": {

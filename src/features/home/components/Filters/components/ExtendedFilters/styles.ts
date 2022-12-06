@@ -29,6 +29,7 @@ export const styles = (theme: Theme) => ({
     flexShrink: 0,
     display: 'flex',
     alignItems: 'center',
+    borderBottom: '2px solid #c6c09f',
   },
   sidebarHeaderTitle: {
     marginRight: '24px',
@@ -44,6 +45,7 @@ export const styles = (theme: Theme) => ({
   },
   sidebarMain: {
     padding: '24px',
+    background: '#eeecde',
     flexGrow: 1,
     flexShrink: 1,
     minHeight: 0,
@@ -51,6 +53,7 @@ export const styles = (theme: Theme) => ({
   },
   sidebarFooter: {
     padding: '24px',
+    background: '#eeecde',
     flexGrow: 0,
     flexShrink: 0,
   },
@@ -70,5 +73,6 @@ export const styles = (theme: Theme) => ({
   select: {
     width: '100%',
     marginTop: '16px',
+    background: '#eeecde',
   },
 });

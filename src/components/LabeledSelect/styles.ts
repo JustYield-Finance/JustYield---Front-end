@@ -4,7 +4,7 @@ export const styles = (theme: Theme) => ({
   select: {
     ...theme.typography['body-lg-med'],
     backgroundColor: '#d9d5bf',
-    border: 'solid 2px #cfcaaf',
+    border: 'solid 2px #c6c09f',
     borderRadius: '8px',
     minWidth: 0,
     width: 'fit-content',
@@ -64,7 +64,7 @@ export const styles = (theme: Theme) => ({
     zIndex: 1000,
     border: '2px solid #c6c09f',
     borderRadius: '8px',
-    backgroundColor: '#cfcaaf',
+    backgroundColor: '#eeecde',
     padding: `${8 - 2}px 0`,
     color: '#2f2f25',
     maxWidth: '100%',

@@ -18,8 +18,8 @@ export const Filters = memo(function Filters() {
 
   return (
     <div className={classes.filters}>
-      {desktopView ? <ChainButtonFilter className={classes.chain} /> : null}
       <UserCategoryButtonFilter className={classes.userCategory} />
+      {desktopView ? <ChainButtonFilter className={classes.chain} /> : null}
       {desktopView ? (
         <>
           <VaultCategoryButtonFilter className={classes.vaultCategory} />

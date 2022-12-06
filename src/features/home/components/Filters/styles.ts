@@ -9,6 +9,7 @@ export const styles = (theme: Theme) => ({
   },
   userCategory: {
     width: '100%',
+    background: '#eeecde',
     [theme.breakpoints.up('lg')]: {
       width: 'fit-content',
       marginRight: 'auto',
@@ -42,9 +43,15 @@ export const styles = (theme: Theme) => ({
       flexGrow: 0,
     },
   },
-  vaultCategory: {},
-  extended: {},
-  clear: {},
+  vaultCategory: {
+    background: '#eeecde',
+  },
+  extended: {
+    background: '#eeecde',
+  },
+  clear: {
+    background: '#eeecde',
+  },
   button: {
     width: 'auto',
     flexBasis: 'calc(50% - 8px)',

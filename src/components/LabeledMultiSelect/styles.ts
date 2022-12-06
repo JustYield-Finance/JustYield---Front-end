@@ -3,7 +3,7 @@ import { Theme } from '@material-ui/core/styles';
 export const styles = (theme: Theme) => ({
   select: {
     ...theme.typography['body-lg-med'],
-    backgroundColor: '#d9d5bf',
+    backgroundColor: '#eeecde',
     border: 'solid 2px #cfcaaf',
     borderRadius: '8px',
     minWidth: 0,
@@ -62,7 +62,7 @@ export const styles = (theme: Theme) => ({
     zIndex: 1000,
     border: '2px solid #c6c09f',
     borderRadius: '8px',
-    backgroundColor: '#cfcaaf',
+    backgroundColor: '#eeecde',
     padding: `${8 - 2}px 0`,
     color: '#2f2f25',
     maxWidth: '100%',
@@ -83,14 +83,14 @@ export const styles = (theme: Theme) => ({
     },
     '&:hover': {
       background: 'rgba(0, 0, 0, 0.16)',
-      color: '#FFF',
+      color: '#2f2f25',
     },
     '&:active': {
       background: 'transparent',
-      color: '#F5F5FF',
+      color: '#2f2f25',
     },
   },
   dropdownItemSelected: {
-    color: '#F5F5FF',
+    color: '#2f2f25',
   },
 });

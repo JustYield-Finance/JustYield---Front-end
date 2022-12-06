@@ -68,7 +68,7 @@ const NavLinks = memo(function () {
     //{ title: t('Header-News'), url: 'https://justyield.com/articles/' },
     //{ title: t('Header-Docs'), url: 'https://docs.justyield.finance' }
     { title: t('Header-Vaults-Single'), url: '/single' },
-    { title: t('Header-Vaults-LP'), url: '/lps' }
+    { title: t('Header-Vaults-LP'), url: '/lps' },
   ];
   return (
     <>
@@ -81,7 +81,7 @@ const NavLinks = memo(function () {
           to={url[0] === '/' ? url : { pathname: url }}
           target={url[0] === '/' ? undefined : '_blank'}
         >
-          {title == "New" ? (
+          {title == 'New' ? (
             <Badge badgeContent="New" color="primary">
               {t(title)}
             </Badge>
@@ -153,9 +153,9 @@ export const Header = connect((state: BeefyState) => {
               <Box className={classes.flex}>
                 <Hidden mdDown>
                   <BifiPrice />
-                  <Box>
+                  {/*<Box>
                     <LanguageDropdown />
-                  </Box>
+                  </Box>*/}
                   {isWalletConnected && (
                     <Box mr={3}>
                       <ActiveChain networkId={currentChainId} />

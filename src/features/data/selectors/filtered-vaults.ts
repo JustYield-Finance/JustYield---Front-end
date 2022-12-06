@@ -63,7 +63,6 @@ export const selectFilterPopinFilterCount = createSelector(
     (filterOptions.platformId !== null ? 1 : 0) +
     (filterOptions.vaultType !== 'all' ? 1 : 0) +
     (filterOptions.vaultCategory !== 'all' ? 1 : 0) +
-    (filterOptions.sort !== 'default' ? 1 : 0) +
     filterOptions.chainIds.length
 );
 
@@ -79,7 +78,6 @@ export const selectHasActiveFilter = createSelector(
     filterOptions.onlyBoosted !== false ||
     filterOptions.searchText !== '' ||
     filterOptions.platformId !== null ||
-    filterOptions.sort !== 'default' ||
     filterOptions.chainIds.length > 0
 );
 
@@ -281,7 +279,7 @@ export const selectFilteredVaults = (state: BeefyState) => {
   let sortedVaults = filteredVaults;
 
   // Vaults are already presorted by date on the reducer
-  if (filterOptions.sort === 'default') {
+  /*if (filterOptions.sort === 'default') {
     const vaultIsBoosted = Object.fromEntries(
       sortedVaults.map(vault => [
         vault.id,
@@ -304,7 +302,7 @@ export const selectFilteredVaults = (state: BeefyState) => {
       // Surface boosted
       sortedVaults = sortBy(sortedVaults, vault => (vaultIsBoosted[vault.id] ? -1 : 1));
     }
-  }
+  }*/
 
   const sortDirMul = filterOptions.sortDirection === 'desc' ? -1 : 1;
   if (filterOptions.sort === 'apy') {
@@ -357,11 +355,11 @@ export const selectFilteredVaults = (state: BeefyState) => {
       }
       return sortDirMul * tvl.tvl.toNumber();
     });
-  } else if (filterOptions.sort === 'safetyScore') {
+  } /*else if (filterOptions.sort === 'safetyScore') {
     sortedVaults = sortBy(sortedVaults, vault => {
       return sortDirMul * vault.safetyScore;
     });
-  } else if (filterOptions.sort === 'depositValue') {
+  }*/ else if (filterOptions.sort === 'depositValue') {
     sortedVaults = sortBy(sortedVaults, vault => {
       const balance = selectUserVaultDepositInUsd(state, vault.id);
       return sortDirMul * balance.toNumber();
@@ -462,7 +460,7 @@ export const selectSingleFilteredVaults = (state: BeefyState) => {
   let sortedVaults = filteredVaults;
 
   // Vaults are already presorted by date on the reducer
-  if (filterOptions.sort === 'default') {
+  /*if (filterOptions.sort === 'default') {
     const vaultIsBoosted = Object.fromEntries(
       sortedVaults.map(vault => [
         vault.id,
@@ -485,7 +483,7 @@ export const selectSingleFilteredVaults = (state: BeefyState) => {
       // Surface boosted
       sortedVaults = sortBy(sortedVaults, vault => (vaultIsBoosted[vault.id] ? -1 : 1));
     }
-  }
+  }*/
 
   const sortDirMul = filterOptions.sortDirection === 'desc' ? -1 : 1;
   if (filterOptions.sort === 'apy') {
@@ -538,11 +536,11 @@ export const selectSingleFilteredVaults = (state: BeefyState) => {
       }
       return sortDirMul * tvl.tvl.toNumber();
     });
-  } else if (filterOptions.sort === 'safetyScore') {
+  } /*else if (filterOptions.sort === 'safetyScore') {
     sortedVaults = sortBy(sortedVaults, vault => {
       return sortDirMul * vault.safetyScore;
     });
-  } else if (filterOptions.sort === 'depositValue') {
+  }*/ else if (filterOptions.sort === 'depositValue') {
     sortedVaults = sortBy(sortedVaults, vault => {
       const balance = selectUserVaultDepositInUsd(state, vault.id);
       return sortDirMul * balance.toNumber();
@@ -643,7 +641,7 @@ export const selectLpsFilteredVaults = (state: BeefyState) => {
   let sortedVaults = filteredVaults;
 
   // Vaults are already presorted by date on the reducer
-  if (filterOptions.sort === 'default') {
+  /*if (filterOptions.sort === 'default') {
     const vaultIsBoosted = Object.fromEntries(
       sortedVaults.map(vault => [
         vault.id,
@@ -666,7 +664,7 @@ export const selectLpsFilteredVaults = (state: BeefyState) => {
       // Surface boosted
       sortedVaults = sortBy(sortedVaults, vault => (vaultIsBoosted[vault.id] ? -1 : 1));
     }
-  }
+  }*/
 
   const sortDirMul = filterOptions.sortDirection === 'desc' ? -1 : 1;
   if (filterOptions.sort === 'apy') {
@@ -719,11 +717,11 @@ export const selectLpsFilteredVaults = (state: BeefyState) => {
       }
       return sortDirMul * tvl.tvl.toNumber();
     });
-  } else if (filterOptions.sort === 'safetyScore') {
+  } /*else if (filterOptions.sort === 'safetyScore') {
     sortedVaults = sortBy(sortedVaults, vault => {
       return sortDirMul * vault.safetyScore;
     });
-  } else if (filterOptions.sort === 'depositValue') {
+  }*/ else if (filterOptions.sort === 'depositValue') {
     sortedVaults = sortBy(sortedVaults, vault => {
       const balance = selectUserVaultDepositInUsd(state, vault.id);
       return sortDirMul * balance.toNumber();

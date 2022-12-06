@@ -2,26 +2,24 @@ import { Theme } from '@material-ui/core/styles';
 
 export const styles = (theme: Theme) => ({
   selector: {
-    display: 'flex',
-    flexDirection: 'row' as const,
-    flexWrap: 'nowrap' as const,
-    columnGap: theme.spacing(2),
-    rowGap: theme.spacing(2),
+    background: '#eeecde',
+    border: 'solid 2px #c6c09f',
   },
   icon: {
-    width: '24px',
-    height: '24px',
+    width: '40px',
+    height: '40px',
     display: 'block',
     margin: '0 auto',
   },
+  animatedButton: {
+    border: 'none',
+  },
   button: {
     background: 'transparent',
-    boxShadow: 'none',
+    border: 'none',
     flexGrow: 1,
     flexShrink: 0,
-    padding: `${12 - 2}px 0`,
-    border: `solid 2px ${theme.palette.background.filters.outline}`,
-    borderRadius: '6px',
+    paddingBottom: `${12 - 2}px 0`,
     cursor: 'pointer',
     '&:not($selected) $icon': {
       '& .bg': {
@@ -32,12 +30,11 @@ export const styles = (theme: Theme) => ({
       },
     },
   },
-  selected: {
-    backgroundColor: theme.palette.background.filters.inactive,
-  },
+  selected: {},
   tooltip: {
     ...theme.typography['body-lg-med'],
-    background: theme.palette.background.filters.outline,
+    background: '#eeecde',
+    border: 'solid 2px #c6c09f',
     padding: '8px 12px',
     borderRadius: '4px',
     color: theme.palette.text.disabled,

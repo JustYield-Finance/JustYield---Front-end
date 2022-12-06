@@ -16,6 +16,11 @@ export const VaultIcon = memo<VaultIconProps>(function VaultIcon({ vaultId }) {
   const vault = useAppSelector(state => selectVaultById(state, vaultId));
 
   return (
-    <AssetsImage className={classes.vaultIcon} assetIds={vault.assetIds} chainId={vault.chainId} />
+    <AssetsImage
+      className={classes.vaultIcon}
+      assetIds={vault.assetIds}
+      chainId={vault.chainId}
+      size={150}
+    />
   );
 });

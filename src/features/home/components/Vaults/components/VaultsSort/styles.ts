@@ -4,7 +4,7 @@ export const styles = (theme: Theme) => ({
   sortColumns: {
     display: 'grid',
     width: '100%',
-    columnGap: '24px',
+    columnGap: '10px',
     gridTemplateColumns: 'repeat(5, minmax(0, 1fr))',
   },
   sortColumn: {
@@ -41,7 +41,8 @@ export const styles = (theme: Theme) => ({
     fill: '#0a0a00',
   },
   sortDropdown: {
-    backgroundColor: '#e4e1ce',
+    backgroundColor: '#eeecde',
+    border: 'solid 2px #c6c09f',
     [theme.breakpoints.up('md')]: {
       width: '200px',
       maxWidth: '100%',

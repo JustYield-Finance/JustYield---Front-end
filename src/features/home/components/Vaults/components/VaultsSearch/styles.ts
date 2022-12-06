@@ -3,7 +3,8 @@ import { Theme } from '@material-ui/core/styles';
 export const styles = (theme: Theme) => ({
   search: {
     color: '#2f2f25',
-    background: '#e4e1ce',
+    background: '#eeecde',
+    border: 'solid 2px #c6c09f',
     borderRadius: '8px',
     '& .MuiInputBase-input': {
       padding: '8px 16px',

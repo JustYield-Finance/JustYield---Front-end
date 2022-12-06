@@ -1,6 +1,8 @@
 export const styles = () => ({
   vaultIcon: {
-    flexShrink: 0,
-    width: '48px',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: '150px',
   },
 });
