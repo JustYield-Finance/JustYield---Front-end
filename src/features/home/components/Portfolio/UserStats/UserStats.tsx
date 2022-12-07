@@ -48,18 +48,6 @@ export const UserStats = memo(function () {
         value={formatUsd(stats.deposited.toNumber())}
         blurred={hideBalance}
       />
-      <UserStat
-        label={t('Portfolio-YieldMnth')}
-        value={formatUsd(stats.monthly.toNumber())}
-        blurred={hideBalance}
-      />
-      <Hidden xsDown>
-        <UserStat
-          label={t('Portfolio-YieldDay')}
-          value={formatUsd(stats.daily.toNumber())}
-          blurred={hideBalance}
-        />
-      </Hidden>
       <VisibleAbove width={430}>
         <UserStat
           label={t('Portfolio-AvgAPY')}
@@ -67,6 +55,18 @@ export const UserStats = memo(function () {
           blurred={hideBalance}
         />
       </VisibleAbove>
+      <UserStat
+        label={t('Portfolio-YieldYrly')}
+        value={formatUsd(stats.yearly.toNumber())}
+        blurred={hideBalance}
+      />
+      {/*<Hidden xsDown>
+        <UserStat
+          label={t('Portfolio-YieldDay')}
+          value={formatUsd(stats.daily.toNumber())}
+          blurred={hideBalance}
+        />
+      </Hidden>*/}
     </div>
   );
 });

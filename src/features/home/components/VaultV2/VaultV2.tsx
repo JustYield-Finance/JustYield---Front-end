@@ -93,15 +93,21 @@ export const VaultV2 = memo<VaultProps>(function Vault({ vaultId }) {
             <div className={classes.vaultDetails}>
               <div className="size" style={{ paddingTop: '10px' }}>
                 <CiVault className={classes.vaultIcon} />
-                <VaultTvlStat vaultId={vaultId} />
+                <div style={{ paddingLeft: '5px' }}>
+                  <VaultTvlStat vaultId={vaultId} />
+                </div>
               </div>
               <div className="size">
                 <CiImport className={classes.vaultIcon} />
-                <VaultDepositStat vaultId={vaultId} />
+                <div style={{ paddingLeft: '5px' }}>
+                  <VaultDepositStat vaultId={vaultId} />
+                </div>
               </div>
               <div className="size">
                 <CiWallet className={classes.vaultIcon} />
-                <VaultWalletAmount vaultId={vaultId} />
+                <div style={{ paddingLeft: '5px' }}>
+                  <VaultWalletAmount vaultId={vaultId} />
+                </div>
               </div>
             </div>
           </div>

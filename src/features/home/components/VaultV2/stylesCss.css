@@ -108,7 +108,7 @@
 .container .card .contentBx .size, .container .card .contentBx .color {
   display: flex;
   justify-content: left;
-  align-items: left;
+  align-items: center;
   padding: 0px 10px;
   transition: 0.5s;
   opacity: 0;
