@@ -29,7 +29,7 @@ export const Portfolio = () => {
       <Container maxWidth="lg">
         <div className={classes.stats}>
           <div className={classes.userStats}>
-            <div className={classes.title}>
+            {/*<div className={classes.title}>
               {t('Portfolio-Portfolio')}{' '}
               <Button size="small" className={classes.btnHide} onClick={updateHideBalance}>
                 {hideBalance ? (
@@ -38,11 +38,11 @@ export const Portfolio = () => {
                   <VisibilityOffOutlinedIcon htmlColor={`${theme.palette.primary.main}`} />
                 )}
               </Button>
-            </div>
+            </div>*/}
             <UserStats />
           </div>
           <div className={classes.vaultStats}>
-            <div className={classes.title}>{t('Vault-platform')}</div>
+            {/*<div className={classes.title}>{t('Vault-platform')}</div>*/}
             <VaultsStats />
           </div>
         </div>

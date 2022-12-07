@@ -35,13 +35,13 @@ export const VaultsStats = () => {
       <Box className={classes.stat}>
         <Box className={classes.labelWithIcon}>
           <div className={classes.label}>{t('TVL')}</div>
-          <div onClick={handleTvlModalOpen}>
+          {/*<div onClick={handleTvlModalOpen}>
             <img
               className={classes.icon}
               src={require('../../../../../images/icons/i.svg').default}
               alt="i"
             />
-          </div>
+          </div>*/}
         </Box>
         <div className={classes.value}>
           <ValueText value={formatBigUsd(totalTvl)} />

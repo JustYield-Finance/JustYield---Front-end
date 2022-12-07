@@ -113,7 +113,7 @@ export function getBigNumOrder(num: BigNumber): number {
 }
 
 export function formatBigUsd(value: BigNumber) {
-  return '$' + formatBigNumber(value);
+  return formatBigNumber(value) + '$';
 }
 
 export function formatBigNumber(value: BigNumber) {

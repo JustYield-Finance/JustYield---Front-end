@@ -4,6 +4,7 @@ export const styles = (theme: Theme) => ({
   selector: {
     background: '#eeecde',
     border: 'solid 2px #c6c09f',
+    zIndex: 0,
   },
   icon: {
     width: '40px',

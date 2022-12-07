@@ -21,7 +21,7 @@ export const styles = (theme: Theme) => ({
   },
   vaultNetwork: {
     position: 'relative' as const,
-    zIndex: 10,
+    zIndex: 1,
     width: '56px',
     height: '56px',
     border: 'solid 2px #c9c49c',

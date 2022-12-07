@@ -24,6 +24,9 @@ import { VaultNetwork } from '../Vault/components/VaultIdentity';
 import { VaultTag } from '../Vault/components/VaultTags/VaultTag';
 import { VaultIcon } from '../Vault/components/VaultIcon';
 
+import { CiVault, CiWallet, CiImport } from 'react-icons/ci';
+import { style } from '@material-ui/system';
+
 const useStyles = makeStyles(styles);
 
 const maxSupportedAssets = 8;
@@ -83,21 +86,23 @@ export const VaultV2 = memo<VaultProps>(function Vault({ vaultId }) {
             ) : null}
             <h2>{vault.name}</h2>
 
-            <div className="size">
-              <h3>Daily :</h3>
-              <VaultDailyStat vaultId={vaultId} />
+            <div className={classes.sizeEmpty}>
+              {/*<h3>Daily :</h3>
+              <VaultDailyStat vaultId={vaultId} />*/}
             </div>
-            <div className="size">
-              <h3>TVL :</h3>
-              <VaultTvlStat vaultId={vaultId} />
-            </div>
-            <div className="size">
-              <h3>Deposited :</h3>
-              <VaultDepositStat vaultId={vaultId} />
-            </div>
-            <div className="size">
-              <h3>Wallet :</h3>
-              <VaultWalletAmount vaultId={vaultId} />
+            <div className={classes.vaultDetails}>
+              <div className="size" style={{ paddingTop: '10px' }}>
+                <CiVault className={classes.vaultIcon} />
+                <VaultTvlStat vaultId={vaultId} />
+              </div>
+              <div className="size">
+                <CiImport className={classes.vaultIcon} />
+                <VaultDepositStat vaultId={vaultId} />
+              </div>
+              <div className="size">
+                <CiWallet className={classes.vaultIcon} />
+                <VaultWalletAmount vaultId={vaultId} />
+              </div>
             </div>
           </div>
         </div>

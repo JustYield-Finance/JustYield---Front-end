@@ -5,7 +5,7 @@ import { BeefyState } from '../../../../../../redux-types';
 import { selectVaultById } from '../../../../../data/selectors/vaults';
 import { VaultValueStat } from '../VaultValueStat';
 import { selectVaultTvl } from '../../../../../data/selectors/tvl';
-import { formatBigUsd } from '../../../../../../helpers/format';
+import { formatBigNumber, formatBigUsd } from '../../../../../../helpers/format';
 
 export type VaultTvlStatProps = {
   vaultId: VaultEntity['id'];

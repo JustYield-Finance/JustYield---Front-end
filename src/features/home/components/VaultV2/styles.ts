@@ -13,12 +13,22 @@ export const styles = (theme: Theme) => ({
       backgroundClip: 'padding-box',
     },
   },
-  vaultRetired: {
-    
+  sizeEmpty: {
+    height: '27px',
   },
-  vaultEarnings: {
-    
+  vaultDetails: {
+    border: 'solid 2px #c6c09f',
+    borderRadius: '16px',
+    marginLeft: '25px',
+    marginRight: '25px',
   },
+  vaultIcon: {
+    padding: '1px',
+    width: '30px',
+    height: '30px',
+  },
+  vaultRetired: {},
+  vaultEarnings: {},
   vaultTagRetired: {
     backgroundColor: 'rgba(46, 172, 184, 0.3)',
   },
