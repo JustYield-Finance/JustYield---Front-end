@@ -8,6 +8,9 @@ import {
   selectVaultById,
   selectVaultStrategyLastHarvest,
   selectVaultStrategyPendingBounty,
+  selectVaultStrategyCallFee,
+  selectVaultStrategyVaultFee,
+  selectVaultStrategyDenominatorFee,
 } from '../../../data/selectors/vaults';
 import { DailyApyStats, YearlyApyStats } from '../../../../components/ApyStats';
 import { ValueBlock } from '../../../../components/ValueBlock/ValueBlock';
@@ -39,6 +42,10 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
   useAppSelector(state => (beefyState = state));
 
   const [pendingCompound, setPendingCompound] = useState(new BigNumber(0));
+
+  const callFee = useAppSelector(state => selectVaultStrategyCallFee(state, vaultId));
+  const vaultFee = useAppSelector(state => selectVaultStrategyVaultFee(state, vaultId));
+  const denominatorFee = useAppSelector(state => selectVaultStrategyDenominatorFee(state, vaultId));
 
   intervalStarted = false;
 
@@ -81,10 +88,11 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
               <ValueBlock
                 label={t('Pending-Verb')}
                 value={formatBigUsd(
-                  new BigNumber(1000000)
-                    .dividedBy(111)
-                    .multipliedBy(pendingCompound)
-                    .dividedBy(45)
+                  pendingCompound
+                    .multipliedBy(denominatorFee)
+                    .dividedBy(callFee)
+                    .multipliedBy(denominatorFee)
+                    .div(vaultFee)
                     .multipliedBy(nativeUsd)
                 )}
                 usdValue={null}

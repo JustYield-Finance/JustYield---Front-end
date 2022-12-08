@@ -65,6 +65,9 @@ export type VaultsState = NormalizedEntity<VaultEntity> & {
         pricePerFullShare: BigNumber;
         callReward: BigNumber;
         lastHarvest: BigNumber;
+        CALL_FEE: BigNumber;
+        VAULT_FEE: BigNumber;
+        DENOMINATOR_FEE: BigNumber;
       };
     };
   };
@@ -139,6 +142,9 @@ function addContractDataToState(
         strategyAddress: vaultContractData.strategy,
         callReward: vaultContractData.callReward,
         lastHarvest: vaultContractData.lastHarvest,
+        CALL_FEE: vaultContractData.CALL_FEE,
+        VAULT_FEE: vaultContractData.VAULT_FEE,
+        DENOMINATOR_FEE: vaultContractData.DENOMINATOR_FEE,
       };
     }
 
@@ -159,6 +165,9 @@ function addContractDataToState(
       sliceState.contractData.byVaultId[vaultId].callReward = vaultContractData.callReward;
     }
     sliceState.contractData.byVaultId[vaultId].lastHarvest = vaultContractData.lastHarvest;
+    sliceState.contractData.byVaultId[vaultId].CALL_FEE = vaultContractData.CALL_FEE;
+    sliceState.contractData.byVaultId[vaultId].VAULT_FEE = vaultContractData.VAULT_FEE;
+    sliceState.contractData.byVaultId[vaultId].DENOMINATOR_FEE = vaultContractData.DENOMINATOR_FEE;
   }
 }
 

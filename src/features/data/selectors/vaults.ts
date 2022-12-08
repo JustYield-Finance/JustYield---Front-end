@@ -91,6 +91,15 @@ export const selectVaultStrategyAddress = (state: BeefyState, vaultId: VaultEnti
 export const selectVaultStrategyPendingBounty = (state: BeefyState, vaultId: VaultEntity['id']) =>
   state.entities.vaults.contractData.byVaultId[vaultId]?.callReward || null;
 
+export const selectVaultStrategyCallFee = (state: BeefyState, vaultId: VaultEntity['id']) =>
+  state.entities.vaults.contractData.byVaultId[vaultId]?.CALL_FEE || 100;
+
+export const selectVaultStrategyVaultFee = (state: BeefyState, vaultId: VaultEntity['id']) =>
+  state.entities.vaults.contractData.byVaultId[vaultId]?.VAULT_FEE || 100;
+
+export const selectVaultStrategyDenominatorFee = (state: BeefyState, vaultId: VaultEntity['id']) =>
+  state.entities.vaults.contractData.byVaultId[vaultId]?.DENOMINATOR_FEE || 1000;
+
 export const selectVaultStrategyLastHarvest = (state: BeefyState, vaultId: VaultEntity['id']) =>
   state.entities.vaults.contractData.byVaultId[vaultId]?.lastHarvest || null;
 

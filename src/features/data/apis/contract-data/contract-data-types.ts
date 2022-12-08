@@ -33,6 +33,10 @@ export interface StandardVaultContractData {
 
   lastHarvest: BigNumber;
 
+  CALL_FEE: BigNumber;
+  VAULT_FEE: BigNumber;
+  DENOMINATOR_FEE: BigNumber;
+
   /**
    * The strategy address
    */
