@@ -133,25 +133,23 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
           ) : null}
           {!isGovVault(vault) ? (
             <>
-              {lastHarvestStr !== 'never' && (
-                <Grid item xs={6}>
-                  <Box className={classes.stat4}>
-                    <ValueBlock
-                      label={t('Compound-Verb')}
-                      value={
-                        <BountyWithBalance
-                          token={native}
-                          vaultId={vaultId}
-                          balance={pendingCompound}
-                        />
-                      }
-                      tooltip={{
-                        content: t('Compound-Text'),
-                      }}
-                    />
-                  </Box>
-                </Grid>
-              )}
+              <Grid item xs={6}>
+                <Box className={classes.stat4}>
+                  <ValueBlock
+                    label={t('Compound-Verb')}
+                    value={
+                      <BountyWithBalance
+                        token={native}
+                        vaultId={vaultId}
+                        balance={pendingCompound}
+                      />
+                    }
+                    tooltip={{
+                      content: t('Compound-Text'),
+                    }}
+                  />
+                </Box>
+              </Grid>
             </>
           ) : null}
         </Grid>
