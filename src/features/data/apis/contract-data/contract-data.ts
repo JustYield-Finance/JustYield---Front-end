@@ -105,11 +105,9 @@ export class ContractDataAPI<T extends ChainEntity> implements IContractDataApi 
     const depositToken = selectTokenByAddress(state, vault.chainId, vault.depositTokenAddress);
     const native = selectChainNativeToken(state, vault.chainId);
 
-    const stratContract = new this.web3.eth.Contract(
-      StrategyAbi,
-      result.strategy
-    );
+    const stratContract = new this.web3.eth.Contract(StrategyAbi, result.strategy);
     const callRewardResult = await stratContract.methods.callReward().call();
+    const lastHarvestResult = await stratContract.methods.lastHarvest().call();
 
     return {
       id: standardVault.id,
@@ -117,6 +115,7 @@ export class ContractDataAPI<T extends ChainEntity> implements IContractDataApi 
       /** always 18 decimals for PPFS */
       pricePerFullShare: new BigNumber(result.pricePerFullShare).shiftedBy(-mooToken.decimals),
       callReward: new BigNumber(callRewardResult).shiftedBy(-native.decimals),
+      lastHarvest: lastHarvestResult,
       strategy: result.strategy,
     } as StandardVaultContractData;
   }

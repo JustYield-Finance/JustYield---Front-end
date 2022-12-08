@@ -7,7 +7,8 @@ export const styles = (theme: Theme) => ({
     zIndex: 1000,
   },
   dropdownInner: {
-    backgroundColor: '#cfcaaf',
+    backgroundColor: '#eeecde',
+    border: 'solid 2px #c6c09f',
     borderRadius: '8px',
     padding: '24px',
     boxShadow: '0px 4px 24px 24px rgba(236, 238, 221, 0.16), 0px 2px 8px rgba(235, 237, 222, 0.2)',

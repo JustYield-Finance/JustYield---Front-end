@@ -31,6 +31,8 @@ export interface StandardVaultContractData {
 
   callReward: BigNumber;
 
+  lastHarvest: BigNumber;
+
   /**
    * The strategy address
    */

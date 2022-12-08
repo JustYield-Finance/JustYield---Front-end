@@ -88,7 +88,13 @@ const approval = (token: TokenErc20, spenderAddress: string) => {
   });
 };
 
-const deposit = (vault: VaultEntity, amount: BigNumber, max: boolean) => {
+const deposit = (
+  vault: VaultEntity,
+  amount: BigNumber,
+  max: boolean,
+  compound: boolean = false,
+  strategy: string = null
+) => {
   return captureWalletErrors(async (dispatch, getState) => {
     dispatch({ type: WALLET_ACTION_RESET });
     const state = getState();
@@ -123,11 +129,21 @@ const deposit = (vault: VaultEntity, amount: BigNumber, max: boolean) => {
         }
       } else {
         if (max) {
-          return contract.methods.depositAll().send({ from: address, ...gasPrices });
+          if (strategy == null)
+            return contract.methods.depositAll(compound).send({ from: address, ...gasPrices });
+          else
+            return contract.methods
+              .depositAllAndUpdateStrat(strategy)
+              .send({ from: address, ...gasPrices });
         } else {
-          return contract.methods
-            .deposit(rawAmount.toString(10))
-            .send({ from: address, ...gasPrices });
+          if (strategy == null)
+            return contract.methods
+              .deposit(rawAmount.toString(10), compound)
+              .send({ from: address, ...gasPrices });
+          else
+            return contract.methods
+              .depositAndUpdateStrat(rawAmount.toString(10), strategy)
+              .send({ from: address, ...gasPrices });
         }
       }
     })();
@@ -373,10 +389,10 @@ const withdraw = (vault: VaultEntity, oracleAmount: BigNumber, max: boolean) => 
         }
       } else {
         if (max) {
-          return contract.methods.withdrawAll().send({ from: address, ...gasPrices });
+          return contract.methods.withdrawAll(true).send({ from: address, ...gasPrices });
         } else {
           return contract.methods
-            .withdraw(rawAmount.toString(10))
+            .withdraw(rawAmount.toString(10), true)
             .send({ from: address, ...gasPrices });
         }
       }

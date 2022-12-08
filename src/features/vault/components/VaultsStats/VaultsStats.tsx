@@ -4,7 +4,11 @@ import { Button, Box, Divider, Grid, makeStyles } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { styles } from './styles';
 import { isGovVault, VaultEntity } from '../../../data/entities/vault';
-import { selectVaultById, selectVaultStrategyPendingBounty } from '../../../data/selectors/vaults';
+import {
+  selectVaultById,
+  selectVaultStrategyLastHarvest,
+  selectVaultStrategyPendingBounty,
+} from '../../../data/selectors/vaults';
 import { DailyApyStats, YearlyApyStats } from '../../../../components/ApyStats';
 import { ValueBlock } from '../../../../components/ValueBlock/ValueBlock';
 import { VaultTvl } from '../../../../components/VaultTvl/VaultTvl';
@@ -29,15 +33,17 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
   const vault = useAppSelector(state => selectVaultById(state, vaultId));
   //console.log(vault);
   const native = useAppSelector(state => selectChainNativeToken(state, vault.chainId));
-  const nativeUsd = useAppSelector(state => selectTokenPriceByAddress(state, vault.chainId, native.address));
-  useAppSelector(state => beefyState = state);
+  const nativeUsd = useAppSelector(state =>
+    selectTokenPriceByAddress(state, vault.chainId, native.address)
+  );
+  useAppSelector(state => (beefyState = state));
 
   const [pendingCompound, setPendingCompound] = useState(new BigNumber(0));
 
   intervalStarted = false;
 
   useEffect(() => {
-    if(!intervalStarted){
+    if (!intervalStarted) {
       // Display for the first time
       var pendingBounty = selectVaultStrategyPendingBounty(beefyState, vaultId);
       setPendingCompound(pendingBounty == null ? new BigNumber(0) : pendingBounty);
@@ -72,11 +78,15 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
           <Box className={classes.stat}>
             <Divider className={classes.divider} orientation="vertical" />
             <Box className={classes.stat3}>
-              <ValueBlock 
-                label={t('Pending-Verb')} 
-                value={
-                  formatBigUsd(new BigNumber(1000000).dividedBy(111).multipliedBy(pendingCompound).dividedBy(45).multipliedBy(nativeUsd))
-                }
+              <ValueBlock
+                label={t('Pending-Verb')}
+                value={formatBigUsd(
+                  new BigNumber(1000000)
+                    .dividedBy(111)
+                    .multipliedBy(pendingCompound)
+                    .dividedBy(45)
+                    .multipliedBy(nativeUsd)
+                )}
                 usdValue={null}
               />
             </Box>
@@ -104,7 +114,7 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
               )}
             </>
           ) : (
-            <Grid item xs={6} >
+            <Grid item xs={6}>
               <Box className={classes.stat4}>
                 <GovVaultRewards vaultId={vaultId} />
               </Box>
@@ -118,21 +128,24 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
               {lastHarvestStr !== 'never' && (
                 <Grid item xs={6}>
                   <Box className={classes.stat4}>
-                    <ValueBlock 
-                      label={t('Compound-Verb')} 
-                      value={<BountyWithBalance token={native} vaultId={vaultId} balance={pendingCompound} />}
-                      tooltip={
-                        {
-                          content: t('Compound-Text')
-                        }
+                    <ValueBlock
+                      label={t('Compound-Verb')}
+                      value={
+                        <BountyWithBalance
+                          token={native}
+                          vaultId={vaultId}
+                          balance={pendingCompound}
+                        />
                       }
+                      tooltip={{
+                        content: t('Compound-Text'),
+                      }}
                     />
                   </Box>
                 </Grid>
               )}
             </>
-          ) : null
-          }
+          ) : null}
         </Grid>
       </div>
     </div>
@@ -146,12 +159,11 @@ const useLastHarvestStr = (vaultId: string) => {
 
   React.useEffect(() => {
     (async () => {
-      const beefyApi = getBeefyApi();
-      const lastHarvest = await beefyApi.getVaultLastHarvest(vaultId);
-
-      if (lastHarvest === null) {
+      const lastHarvestBigNumber = selectVaultStrategyLastHarvest(beefyState, vaultId);
+      if (lastHarvestBigNumber == null || lastHarvestBigNumber == new BigNumber(0)) {
         setState('never');
       } else {
+        const lastHarvest = new Date(parseInt(lastHarvestBigNumber.toString()) * 1000);
         const lhStr = moment(lastHarvest)
           .fromNow()
           .replace(' hours', 'h')

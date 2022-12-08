@@ -167,15 +167,6 @@ export const Withdraw = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
       return dispatch(askForNetworkChange({ chainId: vault.chainId }));
     }
 
-    if(compound) {
-      steps.push({
-        step: 'harvest',
-        message: t('Vault-TxnConfirm', { type: t('Harvest-noun') }),
-        action: walletActions.harvest(vault),
-        pending: false,
-      });
-    }
-
     if (isGovVault(vault)) {
       steps.push({
         step: 'withdraw',
@@ -222,7 +213,7 @@ export const Withdraw = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
   };
 
   const [compound, setCompound] = useState(true);
-  const handleCompound = (e) => {
+  const handleCompound = e => {
     setCompound(e);
   };
 
@@ -490,7 +481,7 @@ export const Withdraw = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
           </>
         ) : null}
         <FeeBreakdown vaultId={vaultId} />
-        <Box mb={1} className={classes.compoundBox}>
+        {/*<Box mb={1} className={classes.compoundBox}>
           <LabelledCheckbox
             labelClass={classes.labelCheckbox}
             checkboxClass={classes.checkbox}
@@ -502,7 +493,7 @@ export const Withdraw = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
               </>
             }
           />
-        </Box>
+        </Box>*/}
         <Box mt={3}>
           {vault.chainId === 'emerald' ? <EmeraldGasNotice /> : null}
           <ScreamAvailableLiquidity vaultId={vaultId} />

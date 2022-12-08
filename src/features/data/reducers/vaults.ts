@@ -64,6 +64,7 @@ export type VaultsState = NormalizedEntity<VaultEntity> & {
         strategyAddress: string;
         pricePerFullShare: BigNumber;
         callReward: BigNumber;
+        lastHarvest: BigNumber;
       };
     };
   };
@@ -137,6 +138,7 @@ function addContractDataToState(
         pricePerFullShare: vaultContractData.pricePerFullShare,
         strategyAddress: vaultContractData.strategy,
         callReward: vaultContractData.callReward,
+        lastHarvest: vaultContractData.lastHarvest,
       };
     }
 
@@ -151,9 +153,12 @@ function addContractDataToState(
     if (sliceState.contractData.byVaultId[vaultId].strategyAddress !== vaultContractData.strategy) {
       sliceState.contractData.byVaultId[vaultId].strategyAddress = vaultContractData.strategy;
     }
-    if (!sliceState.contractData.byVaultId[vaultId].callReward.isEqualTo(vaultContractData.callReward)){
+    if (
+      !sliceState.contractData.byVaultId[vaultId].callReward.isEqualTo(vaultContractData.callReward)
+    ) {
       sliceState.contractData.byVaultId[vaultId].callReward = vaultContractData.callReward;
     }
+    sliceState.contractData.byVaultId[vaultId].lastHarvest = vaultContractData.lastHarvest;
   }
 }
 
@@ -174,8 +179,8 @@ function addVaultToState(
       id: apiVault.id,
       name: apiVault.name,
       isGovVault: true,
-      isMultiStrat: "false",
-      isMultiReward: "false",
+      isMultiStrat: 'false',
+      isMultiReward: 'false',
       depositTokenAddress: apiVault.tokenAddress,
       earnedTokenAddress: apiVault.earnedTokenAddress,
       earnContractAddress: apiVault.earnContractAddress,

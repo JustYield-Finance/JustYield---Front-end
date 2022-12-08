@@ -135,70 +135,50 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
                 <RetirePauseReason vaultId={vaultId} className={classes.retirePauseReason} />
               </Hidden>
               <div className={classes.dw}>
-                {
-                  !isMultiRewardVault(vault) ? 
-                    (
-                      <div className={classes.tabs3}>
-                        <Button
-                          onClick={() => setDw('deposit')}
-                          className={dw === 'deposit' ? classes.selected : ''}
-                        >
-                          {t('Deposit-Verb')}
-                        </Button>
-                        <Button
-                          onClick={() => setDw('withdraw')}
-                          className={dw === 'withdraw' ? classes.selected : ''}
-                        >
-                          {t('Withdraw-Verb')}
-                        </Button>
-                        <Button
-                          onClick={() => setDw('bounty')}
-                          className={dw === 'bounty' ? classes.selected : ''}
-                        >
-                          {t('Bounty-Verb')}
-                        </Button>
-                      </div>
-                    )
-                    :
-                    (
-                      <div className={classes.tabs}>
-                        <Button
-                          onClick={() => setDw('deposit')}
-                          className={dw === 'deposit' ? classes.selected : ''}
-                        >
-                          {t('Deposit-Verb')}
-                        </Button>
-                        <Button
-                          onClick={() => setDw('withdraw')}
-                          className={dw === 'withdraw' ? classes.selected : ''}
-                        >
-                          {t('Withdraw-Verb')}
-                        </Button>
-                      </div>
-                    )
-                }
-                {
-                  !isMultiRewardVault(vault) ?
-                    (
-                      dw === 'deposit' ? 
-                      <Deposit vaultId={vaultId} /> : 
-                      (
-                        dw === 'withdraw' ? 
-                        <Withdraw vaultId={vaultId} /> : 
-                        <Bounty vaultId={vaultId} />
-                      )
-                    ) 
-                    :
-                    (
-                      dw === 'deposit' ? 
-                      <MultiRewardDeposit vaultId={vaultId} /> : 
-                      (
-                        dw === 'withdraw' ? 
-                        <Withdraw vaultId={vaultId} /> : 
-                        <Bounty vaultId={vaultId} />
-                      )
-                    )
-                }
+                {!isMultiRewardVault(vault) ? (
+                  <div className={classes.tabs3}>
+                    <Button
+                      onClick={() => setDw('deposit')}
+                      className={dw === 'deposit' ? classes.selected : ''}
+                    >
+                      {t('Deposit-Verb')}
+                    </Button>
+                    <Button
+                      onClick={() => setDw('withdraw')}
+                      className={dw === 'withdraw' ? classes.selected : ''}
+                    >
+                      {t('Withdraw-Verb')}
+                    </Button>
+                    <Button
+                      onClick={() => setDw('bounty')}
+                      className={dw === 'bounty' ? classes.selected : ''}
+                    >
+                      {t('Bounty-Verb')}
+                    </Button>
+                  </div>
+                ) : (
+                  <div className={classes.tabs}>
+                    <Button
+                      onClick={() => setDw('deposit')}
+                      className={dw === 'deposit' ? classes.selected : ''}
+                    >
+                      {t('Deposit-Verb')}
+                    </Button>
+                    <Button
+                      onClick={() => setDw('withdraw')}
+                      className={dw === 'withdraw' ? classes.selected : ''}
+                    >
+                      {t('Withdraw-Verb')}
+                    </Button>
+                  </div>
+                )}
+                {dw === 'deposit' ? (
+                  <Deposit vaultId={vaultId} />
+                ) : dw === 'withdraw' ? (
+                  <Withdraw vaultId={vaultId} />
+                ) : (
+                  <Bounty vaultId={vaultId} />
+                )}
               </div>
             </div>
             <div className={classes.columnInfo}>
@@ -207,20 +187,14 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
               </Hidden>
               {isBoostedOrPreStake && <BoostCard vaultId={vaultId} />}
               {isGovVault(vault) && <GovDetailsCard vaultId={vaultId} />}
-              {
-                !isGovVault(vault) ? 
-                  null//<Graph vaultId={vaultId} /> 
-                  : 
-                  null
-              }
+              {!isGovVault(vault)
+                ? null //<Graph vaultId={vaultId} />
+                : null}
               <LiquidityPoolBreakdownLoader vaultId={vaultId} />
               {!isGovVault(vault) ? <StrategyCard vaultId={vaultId} /> : null}
-              {
-                !isGovVault(vault) ? 
-                  null//<SafetyCard vaultId={vaultId} />
-                  : 
-                  null
-              }
+              {!isGovVault(vault)
+                ? null //<SafetyCard vaultId={vaultId} />
+                : null}
               <InfoCards chainId={vault.chainId} vaultId={vault.id} />
               {vault.assetIds.map(tokenId => (
                 <TokenCard key={tokenId} chainId={vault.chainId} tokenId={tokenId} />

@@ -103,7 +103,7 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
 
   const [startStepper, isStepping, Stepper] = useStepper(chain.id);
 
-  const formReady = true;// formDataLoaded && !isStepping && !isZapEstimateLoading;
+  const formReady = true; // formDataLoaded && !isStepping && !isZapEstimateLoading;
 
   const isDepositButtonDisabled =
     formState.amount.isLessThanOrEqualTo(0) ||
@@ -176,29 +176,29 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
           pending: false,
         });
       } else {
-        steps.push({
-          step: 'deposit',
-          message: t('Vault-TxnConfirm', { type: t('Deposit-noun') }),
-          action: walletActions.deposit(vault, formState.amount, formState.max),
-          pending: false,
-        });
+        if (compound) {
+          steps.push({
+            step: 'deposit',
+            message: t('Vault-TxnConfirm', { type: t('Deposit-noun') }),
+            action: walletActions.deposit(vault, formState.amount, formState.max, compound),
+            pending: false,
+          });
+        } else {
+          steps.push({
+            step: 'deposit',
+            message: t('Vault-TxnConfirm', { type: t('Deposit-noun') }),
+            action: walletActions.deposit(vault, formState.amount, formState.max),
+            pending: false,
+          });
+        }
       }
-    }
-
-    if(compound) {
-      steps.push({
-        step: 'harvest',
-        message: t('Vault-TxnConfirm', { type: t('Harvest-noun') }),
-        action: walletActions.harvest(vault),
-        pending: false,
-      });
     }
 
     startStepper(steps);
   };
 
   const [compound, setCompound] = useState(true);
-  const handleCompound = (e) => {
+  const handleCompound = e => {
     setCompound(e);
   };
 
@@ -271,8 +271,7 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
             </Button>
           </Paper>
         </Box>
-        {
-        /*
+        {/*
         <Box mb={1} className={classes.earnText}>
           Earn:
         </Box>
@@ -292,8 +291,7 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
             disabled={!formReady}
           />
         </RadioGroup>
-        */
-        }
+        */}
         {formState.isZap ? (
           <>
             <ZapBreakdown
@@ -318,7 +316,8 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
             onChange={e => handleCompound(e)}
             label={
               <>
-                <Box className={classes.averageLine} />{t('Compound')} W{native.symbol}
+                <Box className={classes.averageLine} />
+                {t('Compound')} W{native.symbol}
               </>
             }
           />

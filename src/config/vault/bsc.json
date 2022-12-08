@@ -1,66 +1,26 @@
 [
-    {
-        "id": "bsc-single-busd",
-        "name": "BUSD",
-        "token": "BUSD",
-        "tokenAddress": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
-        "tokenDecimals": 18,
-        "tokenProviderId": "circle",
-        "earnedToken": "BUSD-Vault",
-        "earnedTokenAddress": "0xFa6D7bDB9793fc9921421000e78358ab3186deeD",
-        "earnContractAddress": "0xFa6D7bDB9793fc9921421000e78358ab3186deeD",
-        "oracle": "single",
-        "oracleId": "bsc-single-busd",
-        "status": "active",
-        "isMultiStrat": "true",
-        "isMultiReward": "false",
-        "platformId": "circle",
-        "strategyTypeId": "multi",
-        "assets": ["BUSD"],
-        "risks": [
-            "BATTLE_TESTED",
-            "IL_NONE",
-            "MCAP_LARGE",
-            "AUDIT",
-            "CONTRACTS_VERIFIED"
-        ],
-        "addLiquidityUrl":
-          "",
-        "buyTokenUrl":
-          "https://pancakeswap.finance/swap?outputCurrency=BNB&inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
-        "network": "bsc",
-        "createdAt": 22905375
-    },
-    {
-      "id": "bsc-single-usdt",
-      "name": "USDT",
-      "token": "USDT",
-      "tokenAddress": "0x55d398326f99059fF775485246999027B3197955",
-      "tokenDecimals": 18,
-      "tokenProviderId": "circle",
-      "earnedToken": "USDT-Vault",
-      "earnedTokenAddress": "0x3B2D3B9E6Ad5EF9a57eae1E69cA2c13a013061d3",
-      "earnContractAddress": "0x3B2D3B9E6Ad5EF9a57eae1E69cA2c13a013061d3",
-      "oracle": "single",
-      "oracleId": "bsc-single-usdt",
-      "status": "active",
-      "isMultiStrat": "true",
-      "isMultiReward": "false",
-      "platformId": "circle",
-      "strategyTypeId": "multi",
-      "assets": ["USDT"],
-      "risks": [
-          "BATTLE_TESTED",
-          "IL_NONE",
-          "MCAP_LARGE",
-          "AUDIT",
-          "CONTRACTS_VERIFIED"
-      ],
-      "addLiquidityUrl":
-        "",
-      "buyTokenUrl":
-        "https://pancakeswap.finance/swap?outputCurrency=BNB&inputCurrency=0x55d398326f99059fF775485246999027B3197955",
-      "network": "bsc",
-      "createdAt": 23478513
+  {
+    "id": "bsc-single-busd",
+    "name": "BUSD",
+    "token": "BUSD",
+    "tokenAddress": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+    "tokenDecimals": 18,
+    "tokenProviderId": "circle",
+    "earnedToken": "bBUSD",
+    "earnedTokenAddress": "0x3661221733dd9c81528494e03024ebc3f94ee4d5",
+    "earnContractAddress": "0x3661221733dd9c81528494e03024ebc3f94ee4d5",
+    "oracle": "single",
+    "oracleId": "bsc-single-busd",
+    "status": "active",
+    "isMultiStrat": "true",
+    "isMultiReward": "false",
+    "platformId": "circle",
+    "strategyTypeId": "multi",
+    "assets": ["BUSD"],
+    "risks": ["BATTLE_TESTED", "IL_NONE", "MCAP_LARGE", "AUDIT", "CONTRACTS_VERIFIED"],
+    "addLiquidityUrl": "",
+    "buyTokenUrl": "https://pancakeswap.finance/swap?outputCurrency=BNB&inputCurrency=0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+    "network": "bsc",
+    "createdAt": 23726384
   }
 ]

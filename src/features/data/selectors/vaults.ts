@@ -91,6 +91,9 @@ export const selectVaultStrategyAddress = (state: BeefyState, vaultId: VaultEnti
 export const selectVaultStrategyPendingBounty = (state: BeefyState, vaultId: VaultEntity['id']) =>
   state.entities.vaults.contractData.byVaultId[vaultId]?.callReward || null;
 
+export const selectVaultStrategyLastHarvest = (state: BeefyState, vaultId: VaultEntity['id']) =>
+  state.entities.vaults.contractData.byVaultId[vaultId]?.lastHarvest || null;
+
 export const selectVaultStrategyAddressList = (state: BeefyState, vaultId: VaultEntity['id']) =>
   state.entities.vaults.contractData.byVaultId[vaultId]?.strategyAddress || null;
 
