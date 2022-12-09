@@ -46,7 +46,13 @@ import {
   selectTokenByAddress,
   selectTokenPriceByAddress,
 } from '../../../data/selectors/tokens';
-import { selectVaultById, selectVaultStrategyPendingBounty } from '../../../data/selectors/vaults';
+import {
+  selectVaultById,
+  selectVaultStrategyPendingBounty,
+  selectVaultStrategyCallFee,
+  selectVaultStrategyVaultFee,
+  selectVaultStrategyDenominatorFee,
+} from '../../../data/selectors/vaults';
 import {
   selectCurrentChainId,
   selectIsWalletConnected,
@@ -329,18 +335,24 @@ export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
       ? false
       : true;
 
-  useAppSelector(state => beefyState = state);
+  useAppSelector(state => (beefyState = state));
 
   const native = useAppSelector(state => selectChainNativeToken(state, vault.chainId));
-  const nativeUsd = useAppSelector(state => selectTokenPriceByAddress(state, vault.chainId, native.address));
-  useAppSelector(state => beefyState = state);
+  const nativeUsd = useAppSelector(state =>
+    selectTokenPriceByAddress(state, vault.chainId, native.address)
+  );
+  useAppSelector(state => (beefyState = state));
 
   const [pendingCompound, setPendingCompound] = useState(new BigNumber(0));
+
+  const callFee = useAppSelector(state => selectVaultStrategyCallFee(state, vaultId));
+  const vaultFee = useAppSelector(state => selectVaultStrategyVaultFee(state, vaultId));
+  const denominatorFee = useAppSelector(state => selectVaultStrategyDenominatorFee(state, vaultId));
 
   intervalStarted = false;
 
   useEffect(() => {
-    if(!intervalStarted){
+    if (!intervalStarted) {
       // Display for the first time
       var pendingBounty = selectVaultStrategyPendingBounty(beefyState, vaultId);
       setPendingCompound(pendingBounty == null ? new BigNumber(0) : pendingBounty);
@@ -378,7 +390,14 @@ export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
                 className={classes.depositTokenContainer}
                 value={native.id}
                 control={formState.zapOptions !== null ? <Radio /> : <div style={{ width: 12 }} />}
-                label={formatBigUsd(new BigNumber(1000000).dividedBy(111).multipliedBy(pendingCompound).dividedBy(45).multipliedBy(nativeUsd))}
+                label={formatBigUsd(
+                  pendingCompound
+                    .multipliedBy(denominatorFee)
+                    .dividedBy(callFee)
+                    .multipliedBy(denominatorFee)
+                    .div(vaultFee)
+                    .multipliedBy(nativeUsd)
+                )}
                 disabled={!formReady}
               />
             </RadioGroup>
@@ -395,7 +414,15 @@ export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
                 className={classes.depositTokenContainer}
                 value={native.id}
                 control={formState.zapOptions !== null ? <Radio /> : <div style={{ width: 12 }} />}
-                label={<BountyWithBalance token={native} vaultId={vaultId} balance={pendingCompound} decimals={12} usdValue={pendingCompound.multipliedBy(nativeUsd)} />}
+                label={
+                  <BountyWithBalance
+                    token={native}
+                    vaultId={vaultId}
+                    balance={pendingCompound}
+                    decimals={12}
+                    usdValue={pendingCompound.multipliedBy(nativeUsd)}
+                  />
+                }
                 disabled={!formReady}
               />
             </RadioGroup>
@@ -416,11 +443,7 @@ export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
               </>
             ) : (
               <>
-                <Button
-                  onClick={handleClaimBounty}
-                  className={classes.btnSubmit}
-                  fullWidth={true}
-                >
+                <Button onClick={handleClaimBounty} className={classes.btnSubmit} fullWidth={true}>
                   {t('Claim-Bounty')}
                 </Button>
               </>
