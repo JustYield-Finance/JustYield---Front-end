@@ -10,7 +10,7 @@
     "earnedTokenAddress": "0xd185632994b87ef5df833989f8019455f53238c9",
     "earnContractAddress": "0xd185632994b87ef5df833989f8019455f53238c9",
     "oracle": "single",
-    "oracleId": "bsc-single-busd",
+    "oracleId": "busd",
     "status": "active",
     "isMultiStrat": "true",
     "isMultiReward": "false",
