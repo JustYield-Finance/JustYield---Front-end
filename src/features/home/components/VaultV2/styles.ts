@@ -17,8 +17,6 @@ export const styles = (theme: Theme) => ({
     height: '27px',
   },
   vaultDetails: {
-    border: 'solid 2px #c6c09f',
-    borderRadius: '16px',
     marginLeft: '25px',
     marginRight: '25px',
   },

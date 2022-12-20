@@ -28,7 +28,7 @@ const _VaultWalletAmount = connect(
         : true;
     return {
       hasInWallet: userOracleInWallet.gt(0),
-      userOracleInWallet: formatBigDecimals(userOracleInWallet, 4),
+      userOracleInWallet: formatBigDecimals(userOracleInWallet, 4) + ' ' + vault.name,
       userOracleInWalletUsd: formatBigUsd(userOracleInWalletUsd),
       blurred,
       loading: !isLoaded,
@@ -53,7 +53,7 @@ const _VaultWalletAmount = connect(
     return (
       <ValueBlock
         label={t('')}
-        value={userOracleInWalletUsd}
+        value={userOracleInWallet}
         usdValue={null} //{hasInWallet ? ' (' + userOracleInWalletUsd + ')' : null}
         blurred={blurred}
         loading={loading}

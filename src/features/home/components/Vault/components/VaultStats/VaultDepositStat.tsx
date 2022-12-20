@@ -59,7 +59,7 @@ function mapStateToProps(state: BeefyState, { vaultId }: VaultDepositStatProps) 
 
   return {
     label,
-    value: totalDepositedUsd,
+    value: totalDeposited,
     subValue: null,
     blur: hideBalance,
     loading: false,

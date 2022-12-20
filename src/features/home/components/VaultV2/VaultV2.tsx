@@ -26,6 +26,7 @@ import { VaultIcon } from '../Vault/components/VaultIcon';
 
 import { CiVault, CiWallet, CiImport } from 'react-icons/ci';
 import { style } from '@material-ui/system';
+import { QuickDeposit } from './components/QuickDeposit';
 
 const useStyles = makeStyles(styles);
 
@@ -53,66 +54,53 @@ export const VaultV2 = memo<VaultProps>(function Vault({ vaultId }) {
   const uris = useAssetsImageUris(vault.chainId, vault.assetIds);
 
   return (
-    <Link
-      to={`/vault/${vaultId}`}
-      className={clsx({
-        [classes.vault]: true,
-        [classes.vaultRetired]: isRetired,
-        [classes.vaultEarnings]: isGov,
-      })}
-    >
-      <div className="container">
-        <div className="card">
-          <VaultNetwork chainId={vault.chainId} />
-          <div className="imgBx">
-            <VaultIcon vaultId={vaultId} />
-            {/*uris.map((uri, i) =>
-              uri ? (
-                <img
-                  src={uri}
-                  key={uri}
-                />
-              ) : null
-              )*/}
-          </div>
-          <div className="contentBx">
-            <h2>
-              <VaultYearlyStat vaultId={vaultId} />
-            </h2>
-            {isVaultRetired(vault) ? (
-              <VaultTag className={classes.vaultTagRetired}>{t('VaultTag-Retired')}</VaultTag>
-            ) : isVaultPaused(vault) ? (
-              <VaultTag className={classes.vaultTagPaused}>{t('VaultTag-Paused')}</VaultTag>
-            ) : null}
-            <h2>{vault.name}</h2>
-
-            <div className={classes.sizeEmpty}>
-              {/*<h3>Daily :</h3>
-              <VaultDailyStat vaultId={vaultId} />*/}
+    <div className="container">
+      <Link
+        to={`/vault/${vaultId}`}
+        className={clsx({
+          [classes.vault]: true,
+          [classes.vaultRetired]: isRetired,
+          [classes.vaultEarnings]: isGov,
+        })}
+      >
+        <div className="front">
+          <div className="card">
+            <VaultNetwork chainId={vault.chainId} />
+            <div className="imgBx">
+              <VaultIcon vaultId={vaultId} />
             </div>
-            <div className={classes.vaultDetails}>
-              <div className="size" style={{ paddingTop: '10px' }}>
-                <CiVault className={classes.vaultIcon} />
-                <div style={{ paddingLeft: '5px' }}>
-                  <VaultTvlStat vaultId={vaultId} />
-                </div>
-              </div>
-              <div className="size">
-                <CiImport className={classes.vaultIcon} />
-                <div style={{ paddingLeft: '5px' }}>
-                  <VaultDepositStat vaultId={vaultId} />
-                </div>
-              </div>
-              <div className="size">
-                <CiWallet className={classes.vaultIcon} />
-                <div style={{ paddingLeft: '5px' }}>
-                  <VaultWalletAmount vaultId={vaultId} />
-                </div>
-              </div>
+            <div className="contentBx">
+              <h2>
+                <VaultYearlyStat vaultId={vaultId} />
+              </h2>
+              {isVaultRetired(vault) ? (
+                <VaultTag className={classes.vaultTagRetired}>{t('VaultTag-Retired')}</VaultTag>
+              ) : isVaultPaused(vault) ? (
+                <VaultTag className={classes.vaultTagPaused}>{t('VaultTag-Paused')}</VaultTag>
+              ) : null}
+              <h2>{vault.name}</h2>
             </div>
           </div>
         </div>
+      </Link>
+      <div className="back">
+        <div className="cardBack">
+          <VaultNetwork chainId={vault.chainId} />
+          <div className="contentBx">
+            <QuickDeposit vaultId={vaultId} />
+            <Link
+              to={`/vault/${vaultId}`}
+              className={clsx({
+                [classes.vault]: true,
+                [classes.vaultRetired]: isRetired,
+                [classes.vaultEarnings]: isGov,
+              })}
+            >
+              More details
+            </Link>
+          </div>
+        </div>
       </div>
-    </Link>
+    </div>
   );
 });
