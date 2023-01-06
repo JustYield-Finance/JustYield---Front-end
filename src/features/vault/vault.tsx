@@ -193,7 +193,7 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
               {!isGovVault(vault)
                 ? null //<Graph vaultId={vaultId} />
                 : null}
-              <LiquidityPoolBreakdownLoader vaultId={vaultId} />
+              {/*<LiquidityPoolBreakdownLoader vaultId={vaultId} />*/}
               {!isGovVault(vault) ? <StrategyCard vaultId={vaultId} /> : null}
               {!isGovVault(vault)
                 ? null //<SafetyCard vaultId={vaultId} />
