@@ -19,7 +19,7 @@ export const VaultMeta = memo<VaultMetaProps>(function ({ vaultId }) {
   const depositToken = useAppSelector(state =>
     selectTokenByAddress(state, vault.chainId, vault.depositTokenAddress)
   );
-  const platform = useAppSelector(state => selectPlatformById(state, vault.platformId));
+  //const platform = useAppSelector(state => selectPlatformById(state, vault.platformId));
   const titleKey = isGovVault(vault) ? 'Meta-Vault-Title-Gov' : 'Meta-Vault-Title';
 
   return (
@@ -28,7 +28,7 @@ export const VaultMeta = memo<VaultMetaProps>(function ({ vaultId }) {
       description={t('Meta-Vault-Description', {
         token: depositToken.symbol,
         chain: chain.name,
-        platform: platform.name,
+        platform: vault.platformId,
       })}
     />
   );

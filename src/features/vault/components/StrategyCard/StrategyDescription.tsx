@@ -18,14 +18,14 @@ export const StrategyDescription = memo<StrategyDescriptionProps>(function Strat
   // Only included when !isGovVault so we can type assert to VaultStandard
   const vault = useAppSelector(state => selectVaultById(state, vaultId)) as VaultStandard;
   const chain = useAppSelector(state => selectChainById(state, vault.chainId));
-  const vaultPlatform = useAppSelector(state => selectPlatformById(state, vault.platformId));
+  //const vaultPlatform = useAppSelector(state => selectPlatformById(state, vault.platformId));
   const depositToken = useAppSelector(state =>
     selectTokenByAddress(state, vault.chainId, vault.depositTokenAddress)
   );
   const depositTokenProvider = useAppSelector(state =>
     depositToken.providerId ? selectPlatformById(state, depositToken.providerId) : null
   );
-  const vaultPlatformName = vaultPlatform.name;
+  const vaultPlatformName = vault.platformId; //vaultPlatform.name;
   const depositTokenProviderName = depositTokenProvider ? depositTokenProvider.name : null;
   const assets = vault.assetIds;
   const depositTokenName = depositToken.symbol;

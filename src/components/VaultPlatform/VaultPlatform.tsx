@@ -12,7 +12,7 @@ export type VaultPlatformProps = {
 export const VaultPlatform = memo<VaultPlatformProps>(function VaultPlatform({ vaultId }) {
   const { t } = useTranslation();
   const vault = useAppSelector(state => selectVaultById(state, vaultId));
-  const platform = useAppSelector(state => selectPlatformById(state, vault.platformId));
+  /*const platform = useAppSelector(state => selectPlatformById(state, vault.platformId));
   const depositToken = useAppSelector(state =>
     selectTokenByAddress(state, vault.chainId, vault.depositTokenAddress)
   );
@@ -20,13 +20,14 @@ export const VaultPlatform = memo<VaultPlatformProps>(function VaultPlatform({ v
     depositToken.providerId ? selectPlatformById(state, depositToken.providerId) : null
   );
   const platformName = platform.name;
-  const providerName = provider ? provider.name : null;
+  const providerName = provider ? provider.name : null;*/
 
   return (
     <>
-      {providerName && providerName !== platformName
+      {vault.platformId}
+      {/*providerName && providerName !== platformName
         ? t('VaultTag-PlatformWithProvider', { platform: platformName, provider: providerName })
-        : t('VaultTag-Platform', { platform: platformName })}
+        : t('VaultTag-Platform', { platform: platformName })*/}
     </>
   );
 });

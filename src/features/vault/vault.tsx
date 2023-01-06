@@ -23,7 +23,12 @@ import {
   selectVaultIdIgnoreCase,
 } from '../data/selectors/vaults';
 import { selectIsVaultPreStakedOrBoosted } from '../data/selectors/boosts';
-import { isGovVault, isMultiRewardVault, VaultEntity } from '../data/entities/vault';
+import {
+  isGovVault,
+  isMultiRewardVault,
+  isMultiStratVault,
+  VaultEntity,
+} from '../data/entities/vault';
 import { selectChainById } from '../data/selectors/chains';
 import {
   selectIsVaultInsurace,
@@ -90,10 +95,6 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
     selectIsVaultPreStakedOrBoosted(state, vaultId)
   );
   const [dw, setDw] = useState('deposit');
-  const isMoonpot = useAppSelector(state => selectIsVaultMoonpot(state, vaultId));
-  const isQidao = useAppSelector(state => selectIsVaultQidao(state, vaultId));
-  const isInsurace = useAppSelector(state => selectIsVaultInsurace(state, vaultId));
-  const isSolace = useAppSelector(state => selectIsVaultSolace(state, vaultId));
 
   return (
     <>
@@ -115,12 +116,14 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
                 <div className={classes.platformLabel}>
                   {t('Chain')} <span>{chain.name}</span>
                 </div>
-                {/*<div className={classes.platformLabel}>
-                  {t('Platform')}{' '}
-                  <span>
-                    <VaultPlatform vaultId={vaultId} />
-                  </span>
-                </div>*/}
+                {!isMultiStratVault(vault) ? (
+                  <div className={classes.platformLabel}>
+                    {t('Platform')}{' '}
+                    <span>
+                      <VaultPlatform vaultId={vaultId} />
+                    </span>
+                  </div>
+                ) : null}
               </div>
             </div>
           </div>

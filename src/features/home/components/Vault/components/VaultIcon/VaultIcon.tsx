@@ -20,7 +20,7 @@ export const VaultIcon = memo<VaultIconProps>(function VaultIcon({ vaultId }) {
       className={classes.vaultIcon}
       assetIds={vault.assetIds}
       chainId={vault.chainId}
-      size={150}
+      size={135}
     />
   );
 });

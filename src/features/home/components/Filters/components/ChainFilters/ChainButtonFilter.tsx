@@ -5,6 +5,7 @@ import { ChainEntity } from '../../../../../data/entities/chain';
 import { filteredVaultsActions } from '../../../../../data/reducers/filtered-vaults';
 import { ChainButtonSelector } from './ChainButtonSelector';
 import { ChainButtonAnimated } from './ChainButtonAnimated';
+import { selectCurrentChainId } from '../../../../../data/selectors/wallet';
 
 export type ChainButtonFilterProps = {
   className?: string;
@@ -22,8 +23,11 @@ export const ChainButtonFilter = memo<ChainButtonFilterProps>(function ChainButt
     [dispatch]
   );
 
+  const currentChainId = useAppSelector(state => selectCurrentChainId(state));
+  filteredVaultsActions.setChainIds([currentChainId]);
+
   return (
-    <ChainButtonAnimated
+    <ChainButtonSelector
       selected={selectedChainIds}
       onChange={handleChainSelectorChange}
       className={className}

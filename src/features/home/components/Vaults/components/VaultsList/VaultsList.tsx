@@ -1,6 +1,10 @@
 import React, { memo } from 'react';
 import { makeStyles } from '@material-ui/core';
-import { selectFilteredVaults, selectLpsFilteredVaults, selectSingleFilteredVaults } from '../../../../../data/selectors/filtered-vaults';
+import {
+  selectFilteredVaults,
+  selectLpsFilteredVaults,
+  selectSingleFilteredVaults,
+} from '../../../../../data/selectors/filtered-vaults';
 import { NoResults } from '../NoResults';
 import { VirtualVaultsList } from '../VirtualVaultsList';
 import { styles } from './styles';
@@ -12,9 +16,7 @@ type VaultTypeProps = {
   vaultType?: string;
 };
 
-export const VaultsList = memo<VaultTypeProps>(function VaultsList({
-  vaultType,
-}) {
+export const VaultsList = memo<VaultTypeProps>(function VaultsList({ vaultType }) {
   const vaultIds = useAppSelector(selectFilteredVaults);
   const singleVaultIds = useAppSelector(selectSingleFilteredVaults);
   const lpsVaultIds = useAppSelector(selectLpsFilteredVaults);
@@ -24,13 +26,14 @@ export const VaultsList = memo<VaultTypeProps>(function VaultsList({
     <div className={classes.vaultsList}>
       {vaultIds.length === 0 ? <NoResults /> : null}
       {
-        vaultType === 'single' ?
+        <VirtualVaultsList vaultIds={vaultIds} />
+        /*vaultType === 'single' ?
         <VirtualVaultsList vaultIds={singleVaultIds} /> :
         (
           vaultType === 'lps' ? 
           <VirtualVaultsList vaultIds={lpsVaultIds} /> :
           <VirtualVaultsList vaultIds={vaultIds} />
-        )
+        )*/
       }
     </div>
   );

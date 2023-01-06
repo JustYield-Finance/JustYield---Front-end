@@ -5,6 +5,7 @@ import { makeStyles, Tooltip } from '@material-ui/core';
 import { styles } from './styles';
 import clsx from 'clsx';
 import { useAppSelector } from '../../../../../../store';
+import { selectCurrentChainId } from '../../../../../data/selectors/wallet';
 
 const useStyles = makeStyles(styles);
 const networkIcons = require.context(
@@ -21,6 +22,7 @@ type ChainButtonProps = {
 const ChainButton = memo<ChainButtonProps>(function ({ id, selected, onChange }) {
   const classes = useStyles();
   const chain = useAppSelector(state => selectChainById(state, id));
+
   const handleChange = useCallback(() => {
     onChange(!selected, id);
   }, [id, selected, onChange]);
@@ -56,6 +58,7 @@ export const ChainButtonSelector = memo<ChainButtonSelectorProps>(function Chain
 }) {
   const classes = useStyles();
   const chainIds = useAppSelector(selectAllChainIds);
+
   const handleChange = useCallback(
     (isSelected, id) => {
       if (isSelected) {
@@ -76,6 +79,11 @@ export const ChainButtonSelector = memo<ChainButtonSelectorProps>(function Chain
     },
     [chainIds, selected, onChange]
   );
+
+  const currentChainId = useAppSelector(state => selectCurrentChainId(state));
+  if (selected.length === 0 && chainIds.includes(currentChainId)) {
+    onChange([currentChainId]);
+  }
 
   return (
     <div className={clsx(classes.selector, className)}>

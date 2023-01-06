@@ -27,6 +27,7 @@ import { VaultIcon } from '../Vault/components/VaultIcon';
 import { CiVault, CiWallet, CiImport } from 'react-icons/ci';
 import { style } from '@material-ui/system';
 import { QuickDeposit } from './components/QuickDeposit';
+import { VaultPlatform } from '../../../../components/VaultPlatform';
 
 const useStyles = makeStyles(styles);
 
@@ -55,34 +56,30 @@ export const VaultV2 = memo<VaultProps>(function Vault({ vaultId }) {
 
   return (
     <div className="container">
-      <Link
-        to={`/vault/${vaultId}`}
-        className={clsx({
-          [classes.vault]: true,
-          [classes.vaultRetired]: isRetired,
-          [classes.vaultEarnings]: isGov,
-        })}
-      >
-        <div className="front">
-          <div className="card">
-            <VaultNetwork chainId={vault.chainId} />
-            <div className="imgBx">
-              <VaultIcon vaultId={vaultId} />
-            </div>
-            <div className="contentBx">
+      <div className="front">
+        <div className="card">
+          <VaultNetwork chainId={vault.chainId} />
+          <div className="imgBx">
+            <VaultIcon vaultId={vaultId} />
+          </div>
+          <div className="contentBx">
+            {isVaultRetired(vault) || isVaultPaused(vault) ? null : (
               <h2>
                 <VaultYearlyStat vaultId={vaultId} />
               </h2>
-              {isVaultRetired(vault) ? (
-                <VaultTag className={classes.vaultTagRetired}>{t('VaultTag-Retired')}</VaultTag>
-              ) : isVaultPaused(vault) ? (
-                <VaultTag className={classes.vaultTagPaused}>{t('VaultTag-Paused')}</VaultTag>
-              ) : null}
-              <h2>{vault.name}</h2>
-            </div>
+            )}
+            <h2>{vault.name}</h2>
+            {isVaultRetired(vault) ? (
+              <VaultTag className={classes.vaultTagRetired}>{t('VaultTag-Retired')}</VaultTag>
+            ) : isVaultPaused(vault) ? (
+              <VaultTag className={classes.vaultTagPaused}>{t('VaultTag-Paused')}</VaultTag>
+            ) : null}
+            <VaultTag className={classes.vaultTagPlatform}>
+              <VaultPlatform vaultId={vaultId} />
+            </VaultTag>
           </div>
         </div>
-      </Link>
+      </div>
       <div className="back">
         <div className="cardBack">
           <VaultNetwork chainId={vault.chainId} />

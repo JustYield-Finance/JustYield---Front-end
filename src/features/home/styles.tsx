@@ -1,6 +1,6 @@
 export const styles = () => ({
   vaultContainer: {
-    paddingTop: '32px',
+    paddingTop: '16px',
     paddingBottom: '32px',
   },
 });
