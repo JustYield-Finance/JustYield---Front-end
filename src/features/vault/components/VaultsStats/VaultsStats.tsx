@@ -3,7 +3,7 @@ import moment from 'moment';
 import { Button, Box, Divider, Grid, makeStyles } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 import { styles } from './styles';
-import { isGovVault, VaultEntity } from '../../../data/entities/vault';
+import { isGovVault, isRewardableVault, VaultEntity } from '../../../data/entities/vault';
 import {
   selectVaultById,
   selectVaultStrategyLastHarvest,
@@ -82,23 +82,25 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
               <DailyApyStats vaultId={vault.id} />
             </Box>
           </Box>
-          <Box className={classes.stat}>
-            <Divider className={classes.divider} orientation="vertical" />
-            <Box className={classes.stat3}>
-              <ValueBlock
-                label={t('Pending-Verb')}
-                value={formatBigUsd(
-                  pendingCompound
-                    .multipliedBy(denominatorFee)
-                    .dividedBy(callFee)
-                    .multipliedBy(denominatorFee)
-                    .div(vaultFee)
-                    .multipliedBy(nativeUsd)
-                )}
-                usdValue={null}
-              />
+          {isRewardableVault(vault) ? (
+            <Box className={classes.stat}>
+              <Divider className={classes.divider} orientation="vertical" />
+              <Box className={classes.stat3}>
+                <ValueBlock
+                  label={t('Pending-Verb')}
+                  value={formatBigUsd(
+                    pendingCompound
+                      .multipliedBy(denominatorFee)
+                      .dividedBy(callFee)
+                      .multipliedBy(denominatorFee)
+                      .div(vaultFee)
+                      .multipliedBy(nativeUsd)
+                  )}
+                  usdValue={null}
+                />
+              </Box>
             </Box>
-          </Box>
+          ) : null}
         </Box>
       </div>
       <div className={classes.depositStats}>
@@ -131,7 +133,7 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
           {!isGovVault(vault) ? (
             <Divider flexItem={true} className={classes.divider1} orientation="vertical" />
           ) : null}
-          {!isGovVault(vault) ? (
+          {!isGovVault(vault) && isRewardableVault(vault) ? (
             <>
               <Grid item xs={6}>
                 <Box className={classes.stat4}>

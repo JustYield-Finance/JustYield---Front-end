@@ -14,7 +14,7 @@ import { Router } from './components/Router';
 import { DefaultMeta } from './components/Meta';
 import { HelmetProvider } from 'react-helmet-async';
 import { Redirects } from './components/Redirects';
-import { HomeLps } from './features/home';
+import { All, Single, Multi } from './features/home';
 
 const Home = React.lazy(() => import(`./features/home`));
 const Vault = React.lazy(() => import(`./features/vault`));
@@ -49,11 +49,14 @@ export const App = () => {
                 <Route exact path="/">
                   <Home />
                 </Route>
-                <Route exact path="/single">
-                  <Home />
+                <Route exact path="/multi">
+                  <Multi />
                 </Route>
-                <Route exact path="/lps">
-                  <HomeLps />
+                <Route exact path="/single">
+                  <Single />
+                </Route>
+                <Route exact path="/all">
+                  <All />
                 </Route>
                 <Route strict sensitive exact path={['/:network/vault/:id', '/vault/:id']}>
                   <Vault />

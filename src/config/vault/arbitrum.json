@@ -1,3 +1,28 @@
 [
-  
+  {
+    "id": "arbitrum-synapse-usdt",
+    "name": "USDT",
+    "token": "USDT",
+    "tokenAddress": "0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9",
+    "tokenDecimals": 6,
+    "tokenProviderId": "circle",
+    "earnedToken": "bUSDT",
+    "earnedTokenAddress": "0x1A794c9df186822EA346042A422C9013617B3143",
+    "earnContractAddress": "0x1A794c9df186822EA346042A422C9013617B3143",
+    "oracle": "single",
+    "oracleId": "USDT",
+    "status": "active",
+    "isMultiStrat": "false",
+    "isOptimized": "false",
+    "isRewardable": "false",
+    "platformId": "synapse",
+    "strategyTypeId": "synapse",
+    "apiIds": ["tether"],
+    "assets": ["USDT"],
+    "risks": ["BATTLE_TESTED", "IL_NONE", "MCAP_LARGE", "AUDIT", "CONTRACTS_VERIFIED"],
+    "addLiquidityUrl": "",
+    "buyTokenUrl": "https://app.uniswap.org/#/tokens/arbitrum/0x080F6AEd32Fc474DD5717105Dba5ea57268F46eb",
+    "network": "arbitrum",
+    "createdAt": 55816480
+  }
 ]

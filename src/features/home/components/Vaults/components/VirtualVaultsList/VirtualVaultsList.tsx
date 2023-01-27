@@ -16,6 +16,7 @@ import { Vault } from '../../../Vault';
 import { VaultV2 } from '../../../VaultV2';
 import { VaultEntity } from '../../../../../data/entities/vault';
 import { styles } from './styles';
+import { VaultV3 } from '../../../VaultV3';
 
 const useStyles = makeStyles(styles);
 
@@ -161,12 +162,14 @@ export const VirtualVaultsList = memo<VirtualVaultsListProps>(function ({ vaultI
       </div>
       */}
 
-      <div className={classes.newVirtualVaultsList}>
-        {renderVaultIds.map(vaultId => (
-          <VaultV2 vaultId={vaultId} key={vaultId} />
-        ))}
-      </div>
-      
+      {
+        <div className={classes.newVirtualVaultsList}>
+          {renderVaultIds.map(vaultId => (
+            <VaultV3 vaultId={vaultId} key={vaultId} />
+          ))}
+        </div>
+      }
+
       <div ref={bottomRef} />
       <div style={placeholderStyle} ref={placeholderRef} />
     </>

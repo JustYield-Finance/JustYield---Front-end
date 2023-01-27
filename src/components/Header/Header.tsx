@@ -28,7 +28,22 @@ import { LanguageDropdown } from '../LanguageDropdown';
 import { ChainEntity } from '../../features/data/entities/chain';
 import { NetworkStatus } from '../NetworkStatus';
 import { styles } from './styles';
+import './stylesHeader.css';
 import { BIG_ZERO } from '../../helpers/big-number';
+
+import shield from './imgs/shield.svg';
+import coin from './imgs/coin.svg';
+import blockchain from './imgs/blockchain.svg';
+
+import basics from './imgs/basics.svg';
+import advanced from './imgs/advanced.svg';
+import discord from './imgs/discord.svg';
+import github from './imgs/github.svg';
+import telegram from './imgs/telegram.svg';
+import twitter from './imgs/twitter.svg';
+
+import treasury from './imgs/treasury.svg';
+import proposal from './imgs/proposal.svg';
 
 // lazy load web3 related stuff, as libs are quite heavy
 const WalletContainer = React.lazy(() => import(`./components/WalletContainer`));
@@ -69,27 +84,294 @@ const NavLinks = memo(function () {
     //{ title: t('Header-Docs'), url: 'https://docs.justyield.finance' }
     //{ title: t('Header-Vaults-Single'), url: '/single' },
     //{ title: t('Header-Vaults-LP'), url: '/lps' },
+    { title: t('Optimized Vaults'), url: '/' },
+    { title: t('Multi-Strategies Vaults'), url: '/multi' },
+    { title: t('Single-Exposure Vaults'), url: '/single' },
+    { title: t('Documentation'), url: 'https://docs.justyield.finance' },
+    { title: t('Treasury'), url: '/treasury' },
+    { title: t('Propose, Vote, Delegate'), url: '/vote' },
   ];
   return (
     <>
-      {navLinks.map(({ title, url }) => (
-        <NavLink
-          activeClassName={classes.active}
-          exact={true}
-          className={classes.navLink}
-          key={url}
-          to={url[0] === '/' ? url : { pathname: url }}
-          target={url[0] === '/' ? undefined : '_blank'}
-        >
-          {title == 'New' ? (
-            <Badge badgeContent="New" color="primary">
-              {t(title)}
-            </Badge>
-          ) : (
-            t(title)
-          )}
-        </NavLink>
-      ))}
+      {navLinks.map(({ title, url }) =>
+        url[0] === '/' ? (
+          <NavLink
+            activeClassName={classes.active}
+            exact={true}
+            className={classes.navLink}
+            key={url}
+            to={url[0] === '/' ? url : { pathname: url }}
+            target={url[0] === '/' ? undefined : '_blank'}
+          >
+            {title == 'New' ? (
+              <Badge badgeContent="New" color="primary">
+                {t(title)}
+              </Badge>
+            ) : (
+              t(title)
+            )}
+          </NavLink>
+        ) : (
+          <a
+            className={classes.navLink}
+            href={'https://docs.justyield.finance'}
+            target={'_blank'}
+            rel={'noopener'}
+          >
+            {title == 'New' ? (
+              <Badge badgeContent="New" color="primary">
+                {t(title)}
+              </Badge>
+            ) : (
+              t(title)
+            )}
+          </a>
+        )
+      )}
+    </>
+  );
+});
+
+const NavLinksFull = memo(function () {
+  const classes = useStyles();
+  const { t } = useTranslation();
+  return (
+    <>
+      <nav id="menu">
+        {/*Products Menu
+          <NavLink activeClassName={classes.active} exact={true} className={classes.navLink} key={url} to={url[0] === '/' ? url : { pathname: url }} target={url[0] === '/' ? undefined : '_blank'}>
+            <a href="#">Products</a>
+          </NavLink>
+          */}
+        <div className="menu-item">
+          <div className="menu-text">
+            <a>Products</a>
+          </div>
+          <div className="sub-menu">
+            <div className="icon-box">
+              <div className="icon">
+                <img src={coin} className="menuIcon" />
+              </div>
+              <div className="text">
+                <NavLink
+                  activeClassName={classes.active}
+                  exact={true}
+                  className={classes.newNavLink}
+                  key={'/'}
+                  to={'/'}
+                  target={undefined}
+                >
+                  <div className="title">
+                    Optimized Vaults <i className="far fa-arrow-right"></i>
+                  </div>
+                  <div className="sub-text">Best APYs, Diversified Risk</div>
+                </NavLink>
+              </div>
+            </div>
+            <div className="icon-box">
+              <div className="icon">
+                <img src={blockchain} className="menuIcon" />
+              </div>
+              <div className="text">
+                <NavLink
+                  activeClassName={classes.active}
+                  exact={true}
+                  className={classes.newNavLink}
+                  key={'/multi'}
+                  to={'/multi'}
+                  target={undefined}
+                >
+                  <div className="title">
+                    Multi-Strategies Vaults <i className="far fa-arrow-right"></i>
+                  </div>
+                  <div className="sub-text">High APYs, Multiple Protocols</div>
+                </NavLink>
+              </div>
+            </div>
+            <div className="icon-box">
+              <div className="icon">
+                <img src={shield} className="menuIcon" />
+              </div>
+              <div className="text">
+                <NavLink
+                  activeClassName={classes.active}
+                  exact={true}
+                  className={classes.newNavLink}
+                  key={'/single'}
+                  to={'/single'}
+                  target={undefined}
+                >
+                  <div className="title">
+                    Single-Exposure Vaults <i className="far fa-arrow-right"></i>
+                  </div>
+                  <div className="sub-text">100% User-controlled exposure</div>
+                </NavLink>
+              </div>
+            </div>
+            <div className="sub-menu-holder"></div>
+          </div>
+        </div>
+        {/*Just Yield Menu*/}
+        <div className="menu-item">
+          <div className="menu-text">
+            <a>Just Yield</a>
+          </div>
+          <div className="sub-menu triple">
+            <div className="top-container gb c icon-box">
+              <div className="icon big">
+                <i className="far fa-book"></i>
+              </div>
+              <div className="text">
+                <a
+                  className={classes.newNavLink}
+                  href={'https://docs.justyield.finance'}
+                  target={'_blank'}
+                  rel={'noopener'}
+                >
+                  <div className="title">
+                    Documentation <i className="far fa-arrow-right"></i>
+                  </div>
+                  <div className="sub-text">Always remember to DYOR</div>
+                </a>
+              </div>
+            </div>
+            <div className="box">
+              <div className="icon">
+                <img src={basics} className="menuIcon" />
+              </div>
+              <div className="text">
+                <div className="title">BASICS</div>
+              </div>
+              <a href="#">Get Started</a>
+              <a href="#">$YIELD</a>
+              <a href="#">How To</a>
+              <a href="#">Team</a>
+            </div>
+            <div className="box">
+              <div className="icon">
+                <img src={advanced} className="menuIcon" />
+              </div>
+              <div className="text">
+                <div className="title">ADVANCED</div>
+              </div>
+              <a href="#">Optimized Vaults</a>
+              <a href="#">Multi-Strategies Vaults</a>
+              <a href="#">Single-Exposure Vaults</a>
+              <a href="#">Automated DCA</a>
+            </div>
+            <div className="icon-box flat">
+              <a
+                className={classes.newNavLink}
+                href={'https://twitter.com/JustYield_Fi'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                <div className="icon">
+                  <img src={twitter} className="menuIcon" />
+                </div>
+                <div className="text">
+                  <div className="title">Twitter</div>
+                </div>
+              </a>
+            </div>
+            <div className="icon-box flat">
+              <a
+                className={classes.newNavLink}
+                href={'https://t.me/JustYield'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                <div className="icon">
+                  <img src={telegram} className="menuIcon" />
+                </div>
+                <div className="text">
+                  <div className="title">Telegram</div>
+                </div>
+              </a>
+            </div>
+            <div className="icon-box flat">
+              <a
+                className={classes.newNavLink}
+                href={'https://discord.gg/bbdvQJ4Avg'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                <div className="icon">
+                  <img src={discord} className="menuIcon" />
+                </div>
+                <div className="text">
+                  <div className="title">Discord</div>
+                </div>
+              </a>
+            </div>
+            <div className="icon-box flat">
+              <a
+                className={classes.newNavLink}
+                href={'https://github.com/JustYield-Finance'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                <div className="icon">
+                  <img src={github} className="menuIcon" />
+                </div>
+                <div className="text">
+                  <div className="title">GitHub</div>
+                </div>
+              </a>
+            </div>
+            <div className="sub-menu-holder"></div>
+          </div>
+        </div>
+        {/*Governance Menu*/}
+        <div className="menu-item">
+          <div className="menu-text">
+            <a>Governance</a>
+          </div>
+          <div className="sub-menu">
+            <div className="icon-box">
+              <div className="icon">
+                <img src={treasury} className="menuIcon" />
+              </div>
+              <div className="text">
+                <NavLink
+                  activeClassName={classes.active}
+                  exact={true}
+                  className={classes.newNavLink}
+                  key={'/treasury'}
+                  to={'/treasury'}
+                  target={undefined}
+                >
+                  <div className="title">
+                    Treasury <i className="far fa-arrow-right"></i>
+                  </div>
+                  <div className="sub-text">Protocol Holdings</div>
+                </NavLink>
+              </div>
+            </div>
+            <div className="icon-box">
+              <div className="icon">
+                <img src={proposal} className="menuIcon" />
+              </div>
+              <div className="text">
+                <NavLink
+                  activeClassName={classes.active}
+                  exact={true}
+                  className={classes.newNavLink}
+                  key={'/vote'}
+                  to={'/vote'}
+                  target={undefined}
+                >
+                  <div className="title">
+                    Proposals <i className="far fa-arrow-right"></i>
+                  </div>
+                  <div className="sub-text">Propose, Vote, Delegate</div>
+                </NavLink>
+              </div>
+            </div>
+            <div className="sub-menu-holder"></div>
+          </div>
+        </div>
+      </nav>
     </>
   );
 });
@@ -134,20 +416,35 @@ export const Header = connect((state: BeefyState) => {
           <Container className={classes.container} maxWidth="lg">
             <Toolbar disableGutters={true}>
               <Box sx={{ flexGrow: 1 }}>
-                <Link className={classes.beefy} to="/">
-                  <img
-                    alt="JustYield"
-                    src={
-                      isMobile
-                        ? require(`../../images/bifi-logos/header-logo-notext.png`).default
-                        : require(`../../images/bifi-logos/header-logo.png`).default
-                    }
-                  />
-                </Link>
+                {isMobile ? (
+                  <Link className={classes.beefy} to="/">
+                    <img
+                      alt="JustYield"
+                      src={
+                        isMobile
+                          ? require(`../../images/bifi-logos/header-logo-notext.png`).default
+                          : require(`../../images/bifi-logos/header-logo.png`).default
+                      }
+                      height="75px"
+                    />
+                  </Link>
+                ) : (
+                  <Link className={classes.beefy} to="/">
+                    <img
+                      alt="JustYield"
+                      src={
+                        isMobile
+                          ? require(`../../images/bifi-logos/header-logo-notext.png`).default
+                          : require(`../../images/bifi-logos/header-logo.png`).default
+                      }
+                      height="175px"
+                    />
+                  </Link>
+                )}
               </Box>
               <Hidden mdDown>
                 <Box className={classes.flex} sx={{ flexGrow: 1 }}>
-                  <NavLinks />
+                  <NavLinksFull />
                 </Box>
               </Hidden>
               <Box className={classes.flex}>

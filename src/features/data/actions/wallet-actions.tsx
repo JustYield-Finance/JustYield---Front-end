@@ -378,21 +378,45 @@ const withdraw = (vault: VaultEntity, oracleAmount: BigNumber, max: boolean) => 
     const rawAmount = mooAmount.shiftedBy(mooToken.decimals).decimalPlaces(0);
     const gasPrices = await getGasPriceOptions(web3);
 
+    var compound = true;
+    try {
+      if (isNativeToken) {
+        if (max) {
+          await contract.methods.withdrawAllBNB(true).estimateGas({ from: address, ...gasPrices });
+        } else {
+          await contract.methods
+            .withdrawBNB(rawAmount.toString(10), true)
+            .estimateGas({ from: address, ...gasPrices });
+        }
+      } else {
+        if (max) {
+          await contract.methods.withdrawAll(true).estimateGas({ from: address, ...gasPrices });
+        } else {
+          await contract.methods
+            .withdraw(rawAmount.toString(10), true)
+            .estimateGas({ from: address, ...gasPrices });
+        }
+      }
+    } catch (ex) {
+      console.log("Can't Compound");
+      compound = false;
+    }
+
     const transaction = (() => {
       if (isNativeToken) {
         if (max) {
-          return contract.methods.withdrawAllBNB().send({ from: address, ...gasPrices });
+          return contract.methods.withdrawAllBNB(compound).send({ from: address, ...gasPrices });
         } else {
           return contract.methods
-            .withdrawBNB(rawAmount.toString(10))
+            .withdrawBNB(rawAmount.toString(10), compound)
             .send({ from: address, ...gasPrices });
         }
       } else {
         if (max) {
-          return contract.methods.withdrawAll(true).send({ from: address, ...gasPrices });
+          return contract.methods.withdrawAll(compound).send({ from: address, ...gasPrices });
         } else {
           return contract.methods
-            .withdraw(rawAmount.toString(10), true)
+            .withdraw(rawAmount.toString(10), compound)
             .send({ from: address, ...gasPrices });
         }
       }

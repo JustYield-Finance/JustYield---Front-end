@@ -661,7 +661,13 @@
   },
   {
     "constant": false,
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "bool",
+        "name": "_compound",
+        "type": "bool"
+      }
+    ],
     "name": "withdrawAllBNB",
     "outputs": [],
     "payable": false,
@@ -675,6 +681,11 @@
         "internalType": "uint256",
         "name": "_shares",
         "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "_compound",
+        "type": "bool"
       }
     ],
     "name": "withdrawBNB",

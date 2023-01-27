@@ -16,12 +16,10 @@ export const styles = (theme: Theme) => ({
   },
   button: {
     background: 'transparent',
-    boxShadow: 'none',
+    border: 'none',
     flexGrow: 1,
     flexShrink: 0,
     padding: `${12 - 2}px 0`,
-    border: `solid 2px ${theme.palette.background.filters.outline}`,
-    borderRadius: '6px',
     cursor: 'pointer',
     '&:not($selected) $icon': {
       '& .bg': {
@@ -33,7 +31,7 @@ export const styles = (theme: Theme) => ({
     },
   },
   selected: {
-    backgroundColor: theme.palette.background.filters.inactive,
+    background: '#d9ecf2',
   },
   tooltip: {
     ...theme.typography['body-lg-med'],

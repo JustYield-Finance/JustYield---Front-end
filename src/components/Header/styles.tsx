@@ -14,7 +14,7 @@ export const styles = (theme: Theme) => ({
     alignContent: 'center',
   },
   hasPortfolio: {
-    backgroundColor: theme.palette.background.header,
+    backgroundColor: 'transparent',
   },
   container: {
     paddingTop: '12px',
@@ -27,8 +27,17 @@ export const styles = (theme: Theme) => ({
   beefy: {
     display: 'block',
     '& img': {
-      height: '100px',
       display: 'block',
+    },
+  },
+  newNavLink: {
+    textDecoration: 'none',
+    '& a': {
+      textDecoration: 'none',
+      color: theme.palette.text.disabled,
+      '&:hover': {
+        color: theme.palette.text.primary,
+      },
     },
   },
   navLink: {

@@ -3,7 +3,8 @@ import { Theme } from '@material-ui/core/styles';
 export const styles = (theme: Theme) => ({
   message: {
     padding: '24px',
-    background: '#d2ceac',
+    background: 'rgba(238,236,222,0.5)',
+    boxShadow: '0 2px 10px rgba(0,0,0,0.5)',
     borderBottomLeftRadius: '8px',
     borderBottomRightRadius: '8px',
   },

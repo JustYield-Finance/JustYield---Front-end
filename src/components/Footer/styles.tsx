@@ -8,7 +8,6 @@ export const styles = (theme: Theme) => ({
     justifyContent: 'flex-start',
     minHeight: '100vh',
     width: '100%',
-    backgroundColor: theme.palette.background.appBG,
   },
   wrapperTop: {
     marginBottom: 'auto',

@@ -1,0 +1,209 @@
+* { 
+  margin : 0;
+  padding: 0;
+  box-sizing : border-box;
+}
+
+.container {
+  position : relative;
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  flex-wrap : warp;
+  padding : 30px;  
+}
+
+.container .card {
+  position: relative;
+  max-width : 300px;
+  height : 215px;  
+  background-color : rgba(238,236,222,0.5);
+  margin : 30px 10px;
+  padding : 20px 15px;
+  
+  display : flex;
+  flex-direction : column;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+  transition : 0.3s ease-in-out;
+  border-radius : 15px;
+}
+.container .card:hover {
+  height : 320px;    
+}
+
+
+.container .card .image {
+  position : relative;
+  width : 260px;
+  height : 260px;
+  
+  top : -40%;
+  left: 5px;
+  z-index : 1;
+}
+
+.container .card .image img{
+  width : 50%;
+  border-radius : 15px;
+  margin: auto;
+  display: block;
+  filter: drop-shadow(5px 5px 4px rgba(0,0,0,0.5));
+}
+
+.animatedToken {
+  width: 100px;
+  height: 100px;
+}
+
+.container .card .content {
+  position : relative;
+  top : -140px;
+  padding : 10px 15px;
+  color : #111;
+  text-align : center;
+  
+  visibility : hidden;
+  opacity : 0;
+  transition : 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+   margin-top : -75px;
+   visibility : visible;
+   opacity : 1;
+   transition-delay: 0.2s;
+}
+
+.container .card .contentInit {
+  position : relative;
+  top : -50px;
+  padding : 10px 15px;
+  color : #111;
+  text-align : center;
+  
+  visibility : visible;
+  opacity : 1;
+  transition : 0.3s ease-in-out;
+}
+
+.container .card:hover .contentInit {
+   margin-top : 30px;
+   visibility : hidden;
+   opacity : 0;
+   transition-delay: 0.2s;
+}
+
+.container .card .contentGraph{
+  position: relative;
+  width: 100%;
+  padding: 10% 0;
+  height: 150px;
+  text-align: center;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.container .card .graph {
+  border: 2px rgba(0,0,0,0.5) solid;
+  border-radius: 25px;
+}
+
+.greenChart {
+  color: #0ECB81;
+}
+
+.redChart {
+  color: #F6465D;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius : 15px;
+  overflow: hidden;
+}
+
+.wrapper div {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  position: absolute;
+  top: 90%;
+  left: -5%;
+  animation: 4s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+
+.wrapper div:nth-child(1) {
+  top: 60%;
+  left: 65%;
+  animation: animate 2s linear infinite;
+}
+.wrapper div:nth-child(2) {
+  top: 70%;
+  left: 15%;
+  animation: animate 2.8s linear infinite;
+}
+.wrapper div:nth-child(3) {
+  top: 70%;
+  left: 20%;
+  animation: animateLow 1s linear infinite;
+}
+.wrapper div:nth-child(4) {
+  top: 70%;
+  left: 70%;
+  animation: animateLow 1.5s linear infinite;
+}
+.wrapper div:nth-child(5) {
+  top: 65%;
+  left: 12%;
+  animation: animateLow 2s linear infinite;
+}
+.wrapper div:nth-child(6) {
+  top: 70%;
+  left: 62%;
+  animation: animateLow 2.5s linear infinite;
+}
+.wrapper div:nth-child(7) {
+  top: 70%;
+  left: 30%;
+  animation: animateLow 3s linear infinite;
+}
+.wrapper div:nth-child(8) {
+  top: 70%;
+  left: 55%;
+  animation: animateLow 1s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0.08) translateY(0);
+  }
+  100% {
+    transform: scale(0.15) translateY(-350px);
+  }
+}
+@keyframes animateLow {
+  0% {
+    transform: scale(0.08) translateY(0);
+  }
+  100% {
+    transform: scale(0.15) translateY(-200px);
+  }
+}
+
+.content .size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+  padding-top: 10px;
+}
+
+.container .card .menuIcon {
+  width: auto;
+  height: 100px;
+  filter: invert(67%) sepia(49%) saturate(502%) hue-rotate(7deg) brightness(97%) contrast(87%);
+  padding: 10px;
+}

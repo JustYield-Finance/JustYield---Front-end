@@ -3,6 +3,8 @@ import { sortBy } from 'lodash';
 import { BeefyState } from '../../../redux-types';
 import {
   isGovVault,
+  isMultiStratVault,
+  isOptimizedVault,
   isVaultPaused,
   isVaultRetired,
   shouldVaultShowInterest,
@@ -428,7 +430,11 @@ export const selectSingleFilteredVaults = (state: BeefyState) => {
       return false;
     }
 
-    if (vault.type !== 'single') {
+    if (isMultiStratVault(vault)) {
+      return false;
+    }
+
+    if (isOptimizedVault(vault)) {
       return false;
     }
 
@@ -555,7 +561,7 @@ export const selectSingleFilteredVaults = (state: BeefyState) => {
   return sortedVaults.map(vault => vault.id);
 };
 
-export const selectLpsFilteredVaults = (state: BeefyState) => {
+export const selectMultiFilteredVaults = (state: BeefyState) => {
   const filterOptions = selectFilterOptions(state);
   const vaults = state.entities.vaults.allIds.map(id => selectVaultById(state, id));
   const tvlByVaultId = state.biz.tvl.byVaultId;
@@ -609,7 +615,188 @@ export const selectLpsFilteredVaults = (state: BeefyState) => {
       return false;
     }
 
-    if (vault.type !== 'lps') {
+    if (!isMultiStratVault(vault)) {
+      return false;
+    }
+
+    // hide when no wallet balance of deposit token
+    if (
+      filterOptions.userCategory === 'eligible' &&
+      !selectIsUserEligibleForVault(state, vault.id)
+    ) {
+      return false;
+    }
+
+    if (
+      filterOptions.userCategory === 'deposited' &&
+      !selectHasUserDepositInVault(state, vault.id)
+    ) {
+      return false;
+    }
+
+    // If the user's included a search string...
+    const searchText = simplifySearchText(filterOptions.searchText);
+    if (searchText.length > 0 && !selectVaultMatchesText(state, vault, searchText)) {
+      return false;
+    }
+
+    return true;
+  });
+
+  // apply sort
+  let sortedVaults = filteredVaults;
+
+  // Vaults are already presorted by date on the reducer
+  /*if (filterOptions.sort === 'default') {
+    const vaultIsBoosted = Object.fromEntries(
+      sortedVaults.map(vault => [
+        vault.id,
+        selectIsVaultPreStakedOrBoosted(state, vault.id) && vault.platformId !== 'valleyswap',
+      ])
+    );
+
+    if (filterOptions.userCategory === 'deposited') {
+      // Surface retired, paused and boosted
+      sortedVaults = sortBy(sortedVaults, vault =>
+        vault.status === 'eol'
+          ? -3
+          : vault.status === 'paused'
+          ? -2
+          : vaultIsBoosted[vault.id]
+          ? -1
+          : 1
+      );
+    } else {
+      // Surface boosted
+      sortedVaults = sortBy(sortedVaults, vault => (vaultIsBoosted[vault.id] ? -1 : 1));
+    }
+  }*/
+
+  const sortDirMul = filterOptions.sortDirection === 'desc' ? -1 : 1;
+  if (filterOptions.sort === 'apy') {
+    sortedVaults = sortBy(sortedVaults, vault => {
+      if (!shouldVaultShowInterest(vault)) {
+        return 0;
+      }
+
+      const apy = apyByVaultId[vault.id];
+      if (!apy) {
+        return -1;
+      }
+
+      if (apy.boostedTotalApy !== undefined) {
+        return sortDirMul * apy.boostedTotalApy;
+      } else if (apy.totalApy !== undefined) {
+        return sortDirMul * apy.totalApy;
+      } else if (apy.vaultApr !== undefined) {
+        return sortDirMul * apy.vaultApr;
+      } else {
+        throw new Error('Apy type not supported');
+      }
+    });
+  } else if (filterOptions.sort === 'daily') {
+    sortedVaults = sortBy(sortedVaults, vault => {
+      if (!shouldVaultShowInterest(vault)) {
+        return 0;
+      }
+
+      const apy = apyByVaultId[vault.id];
+      if (!apy) {
+        return -1;
+      }
+
+      if (apy.boostedTotalDaily !== undefined) {
+        return sortDirMul * apy.boostedTotalDaily;
+      } else if (apy.totalDaily !== undefined) {
+        return sortDirMul * apy.totalDaily;
+      } else if (apy.vaultDaily !== undefined) {
+        return sortDirMul * apy.vaultDaily;
+      } else {
+        throw new Error('Daily type not supported');
+      }
+    });
+  } else if (filterOptions.sort === 'tvl') {
+    sortedVaults = sortBy(sortedVaults, vault => {
+      const tvl = tvlByVaultId[vault.id];
+      if (!tvl) {
+        return 0;
+      }
+      return sortDirMul * tvl.tvl.toNumber();
+    });
+  } /*else if (filterOptions.sort === 'safetyScore') {
+    sortedVaults = sortBy(sortedVaults, vault => {
+      return sortDirMul * vault.safetyScore;
+    });
+  }*/ else if (filterOptions.sort === 'depositValue') {
+    sortedVaults = sortBy(sortedVaults, vault => {
+      const balance = selectUserVaultDepositInUsd(state, vault.id);
+      return sortDirMul * balance.toNumber();
+    });
+  } else if (filterOptions.sort === 'walletValue') {
+    sortedVaults = sortBy(sortedVaults, vault => {
+      const balance = selectUserVaultDepositTokenWalletBalanceInUsd(state, vault.id);
+      return sortDirMul * balance.toNumber();
+    });
+  }
+
+  return sortedVaults.map(vault => vault.id);
+};
+
+export const selectOptimizedFilteredVaults = (state: BeefyState) => {
+  const filterOptions = selectFilterOptions(state);
+  const vaults = state.entities.vaults.allIds.map(id => selectVaultById(state, id));
+  const tvlByVaultId = state.biz.tvl.byVaultId;
+  const apyByVaultId = state.biz.apy.totalApy.byVaultId;
+
+  // apply filtering
+  const chainIdMap = createIdMap(filterOptions.chainIds);
+  const filteredVaults = vaults.filter(vault => {
+    if (filterOptions.vaultCategory === 'featured' && !selectIsVaultFeatured(state, vault.id)) {
+      return false;
+    }
+    if (filterOptions.vaultCategory === 'bluechip' && !selectIsVaultBlueChip(state, vault.id)) {
+      return false;
+    }
+    if (filterOptions.vaultCategory === 'stable' && !selectIsVaultStable(state, vault.id)) {
+      return false;
+    }
+    if (filterOptions.vaultCategory === 'beefy' && !selectIsVaultBeefy(state, vault.id)) {
+      return false;
+    }
+
+    if (filterOptions.chainIds.length > 0 && !chainIdMap[vault.chainId]) {
+      return false;
+    }
+    if (
+      filterOptions.platformId !== null &&
+      selectPlatformIdForFilter(state, vault.platformId) !== filterOptions.platformId
+    ) {
+      return false;
+    }
+
+    if (filterOptions.onlyRetired && !isVaultRetired(vault)) {
+      return false;
+    }
+
+    if (filterOptions.onlyPaused && !isVaultPaused(vault)) {
+      return false;
+    }
+
+    if (
+      !filterOptions.onlyRetired &&
+      isVaultRetired(vault) &&
+      filterOptions.userCategory !== 'deposited'
+    ) {
+      return false;
+    }
+    if (filterOptions.onlyMoonpot && !selectIsVaultMoonpot(state, vault.id)) {
+      return false;
+    }
+    if (filterOptions.onlyBoosted && !selectIsVaultPreStakedOrBoosted(state, vault.id)) {
+      return false;
+    }
+
+    if (!isOptimizedVault(vault)) {
       return false;
     }
 

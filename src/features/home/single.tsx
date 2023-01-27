@@ -8,11 +8,14 @@ import { styles } from './styles';
 import { Vaults } from './components/Vaults';
 import { useAppSelector } from '../../store';
 // import { ProposalBanner } from '../../components/ProposalBanner';
+import { BeefyState } from '../../redux-types';
+import { selectFilteredVaults } from '../data/selectors/filtered-vaults';
 const useStyles = makeStyles(styles);
 
-export const HomeLps = memo(function Home() {
+export const Single = memo(function Home() {
   const classes = useStyles();
   const isVaultListAvailable = useAppSelector(selectIsVaultListAvailable);
+  const vaultIds = useAppSelector(selectFilteredVaults);
 
   if (!isVaultListAvailable) {
     return <Loading />;
@@ -20,11 +23,8 @@ export const HomeLps = memo(function Home() {
 
   return (
     <>
-      {/* <ProposalBanner /> */}
-      <Portfolio />
       <Container maxWidth="lg" className={classes.vaultContainer}>
-        <Filters />
-        <Vaults vaultType='lps' />
+        <Vaults vaultType="single" />
       </Container>
     </>
   );

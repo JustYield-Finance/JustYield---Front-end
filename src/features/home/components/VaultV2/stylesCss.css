@@ -14,7 +14,7 @@
 .container .card,
 .container .cardBack{
   position: absolute;
-  background: #d2ceac;
+  background: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 270px;
   overflow: hidden;
@@ -23,46 +23,8 @@
   border: solid 3px #eeecde;
 }
 
-.container .front,
-.container .back {
-  transition: transform 1.2s;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-}
-
-.container:hover .front {
-  transform: rotateY(-180deg);
-}
-
-.container .back {
-  transform: rotateY(180deg);
-}
-
-.container:hover .back {
-  transform: rotateY(0);
-}
-
-.container .card:before{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.container .card:after{
-  position: absolute;
-  top: 30%;
-  left: -20%;
-  font-size: 12em;
-  font-weight: 800;
-  font-style: italic;
-  color: rgba(255,255,25,0.05)
-}
-
 .container .card .imgBx{
   position: absolute;
-  top: 5%;
   z-index: 1;
   width: 100%;
   height: 135px;
@@ -73,23 +35,37 @@
   width: 75px;
 }
 
-.container .card .contentBx,
+.container .card .contentBx{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  transition: 0.5s;
+  z-index: 10;
+}
+
 .container .cardBack .contentBx{
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
-  transition: 1s;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.container .card .contentGraph{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10%;
+  height: 180px;
+  text-align: center;
+  transition: 0.5s;
   z-index: 10;
 }
 
 .container .card .contentBx{
   height: 135px;
-  padding-top: 20px;
-}
-
-.container .card:hover .contentBx{
-  height: 150px;
 }
 
 .container .card .contentBx h2{

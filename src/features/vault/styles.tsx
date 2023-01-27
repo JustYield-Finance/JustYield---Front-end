@@ -23,7 +23,8 @@ export const styles = (theme: Theme) => ({
     margin: '0 0 0 12px',
   },
   dw: {
-    backgroundColor: '#d8d4b5',
+    backgroundColor: 'rgba(238,236,222,0.5)',
+    boxShadow: '0 2px 10px rgba(0,0,0,0.5)',
     borderRadius: '12px',
   },
   contentColumns: {
@@ -56,7 +57,7 @@ export const styles = (theme: Theme) => ({
     },
   },
   tabs: {
-    backgroundColor: theme.palette.background.vaults.inactive,
+    backgroundColor: 'rgba(238,236,222,0.8)',
     borderTopLeftRadius: '12px',
     borderTopRightRadius: '12px',
     '& .MuiButton-root': {
@@ -76,7 +77,7 @@ export const styles = (theme: Theme) => ({
     },
   },
   tabs3: {
-    backgroundColor: theme.palette.background.vaults.inactive,
+    backgroundColor: 'rgba(238,236,222,0.8)',
     borderTopLeftRadius: '12px',
     borderTopRightRadius: '12px',
     '& .MuiButton-root': {

@@ -40,12 +40,16 @@ export function TokenWithDeposit({
     selectTokenByAddress(state, vault.chainId, vault.depositTokenAddress)
   );
 
+  console.log(depositToken, 'depositToken');
+
   const oracleAmount = useAppSelector(state => {
     const mooTokenBalance = isGovVault(vault)
       ? selectGovVaultUserStackedBalanceInDepositToken(state, vault.id)
       : selectStandardVaultUserBalanceInDepositTokenExcludingBoosts(state, vault.id);
     return mooTokenBalance;
   });
+
+  console.log(oracleAmount, 'oracleAmount');
 
   const amountsAndSymbol = useAppSelector((state): [BigNumber, string][] => {
     if (!convertAmountTo) {
@@ -70,6 +74,8 @@ export function TokenWithDeposit({
     }
     return amountsAndSymbol;
   });
+
+  console.log(amountsAndSymbol, 'amountsAndSymbol');
 
   /**
    * MrTitoune: I just added an estimation of how much of each token you can withdraw that you have in the vault by mistake

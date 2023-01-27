@@ -28,6 +28,7 @@ export const styles = (theme: Theme) => ({
       flexBasis: '100%',
       flexShrink: 0,
     },
+    background: 'rgba(238,236,222,0.5)',
   },
   vaultType: {
     width: '100%',

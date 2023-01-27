@@ -25,9 +25,10 @@ import {
 import { selectIsVaultPreStakedOrBoosted } from '../data/selectors/boosts';
 import {
   isGovVault,
-  isMultiRewardVault,
+  isOptimizedVault,
   isMultiStratVault,
   VaultEntity,
+  isRewardableVault,
 } from '../data/entities/vault';
 import { selectChainById } from '../data/selectors/chains';
 import {
@@ -138,7 +139,7 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
                 <RetirePauseReason vaultId={vaultId} className={classes.retirePauseReason} />
               </Hidden>
               <div className={classes.dw}>
-                {!isMultiRewardVault(vault) ? (
+                {isRewardableVault(vault) ? (
                   <div className={classes.tabs3}>
                     <Button
                       onClick={() => setDw('deposit')}

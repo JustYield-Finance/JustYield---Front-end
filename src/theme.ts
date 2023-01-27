@@ -81,53 +81,11 @@ const fontStyles: Record<string, TypographyStyleOptions> = {
 };
 
 const theme = createTheme({
-  /*palette: {
-    type: 'dark',
-    primary: { main: '#59A662', light: '#CDF7D2', dark: '#004708' },
-    background: {
-      default: '#232743',
-      paper: '#232743',
-      light: '#313759',
-      content: '#2D3153',
-      contentLight: '#F4F4F4',
-      header: '#121212',
-      footer: '#121212',
-      cta: '#59A662',
-      appBG: '#1B1E31',
-      filters: {
-        active: '#4C5480',
-        inactive: '#262A40',
-        outline: '#303550',
-        footer: '#191C29',
-      },
-      vaults: {
-        default: '#2D3153',
-        defaultOutline: '#363B63',
-        boostOutline: '#DB8332',
-        gov: '#342763',
-        govOutline: '#42477B',
-        inactive: '#111321',
-        inactiveOutline: '#762C2C',
-      },
-      snackbars: {
-        bg: '#FFF',
-        bgLine: '#E5E5E5',
-        bgBtn: '#363B63',
-        text: '#2D3153',
-        error: '#DC2C10',
-      },
-    },
-    text: {
-      primary: '#F5F5FF',
-      secondary: '#D0D0DA',
-      disabled: '#999CB3',
-    },
-  },*/
   palette: {
     type: 'dark',
     primary: { main: '#85bf4b', light: '#32082d', dark: '#ffb8f7' },
     background: {
-      default: '#dcd8bc',
+      default: '#d9ecf2',
       paper: '#dcd8bc',
       light: '#cec8a6',
       content: '#d2ceac',
@@ -224,12 +182,12 @@ const theme = createTheme({
           '--onboard-connect-header-background': '#eeecde',
           '--onboard-connect-header-color': '#0a0a00',
           '--onboard-modal-color': '#0a0a00',
-          '--onboard-modal-background': '#dcd8bc',
-          '--onboard-main-scroll-container-background': '#dcd8bc',
+          '--onboard-modal-background': '#d9ecf2',
+          '--onboard-main-scroll-container-background': '#d9ecf2',
           '--onboard-close-button-background': '#eeecde',
           '--onboard-close-button-color': '#757157',
           '--onboard-wallet-button-border-color': '#d2ceac',
-          '--onboard-wallet-button-background': '#d2ceac',
+          '--onboard-wallet-button-background': 'rgba(238,236,222,0.8)',
           '--onboard-wallet-button-color': '#2f2f25',
           '--onboard-wallet-button-background-hover': 'rgba(10, 10, 10, 0.08)',
           '--onboard-wallet-button-color-hover': '#fff',

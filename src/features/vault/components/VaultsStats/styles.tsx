@@ -19,7 +19,8 @@ export const styles = (theme: Theme) => ({
     height: 96,
     display: 'flex',
     justifyContent: 'flex-start',
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: 'rgba(238,236,222,0.5)',
+    boxShadow: '0 2px 10px rgba(0,0,0,0.5)',
     borderRadius: '8px',
     padding: '16px 16px',
   },
@@ -32,7 +33,8 @@ export const styles = (theme: Theme) => ({
     flexWrap: 'nowrap' as const,
     justifyContent: 'flex-end',
     textAlign: 'end' as const,
-    backgroundColor: theme.palette.background.default,
+    backgroundColor: 'rgba(238,236,222,0.5)',
+    boxShadow: '0 2px 10px rgba(0,0,0,0.5)',
     borderRadius: '8px',
     padding: '16px 24px',
     [theme.breakpoints.down('md')]: {
@@ -107,5 +109,5 @@ export const styles = (theme: Theme) => ({
     '& + $btnSubmit': {
       marginTop: '12px',
     },
-  }
+  },
 });

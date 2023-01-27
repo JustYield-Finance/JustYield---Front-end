@@ -16,6 +16,7 @@ import { Loader } from '../../../../../../components/Loader';
 import { askForWalletConnection, doDisconnectWallet } from '../../../../../data/actions/wallet';
 import { Button } from '../../../../../../components/Button';
 import { filteredVaultsActions } from '../../../../../data/reducers/filtered-vaults';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(styles);
 
@@ -88,6 +89,11 @@ export const NoResults = memo(function () {
   const userCategory = useAppSelector(selectFilterUserCategory);
   const userBalanceAvailable = useAppSelector(selectIsUserBalanceAvailable);
   const isWalletKnown = useAppSelector(selectIsWalletKnown);
+  const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+  const handleViewAll = useCallback(() => {
+    dispatch(filteredVaultsActions.setUserCategory('all'));
+  }, [dispatch]);
 
   if (!isWalletKnown && (userCategory === 'eligible' || userCategory === 'deposited')) {
     return (
@@ -110,5 +116,11 @@ export const NoResults = memo(function () {
     return <NotDepositedMessage title="NoResults-NotDeposited" text="NoResults-FindVault" />;
   }
 
-  return <Message title="NoResults-NoResultsFound" text="NoResults-TryClearFilters" />;
+  return (
+    <Message title="NoResults-NoResultsFound" text="">
+      <Link to={`/all`} style={{ textDecoration: 'none' }}>
+        <Button variant="success">{t('NoResults-ViewAllVaults')}</Button>
+      </Link>
+    </Message>
+  );
 });

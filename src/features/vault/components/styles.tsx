@@ -36,11 +36,11 @@ export const styles = (theme: Theme) => ({
     paddingTop: '24px',
     '& .MuiPaper-root': {
       position: 'relative' as const,
-      backgroundColor: theme.palette.background.vaults.inactive,
+      backgroundColor: 'rgba(255,255,255,0.5)',
       borderRadius: '8px',
       padding: 0,
       margin: 0,
-      boxShadow: 'none',
+      boxShadow: '0 1px 0 rgba(0,0,0,0.5)',
       '& .MuiInputBase-input': {
         ...theme.typography['h3'],
         height: 'auto',
@@ -50,7 +50,8 @@ export const styles = (theme: Theme) => ({
     '& .MuiButton-root': {
       ...theme.typography['subline-sm'],
       color: theme.palette.text.primary,
-      backgroundColor: theme.palette.background.vaults.defaultOutline,
+      backgroundColor: 'rgba(238,236,222,0.5)',
+      boxShadow: '0 2px 2px rgba(0,0,0,0.5)',
       borderRadius: '4px',
       margin: 0,
       padding: '6px 12px',
@@ -90,15 +91,18 @@ export const styles = (theme: Theme) => ({
     marginRight: theme.spacing(0.5),
   },
   btnSubmit: {
-    color: theme.palette.text.primary,
+    color: '#f5f5ff',
     backgroundColor: theme.palette.primary.main,
+    boxShadow: '0 2px 2px rgba(0,0,0,0.5)',
     padding: '12px 24px',
     borderRadius: '8px',
     '&:hover': {
       backgroundColor: '#389D44',
+      boxShadow: '0 2px 2px rgba(0,0,0,0.5)',
     },
     '&.Mui-disabled': {
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+      backgroundColor: 'rgba(133, 191, 75, 0.5)',
+      boxShadow: '0 2px 2px rgba(0,0,0,0.5)',
     },
     '& + $btnSubmit': {
       marginTop: '12px',

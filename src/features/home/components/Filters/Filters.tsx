@@ -18,7 +18,7 @@ export const Filters = memo(function Filters() {
 
   return (
     <div className={classes.filters}>
-      {desktopView ? <ChainButtonFilter className={classes.chain} /> : null}
+      {/*{desktopView ? <ChainButtonFilter className={classes.chain} /> : null}
       <UserCategoryButtonFilter className={classes.userCategory} />
       {desktopView ? (
         <>
@@ -33,7 +33,8 @@ export const Filters = memo(function Filters() {
         className={clsx(classes.button, classes.extended)}
         desktopView={desktopView}
       />
-      <ClearFiltersButton className={clsx(classes.button, classes.clear)} />
+      <ClearFiltersButton className={clsx(classes.button, classes.clear)} />*/}
+      <ChainDropdownFilter className={classes.chain} />
     </div>
   );
 });

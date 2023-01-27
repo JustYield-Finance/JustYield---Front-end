@@ -3,7 +3,8 @@ export const styles = {
     borderRadius: '20px',
     marginTop: '24px',
     '&.MuiPaper-elevation1': {
-      boxShadow: '0px 0px 32px 0px #0000001A',
+      boxShadow: '0 2px 10px rgba(0,0,0,0.5)',
     },
+    backgroundColor: '#d9ecf2',
   },
 };

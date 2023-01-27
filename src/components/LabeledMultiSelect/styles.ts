@@ -3,7 +3,7 @@ import { Theme } from '@material-ui/core/styles';
 export const styles = (theme: Theme) => ({
   select: {
     ...theme.typography['body-lg-med'],
-    backgroundColor: '#eeecde',
+    background: 'rgba(238,236,222,0.5)',
     border: 'solid 2px #cfcaaf',
     borderRadius: '8px',
     minWidth: 0,
@@ -62,7 +62,7 @@ export const styles = (theme: Theme) => ({
     zIndex: 1000,
     border: '2px solid #c6c09f',
     borderRadius: '8px',
-    backgroundColor: '#eeecde',
+    background: 'rgba(238,236,222,0.8)',
     padding: `${8 - 2}px 0`,
     color: '#2f2f25',
     maxWidth: '100%',

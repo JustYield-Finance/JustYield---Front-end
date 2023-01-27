@@ -17,7 +17,7 @@ import { initDepositForm } from '../../../data/actions/scenarios';
 import { askForNetworkChange, askForWalletConnection } from '../../../data/actions/wallet';
 import { walletActions } from '../../../data/actions/wallet-actions';
 import { isTokenNative } from '../../../data/entities/token';
-import { isGovVault, VaultEntity } from '../../../data/entities/vault';
+import { isGovVault, isRewardableVault, VaultEntity } from '../../../data/entities/vault';
 import { depositActions } from '../../../data/reducers/wallet/deposit';
 import { selectShouldDisplayBoostWidget } from '../../../data/selectors/boosts';
 import { selectChainById } from '../../../data/selectors/chains';
@@ -197,7 +197,7 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
     startStepper(steps);
   };
 
-  const [compound, setCompound] = useState(true);
+  const [compound, setCompound] = useState(isRewardableVault(vault) ? true : false);
   const handleCompound = e => {
     setCompound(e);
   };
@@ -308,20 +308,22 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
         ) : null}
         <FeeBreakdown vaultId={vaultId} />
         <MaxNativeDepositAlert />
-        <Box mb={1} className={classes.compoundBox}>
-          <LabelledCheckbox
-            labelClass={classes.labelCheckbox}
-            checkboxClass={classes.checkbox}
-            checked={compound}
-            onChange={e => handleCompound(e)}
-            label={
-              <>
-                <Box className={classes.averageLine} />
-                {t('Compound')} W{native.symbol}
-              </>
-            }
-          />
-        </Box>
+        {isRewardableVault(vault) ? (
+          <Box mb={1} className={classes.compoundBox}>
+            <LabelledCheckbox
+              labelClass={classes.labelCheckbox}
+              checkboxClass={classes.checkbox}
+              checked={compound}
+              onChange={e => handleCompound(e)}
+              label={
+                <>
+                  <Box className={classes.averageLine} />
+                  {t('Compound')} W{native.symbol}
+                </>
+              }
+            />
+          </Box>
+        ) : null}
         <Box mt={3}>
           {vault.chainId === 'emerald' ? <EmeraldGasNotice /> : null}
           {vault.status !== 'active' ? (

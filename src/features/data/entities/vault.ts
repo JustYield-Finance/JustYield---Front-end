@@ -51,7 +51,11 @@ export interface VaultStandard {
 
   isMultiStrat: 'true' | 'false';
 
-  isMultiReward: 'true' | 'false';
+  isOptimized: 'true' | 'false';
+
+  isRewardable: 'true' | 'false';
+
+  apiIds: string[];
 
   /**
    * The protocol this vault rely on (Curve, boo finance, etc)
@@ -116,7 +120,11 @@ export interface VaultGov {
 
   isMultiStrat: 'true' | 'false';
 
-  isMultiReward: 'true' | 'false';
+  isOptimized: 'true' | 'false';
+
+  isRewardable: 'true' | 'false';
+
+  apiIds: string[];
 
   platformId: PlatformEntity['id'];
 
@@ -165,8 +173,12 @@ export function isMultiStratVault(vault: VaultEntity) {
   return vault.isMultiStrat === 'true';
 }
 
-export function isMultiRewardVault(vault: VaultEntity) {
-  return vault.isMultiReward === 'true';
+export function isOptimizedVault(vault: VaultEntity) {
+  return vault.isOptimized === 'true';
+}
+
+export function isRewardableVault(vault: VaultEntity) {
+  return vault.isRewardable === 'true';
 }
 
 export function isVaultPausedOrRetired(vault: VaultEntity) {

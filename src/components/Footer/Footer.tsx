@@ -25,7 +25,7 @@ const navLinks = [
   {
     title: ['Footer-Docs', 'Header-Docs'],
     path: 'https://docs.justyield.finance',
-  }/*,
+  } /*,
   {
     title: 'Footer-Audit',
     path: 'https://github.com/JustYield-Finance/justyield-audits',
@@ -33,7 +33,7 @@ const navLinks = [
   {
     title: 'Footer-MediaKit',
     path: 'https://justyield.com/media-kit/',
-  },*/
+  },*/,
 ];
 
 const socialLinks = [
@@ -56,12 +56,12 @@ const socialLinks = [
     title: 'Twitter',
     path: 'https://twitter.com/JustYield_Fi',
     Icon: IconTwitter,
-  }/*,
+  } /*,
   {
     title: 'Reddit',
     path: 'https://www.reddit.com/r/JustYield/',
     Icon: IconReddit,
-  },*/
+  },*/,
 ];
 
 const useStyles = makeStyles(styles);
@@ -108,7 +108,9 @@ export const WrappedFooter = memo(function WrappedFooter({ children }) {
   return (
     <div className={classes.wrapper}>
       <div className={classes.wrapperTop}>{children}</div>
-      <Footer />
+      {
+        //<Footer />
+      }
     </div>
   );
 });

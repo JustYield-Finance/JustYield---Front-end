@@ -71,9 +71,9 @@ const SORT_COLUMNS: {
   TooltipComponent?: FC;
 }[] = [
   { label: 'Filter-SortApy', sortKey: 'apy' },
-  { label: 'Filter-SortDaily', sortKey: 'daily' },
-  { label: 'Filter-SortWallet', sortKey: 'walletValue' },
-  { label: 'Filter-SortDeposited', sortKey: 'depositValue' },
+  //{ label: 'Filter-SortDaily', sortKey: 'daily' },
+  //{ label: 'Filter-SortWallet', sortKey: 'walletValue' },
+  //{ label: 'Filter-SortDeposited', sortKey: 'depositValue' },
   { label: 'Filter-SortTvl', sortKey: 'tvl' },
   //{ label: 'Filter-SortSafety', sortKey: 'safetyScore' },
 ];

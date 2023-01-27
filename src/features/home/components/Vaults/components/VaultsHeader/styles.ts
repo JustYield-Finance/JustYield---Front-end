@@ -18,7 +18,7 @@ export const styles = (theme: Theme) => ({
       gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
     },
     [theme.breakpoints.up('lg')]: {
-      gridTemplateColumns: 'minmax(0, 30fr) minmax(0, 70fr)',
+      gridTemplateColumns: 'minmax(0, 30fr) minmax(0, 30fr) minmax(0, 40fr)',
     },
   },
 });

@@ -59,7 +59,7 @@ function mapStateToProps(state: BeefyState, { vaultId }: VaultYearlyStatProps) {
       label,
       value: '???',
       subValue: null,
-      blur: false,
+      blur: true,
       loading: false,
       bold: true,
     };
