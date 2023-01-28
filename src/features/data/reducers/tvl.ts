@@ -80,7 +80,16 @@ function addContractDataToState(
     const vault = selectVaultById(state, vaultContractData.id);
     const price = selectTokenPriceByAddress(state, vault.chainId, vault.depositTokenAddress);
 
-    const vaultTvl = vaultContractData.balance.times(price);
+    const depositToken = selectTokenByAddress(state, vault.chainId, vault.depositTokenAddress);
+    const mooToken = selectTokenByAddress(state, vault.chainId, vault.earnedTokenAddress);
+    const decimalsDiff =
+      mooToken.decimals > depositToken.decimals
+        ? mooToken.decimals - depositToken.decimals
+        : depositToken.decimals - mooToken.decimals;
+
+    const vaultTvl = vaultContractData.balance
+      .times(price)
+      .times(new BigNumber(10).exponentiatedBy(-decimalsDiff));
 
     // save for vault
     sliceState.byVaultId[vault.id] = { tvl: vaultTvl };

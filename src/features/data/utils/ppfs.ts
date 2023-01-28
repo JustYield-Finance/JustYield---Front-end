@@ -30,9 +30,12 @@ export function mooAmountToOracleAmount(
 
   // go to math representation
   // but we can't return a number with more precision than the oracle precision
-  const oracleAmount = oracleChainAmount
+  var oracleAmount = oracleChainAmount
     .shiftedBy(-depositToken.decimals)
     .decimalPlaces(depositToken.decimals);
+  if (depositToken.decimals != mooToken.decimals) {
+    oracleAmount = oracleChainAmount.shiftedBy(-mooToken.decimals).decimalPlaces(mooToken.decimals);
+  }
 
   return oracleAmount;
 }

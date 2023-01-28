@@ -126,20 +126,32 @@ export const withdrawSlice = createSlice({
       const state = action.payload.state;
       const vault = selectVaultById(state, sliceState.vaultId);
       const depositToken = selectTokenByAddress(state, vault.chainId, vault.depositTokenAddress);
+      const mooToken = selectTokenByAddress(state, vault.chainId, vault.earnedTokenAddress);
       const input = action.payload.amount.replace(/[,]+/, '').replace(/[^0-9.]+/, '');
 
+      const decimalsDiff =
+        mooToken.decimals > depositToken.decimals
+          ? mooToken.decimals - depositToken.decimals
+          : depositToken.decimals - mooToken.decimals;
+
       let value = new BigNumber(input).decimalPlaces(depositToken.decimals, BigNumber.ROUND_DOWN);
+      var inputValue = value;
+      value = value.multipliedBy(new BigNumber(10).exponentiatedBy(decimalsDiff));
+
+      console.log(value.toNumber(), 'value');
 
       if (value.isNaN() || value.isLessThanOrEqualTo(0)) {
         value = BIG_ZERO;
       }
 
-      const mooToken = selectTokenByAddress(state, vault.chainId, vault.earnedTokenAddress);
       const mooTokenBalance = isGovVault(vault)
         ? selectGovVaultUserStackedBalanceInDepositToken(state, vault.id)
         : selectUserBalanceOfToken(state, vault.chainId, vault.earnedTokenAddress);
+      console.log(mooTokenBalance.toNumber(), 'mooTokenBalance');
       const ppfs = selectVaultPricePerFullShare(state, vault.id);
-      const amount = mooAmountToOracleAmount(mooToken, depositToken, ppfs, mooTokenBalance);
+      var amount = mooAmountToOracleAmount(mooToken, depositToken, ppfs, mooTokenBalance);
+      amount = amount.multipliedBy(new BigNumber(10).exponentiatedBy(decimalsDiff));
+      console.log(amount.toNumber(), 'amount');
       if (value.isGreaterThanOrEqualTo(amount)) {
         value = new BigNumber(amount);
         sliceState.max = true;
@@ -148,10 +160,10 @@ export const withdrawSlice = createSlice({
       }
 
       const formattedInput = (() => {
-        if (value.isEqualTo(input)) return input;
+        if (inputValue.isEqualTo(input)) return input;
         if (input === '') return '';
         if (input === '.') return `0.`;
-        return formatBigNumberSignificant(value);
+        return formatBigNumberSignificant(inputValue);
       })();
 
       sliceState.formattedInput = formattedInput;
