@@ -89,6 +89,9 @@
   "StrategyDescription-maxi": "The YIELD Maxi vault allows users to stake their YIELD much like in the RewardPool, but be rewarded instead in more YIELD. By staking YIELD, each participant compounds her share of Just Yield’s revenue on the network into more YIELD token. Since YIELD token can no longer be minted, reward YIELD is purchased on the open market using the network's native token (e.g. {{nativeToken}} on {{chain}}).",
   "StrategyDescription-default": "No description for the current strategy added yet.",
   "StrategyDescription-multi": "The vault deposits the user's {{depositToken}} in the best single asset strategy, earning the platform's governance token. Earned token is swapped for more {{depositToken}}. To complete the compounding cycle, the new {{depositToken}} is added to the farm, ready to go for the next earning event. The transaction cost required to do all this is socialized among the vault's users.",
+
   "StrategyDescription-sandbox": "{{depositToken}} will earn platform governance tokens which are swapped for more {{depositToken}}. Due to the underlying strategy architecture, the delay between two compounds is at least 7 days.",
+  "StrategyDescription-synapse-arbitrum": "{{depositToken}} will be converted in nUSD-LP (nUSD/USDC/USDT) and deposited in Arbitrum 3Pool. This strategy will earn platform governance tokens which are swapped for more nUSD-LP. On withdrawal action, the LP will be converted back to {{depositToken}}.",
+
   "xyz": "last-line placeholder"
 }
