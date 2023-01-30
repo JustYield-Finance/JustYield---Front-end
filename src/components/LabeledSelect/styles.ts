@@ -64,7 +64,7 @@ export const styles = (theme: Theme) => ({
     zIndex: 1000,
     border: '2px solid #c6c09f',
     borderRadius: '8px',
-    backgroundColor: '#eeecde',
+    backgroundColor: 'rgba(238,236,222,0.5)',
     padding: `${8 - 2}px 0`,
     color: '#2f2f25',
     maxWidth: '100%',

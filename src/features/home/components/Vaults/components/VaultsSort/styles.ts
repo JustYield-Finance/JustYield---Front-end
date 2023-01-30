@@ -41,10 +41,10 @@ export const styles = (theme: Theme) => ({
     fill: '#0a0a00',
   },
   sortDropdown: {
-    backgroundColor: '#eeecde',
+    backgroundColor: 'rgba(238,236,222,0.5)',
     border: 'solid 2px #c6c09f',
     [theme.breakpoints.up('md')]: {
-      width: '200px',
+      width: '100%',
       maxWidth: '100%',
       marginLeft: 'auto',
     },

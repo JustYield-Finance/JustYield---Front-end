@@ -118,8 +118,8 @@ const SortDropdown = memo(function SortDropdown() {
   const options = useMemo<Record<FilteredVaultsState['sort'], string>>(() => {
     return {
       apy: t('Filter-SortApy'),
-      daily: t('Filter-SortDaily'),
-      walletValue: t('Filter-SortWallet'),
+      //daily: t('Filter-SortDaily'),
+      //walletValue: t('Filter-SortWallet'),
       depositValue: t('Filter-SortDeposited'),
       tvl: t('Filter-SortTvl'),
     };
@@ -150,7 +150,7 @@ export const VaultsSort = memo(function VaultsSort() {
   const sortColumns = useMediaQuery((theme: Theme) => theme.breakpoints.up('lg'));
 
   return sortColumns ? (
-    <SortColumns />
+    <SortDropdown />
   ) : (
     <>
       <SortDropdown />

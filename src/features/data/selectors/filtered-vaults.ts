@@ -328,7 +328,8 @@ export const selectFilteredVaults = (state: BeefyState) => {
         throw new Error('Apy type not supported');
       }
     });
-  } else if (filterOptions.sort === 'daily') {
+  } else if (filterOptions.sort === 'tvl') {
+  /*else if (filterOptions.sort === 'daily') {
     sortedVaults = sortBy(sortedVaults, vault => {
       if (!shouldVaultShowInterest(vault)) {
         return 0;
@@ -349,7 +350,7 @@ export const selectFilteredVaults = (state: BeefyState) => {
         throw new Error('Daily type not supported');
       }
     });
-  } else if (filterOptions.sort === 'tvl') {
+  } */
     sortedVaults = sortBy(sortedVaults, vault => {
       const tvl = tvlByVaultId[vault.id];
       if (!tvl) {
@@ -366,12 +367,13 @@ export const selectFilteredVaults = (state: BeefyState) => {
       const balance = selectUserVaultDepositInUsd(state, vault.id);
       return sortDirMul * balance.toNumber();
     });
-  } else if (filterOptions.sort === 'walletValue') {
+  }
+  /*else if (filterOptions.sort === 'walletValue') {
     sortedVaults = sortBy(sortedVaults, vault => {
       const balance = selectUserVaultDepositTokenWalletBalanceInUsd(state, vault.id);
       return sortDirMul * balance.toNumber();
     });
-  }
+  }*/
 
   return sortedVaults.map(vault => vault.id);
 };
@@ -513,7 +515,8 @@ export const selectSingleFilteredVaults = (state: BeefyState) => {
         throw new Error('Apy type not supported');
       }
     });
-  } else if (filterOptions.sort === 'daily') {
+  } else if (filterOptions.sort === 'tvl') {
+  /*else if (filterOptions.sort === 'daily') {
     sortedVaults = sortBy(sortedVaults, vault => {
       if (!shouldVaultShowInterest(vault)) {
         return 0;
@@ -534,7 +537,7 @@ export const selectSingleFilteredVaults = (state: BeefyState) => {
         throw new Error('Daily type not supported');
       }
     });
-  } else if (filterOptions.sort === 'tvl') {
+  } */
     sortedVaults = sortBy(sortedVaults, vault => {
       const tvl = tvlByVaultId[vault.id];
       if (!tvl) {
@@ -551,12 +554,13 @@ export const selectSingleFilteredVaults = (state: BeefyState) => {
       const balance = selectUserVaultDepositInUsd(state, vault.id);
       return sortDirMul * balance.toNumber();
     });
-  } else if (filterOptions.sort === 'walletValue') {
+  }
+  /*else if (filterOptions.sort === 'walletValue') {
     sortedVaults = sortBy(sortedVaults, vault => {
       const balance = selectUserVaultDepositTokenWalletBalanceInUsd(state, vault.id);
       return sortDirMul * balance.toNumber();
     });
-  }
+  }*/
 
   return sortedVaults.map(vault => vault.id);
 };
@@ -694,7 +698,8 @@ export const selectMultiFilteredVaults = (state: BeefyState) => {
         throw new Error('Apy type not supported');
       }
     });
-  } else if (filterOptions.sort === 'daily') {
+  } else if (filterOptions.sort === 'tvl') {
+  /*else if (filterOptions.sort === 'daily') {
     sortedVaults = sortBy(sortedVaults, vault => {
       if (!shouldVaultShowInterest(vault)) {
         return 0;
@@ -715,7 +720,7 @@ export const selectMultiFilteredVaults = (state: BeefyState) => {
         throw new Error('Daily type not supported');
       }
     });
-  } else if (filterOptions.sort === 'tvl') {
+  } */
     sortedVaults = sortBy(sortedVaults, vault => {
       const tvl = tvlByVaultId[vault.id];
       if (!tvl) {
@@ -732,12 +737,13 @@ export const selectMultiFilteredVaults = (state: BeefyState) => {
       const balance = selectUserVaultDepositInUsd(state, vault.id);
       return sortDirMul * balance.toNumber();
     });
-  } else if (filterOptions.sort === 'walletValue') {
+  }
+  /*else if (filterOptions.sort === 'walletValue') {
     sortedVaults = sortBy(sortedVaults, vault => {
       const balance = selectUserVaultDepositTokenWalletBalanceInUsd(state, vault.id);
       return sortDirMul * balance.toNumber();
     });
-  }
+  }*/
 
   return sortedVaults.map(vault => vault.id);
 };
@@ -875,7 +881,8 @@ export const selectOptimizedFilteredVaults = (state: BeefyState) => {
         throw new Error('Apy type not supported');
       }
     });
-  } else if (filterOptions.sort === 'daily') {
+  } else if (filterOptions.sort === 'tvl') {
+  /*else if (filterOptions.sort === 'daily') {
     sortedVaults = sortBy(sortedVaults, vault => {
       if (!shouldVaultShowInterest(vault)) {
         return 0;
@@ -896,7 +903,7 @@ export const selectOptimizedFilteredVaults = (state: BeefyState) => {
         throw new Error('Daily type not supported');
       }
     });
-  } else if (filterOptions.sort === 'tvl') {
+  }*/
     sortedVaults = sortBy(sortedVaults, vault => {
       const tvl = tvlByVaultId[vault.id];
       if (!tvl) {
@@ -913,12 +920,13 @@ export const selectOptimizedFilteredVaults = (state: BeefyState) => {
       const balance = selectUserVaultDepositInUsd(state, vault.id);
       return sortDirMul * balance.toNumber();
     });
-  } else if (filterOptions.sort === 'walletValue') {
+  }
+  /*else if (filterOptions.sort === 'walletValue') {
     sortedVaults = sortBy(sortedVaults, vault => {
       const balance = selectUserVaultDepositTokenWalletBalanceInUsd(state, vault.id);
       return sortDirMul * balance.toNumber();
     });
-  }
+  }*/
 
   return sortedVaults.map(vault => vault.id);
 };
