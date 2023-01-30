@@ -33,7 +33,13 @@ export function mooAmountToOracleAmount(
   var oracleAmount = oracleChainAmount
     .shiftedBy(-depositToken.decimals)
     .decimalPlaces(depositToken.decimals);
-  if (depositToken.decimals != mooToken.decimals) {
+  if (
+    depositToken.decimals != mooToken.decimals &&
+    (mooToken.address.toLocaleLowerCase() ==
+      '0xe356a69c30fC225faec8Fea78e0AE890325DF35f'.toLocaleLowerCase() ||
+      mooToken.address.toLocaleLowerCase() ==
+        '0xBc6254C57D82aBc5Eb8FBE337Fe5Aa87c7c7D195'.toLocaleLowerCase())
+  ) {
     oracleAmount = oracleChainAmount.shiftedBy(-mooToken.decimals).decimalPlaces(mooToken.decimals);
   }
 

@@ -136,9 +136,15 @@ export const withdrawSlice = createSlice({
 
       let value = new BigNumber(input).decimalPlaces(depositToken.decimals, BigNumber.ROUND_DOWN);
       var inputValue = value;
-      value = value.multipliedBy(new BigNumber(10).exponentiatedBy(decimalsDiff));
 
-      console.log(value.toNumber(), 'value');
+      if (
+        mooToken.address.toLocaleLowerCase() ==
+          '0xe356a69c30fC225faec8Fea78e0AE890325DF35f'.toLocaleLowerCase() ||
+        mooToken.address.toLocaleLowerCase() ==
+          '0xBc6254C57D82aBc5Eb8FBE337Fe5Aa87c7c7D195'.toLocaleLowerCase()
+      ) {
+        value = value.multipliedBy(new BigNumber(10).exponentiatedBy(decimalsDiff));
+      }
 
       if (value.isNaN() || value.isLessThanOrEqualTo(0)) {
         value = BIG_ZERO;
@@ -147,11 +153,16 @@ export const withdrawSlice = createSlice({
       const mooTokenBalance = isGovVault(vault)
         ? selectGovVaultUserStackedBalanceInDepositToken(state, vault.id)
         : selectUserBalanceOfToken(state, vault.chainId, vault.earnedTokenAddress);
-      console.log(mooTokenBalance.toNumber(), 'mooTokenBalance');
       const ppfs = selectVaultPricePerFullShare(state, vault.id);
       var amount = mooAmountToOracleAmount(mooToken, depositToken, ppfs, mooTokenBalance);
-      amount = amount.multipliedBy(new BigNumber(10).exponentiatedBy(decimalsDiff));
-      console.log(amount.toNumber(), 'amount');
+      if (
+        mooToken.address.toLocaleLowerCase() ==
+          '0xe356a69c30fC225faec8Fea78e0AE890325DF35f'.toLocaleLowerCase() ||
+        mooToken.address.toLocaleLowerCase() ==
+          '0xBc6254C57D82aBc5Eb8FBE337Fe5Aa87c7c7D195'.toLocaleLowerCase()
+      ) {
+        amount = amount.multipliedBy(new BigNumber(10).exponentiatedBy(decimalsDiff));
+      }
       if (value.isGreaterThanOrEqualTo(amount)) {
         value = new BigNumber(amount);
         sliceState.max = true;

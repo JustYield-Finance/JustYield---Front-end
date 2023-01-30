@@ -87,9 +87,17 @@ function addContractDataToState(
         ? mooToken.decimals - depositToken.decimals
         : depositToken.decimals - mooToken.decimals;
 
-    const vaultTvl = vaultContractData.balance
-      .times(price)
-      .times(new BigNumber(10).exponentiatedBy(-decimalsDiff));
+    var vaultTvl = vaultContractData.balance.times(price);
+    if (
+      mooToken.address.toLocaleLowerCase() ==
+        '0xe356a69c30fC225faec8Fea78e0AE890325DF35f'.toLocaleLowerCase() ||
+      mooToken.address.toLocaleLowerCase() ==
+        '0xBc6254C57D82aBc5Eb8FBE337Fe5Aa87c7c7D195'.toLocaleLowerCase()
+    ) {
+      vaultTvl = vaultContractData.balance
+        .times(price)
+        .times(new BigNumber(10).exponentiatedBy(-decimalsDiff));
+    }
 
     // save for vault
     sliceState.byVaultId[vault.id] = { tvl: vaultTvl };
