@@ -330,7 +330,13 @@
   },
   {
     "constant": false,
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "bool",
+        "name": "_compound",
+        "type": "bool"
+      }
+    ],
     "name": "depositBNB",
     "outputs": [],
     "payable": true,

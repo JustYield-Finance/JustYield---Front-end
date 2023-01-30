@@ -92,6 +92,7 @@
 
   "StrategyDescription-sandbox": "{{depositToken}} will earn platform governance tokens which are swapped for more {{depositToken}}. Due to the underlying strategy architecture, the delay between two compounds is at least 7 days.",
   "StrategyDescription-synapse-arbitrum": "{{depositToken}} will be converted in nUSD-LP (nUSD/USDC/USDT) and deposited in Arbitrum 3Pool. This strategy will earn platform governance tokens which are swapped for more nUSD-LP. On withdrawal action, the LP will be converted back to {{depositToken}}.",
+  "StrategyDescription-radiant-arbitrum": "{{depositToken}} will be deposited in Radiant lending markets and earn interest paid by borrowers. In addition, deposits will earn platform governance tokens which will be continiously locked for max duration to get more rewards in {{depositToken}}.",
 
   "xyz": "last-line placeholder"
 }

@@ -120,11 +120,11 @@ const deposit = (
       if (isNativeToken) {
         if (max) {
           return contract.methods
-            .depositAllBNB()
+            .depositAllBNB(compound)
             .send({ from: address, value: rawAmount.toString(10), ...gasPrices });
         } else {
           return contract.methods
-            .depositBNB()
+            .depositBNB(compound)
             .send({ from: address, value: rawAmount.toString(10), ...gasPrices });
         }
       } else {
@@ -382,7 +382,7 @@ const withdraw = (vault: VaultEntity, oracleAmount: BigNumber, max: boolean) => 
     try {
       if (isNativeToken) {
         if (max) {
-          await contract.methods.withdrawAllBNB(true).estimateGas({ from: address, ...gasPrices });
+          await contract.methods.withdrawBNB(true).estimateGas({ from: address, ...gasPrices });
         } else {
           await contract.methods
             .withdrawBNB(rawAmount.toString(10), true)
@@ -405,7 +405,9 @@ const withdraw = (vault: VaultEntity, oracleAmount: BigNumber, max: boolean) => 
     const transaction = (() => {
       if (isNativeToken) {
         if (max) {
-          return contract.methods.withdrawAllBNB(compound).send({ from: address, ...gasPrices });
+          return contract.methods
+            .withdrawBNB(rawAmount.toString(10), compound)
+            .send({ from: address, ...gasPrices });
         } else {
           return contract.methods
             .withdrawBNB(rawAmount.toString(10), compound)
