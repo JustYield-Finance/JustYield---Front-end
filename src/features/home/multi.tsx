@@ -24,6 +24,7 @@ export const Multi = memo(function Home() {
   return (
     <>
       <Container maxWidth="lg" className={classes.vaultContainer}>
+        <Portfolio />
         <Vaults vaultType="multi" />
       </Container>
     </>

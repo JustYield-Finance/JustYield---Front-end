@@ -34,28 +34,12 @@ export const VaultsStats = () => {
     <Grid container className={classes.userStats}>
       <Box className={classes.stat}>
         <Box className={classes.labelWithIcon}>
-          <div className={classes.label}>{t('TVL')}</div>
-          {/*<div onClick={handleTvlModalOpen}>
-            <img
-              className={classes.icon}
-              src={require('../../../../../images/icons/i.svg').default}
-              alt="i"
-            />
-          </div>*/}
+          <div className={classes.label}>{t('Total-Value-Locked')}</div>
         </Box>
         <div className={classes.value}>
           <ValueText value={formatBigUsd(totalTvl)} />
         </div>
       </Box>
-      <Box className={classes.stat}>
-        <div className={classes.label}>{t('Vaults-Title')}</div>
-        <div className={classes.value}>
-          <ValueText value={totalActiveVaults} />
-        </div>
-      </Box>
-      <Modal open={isTvlModalOpen} onClose={handleTvlModalClose}>
-        <ModalTvl close={handleTvlModalClose} />
-      </Modal>
     </Grid>
   );
 };

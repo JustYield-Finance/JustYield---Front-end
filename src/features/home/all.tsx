@@ -24,6 +24,7 @@ export const All = memo(function Home() {
   return (
     <>
       <Container maxWidth="lg" className={classes.vaultContainer}>
+        <Portfolio />
         <Vaults />
       </Container>
     </>

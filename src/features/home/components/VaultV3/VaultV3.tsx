@@ -5,6 +5,7 @@ import {
   isVaultPaused,
   isVaultRetired,
   VaultEntity,
+  isGovVault,
 } from '../../../data/entities/vault';
 import { makeStyles } from '@material-ui/core';
 import { styles } from './styles';
@@ -52,6 +53,10 @@ import { formatPercent } from '../../../../helpers/format';
 import shield from '../../../../components/Header/imgs/shield.svg';
 import coin from '../../../../components/Header/imgs/coin.svg';
 import blockchain from '../../../../components/Header/imgs/blockchain.svg';
+import {
+  selectGovVaultUserStackedBalanceInDepositToken,
+  selectStandardVaultUserBalanceInDepositTokenIncludingBoosts,
+} from '../../../data/selectors/balance';
 
 const useStyles = makeStyles(styles);
 const baseUrlAPI = 'https://api.coingecko.com/api/v3/simple/price';
@@ -77,6 +82,12 @@ export const VaultV3 = memo<VaultProps>(function Vault({ vaultId }) {
   const vault = useAppSelector(state => selectVaultById(state, vaultId));
   const chain = useAppSelector(state => selectChainById(state, vault.chainId));
   const uris = useAssetsImageUris(vault.chainId, vault.assetIds);
+
+  const deposit = useAppSelector(state =>
+    isGovVault(vault)
+      ? selectGovVaultUserStackedBalanceInDepositToken(state, vault.id)
+      : selectStandardVaultUserBalanceInDepositTokenIncludingBoosts(state, vault.id)
+  );
 
   const [priceData, setPriceData] = useState({
     usd: 0,
@@ -116,6 +127,11 @@ export const VaultV3 = memo<VaultProps>(function Vault({ vaultId }) {
       })}
     >
       <div className="container">
+        {deposit.gt(0) ? (
+          <div className="bubble">
+            <VaultDepositStat vaultId={vaultId} />
+          </div>
+        ) : null}
         <div className="wrapper">
           {uris.length > 1 ? (
             <>

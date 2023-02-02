@@ -1,7 +1,7 @@
 export const styles = theme => ({
   portfolio: {
-    backgroundColor: theme.palette.background.header,
-    padding: `${40 - 24}px 0 40px 0`,
+    backgroundColor: 'transparent',
+    padding: `0px 0 10px 0`,
   },
   stats: {
     display: 'grid',

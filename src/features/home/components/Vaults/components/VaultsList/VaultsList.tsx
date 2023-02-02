@@ -42,6 +42,8 @@ export const VaultsList = memo<VaultTypeProps>(function VaultsList({ vaultType }
       ) : vaultType === 'optimized' ? (
         optiVaultIds.length > 0 ? (
           <VirtualVaultsList vaultIds={optiVaultIds} />
+        ) : multiVaultIds.length > 0 ? (
+          <VirtualVaultsList vaultIds={multiVaultIds} />
         ) : (
           <VirtualVaultsList vaultIds={vaultIds} />
         )
