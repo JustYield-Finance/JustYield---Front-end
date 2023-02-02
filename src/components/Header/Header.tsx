@@ -242,10 +242,38 @@ const NavLinksFull = memo(function () {
               <div className="text">
                 <div className="title">BASICS</div>
               </div>
-              <a href="#">Get Started</a>
-              <a href="#">$YIELD</a>
-              <a href="#">How To</a>
-              <a href="#">Team</a>
+              <a
+                className={classes.newNavLink}
+                href={'https://docs.justyield.finance/get-started'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                Get Started
+              </a>
+              <a
+                className={classes.newNavLink}
+                href={'https://docs.justyield.finance/just-yield/basics'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                Basics
+              </a>
+              <a
+                className={classes.newNavLink}
+                href={'https://docs.justyield.finance/faq/how-to'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                How To
+              </a>
+              <a
+                className={classes.newNavLink}
+                href={'https://docs.justyield.finance/governance/team-and-goals'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                Team
+              </a>
             </div>
             <div className="box">
               <div className="icon">
@@ -254,10 +282,38 @@ const NavLinksFull = memo(function () {
               <div className="text">
                 <div className="title">ADVANCED</div>
               </div>
-              <a href="#">Optimized Vaults</a>
-              <a href="#">Multi-Strategies Vaults</a>
-              <a href="#">Single-Exposure Vaults</a>
-              <a href="#">Automated DCA</a>
+              <a
+                className={classes.newNavLink}
+                href={'https://docs.justyield.finance/just-yield/optimized-vaults'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                Optimized Vaults
+              </a>
+              <a
+                className={classes.newNavLink}
+                href={'https://docs.justyield.finance/just-yield/multi-strategies-vaults'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                Multi-Strategies Vaults
+              </a>
+              <a
+                className={classes.newNavLink}
+                href={'https://docs.justyield.finance/just-yield/single-exposure-vaults'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                Single-Exposure Vaults
+              </a>
+              <a
+                className={classes.newNavLink}
+                href={'https://docs.justyield.finance/just-yield/flexible-rewards'}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                Flexible Rewards
+              </a>
             </div>
             <div className="icon-box flat">
               <a
