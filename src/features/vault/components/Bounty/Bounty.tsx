@@ -21,7 +21,7 @@ import { initWithdrawForm } from '../../../data/actions/scenarios';
 import { askForNetworkChange, askForWalletConnection } from '../../../data/actions/wallet';
 import { walletActions } from '../../../data/actions/wallet-actions';
 import { TokenEntity } from '../../../data/entities/token';
-import { isGovVault, VaultEntity } from '../../../data/entities/vault';
+import { isGovVault, isRewardableVault, VaultEntity } from '../../../data/entities/vault';
 import { withdrawActions } from '../../../data/reducers/wallet/withdraw';
 import {
   selectBoostUserBalanceInToken,
@@ -378,54 +378,66 @@ export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
                 : classes.width100
             )}
           >
-            {showDepositedText && <div className={classes.balanceText}>{t('Pending-Verb')}</div>}
+            {showDepositedText && isRewardableVault(vault) && (
+              <div className={classes.balanceText}>{t('Pending-Verb')}</div>
+            )}
 
-            <RadioGroup
-              className={classes.radioGroup}
-              value={native}
-              aria-label="deposit-asset"
-              name="deposit-asset"
-            >
-              <FormControlLabel
-                className={classes.depositTokenContainer}
-                value={native.id}
-                control={formState.zapOptions !== null ? <Radio /> : <div style={{ width: 12 }} />}
-                label={formatBigUsd(
-                  pendingCompound
-                    .multipliedBy(denominatorFee)
-                    .dividedBy(callFee)
-                    .multipliedBy(denominatorFee)
-                    .div(vaultFee)
-                    .multipliedBy(nativeUsd)
-                )}
-                disabled={!formReady}
-              />
-            </RadioGroup>
+            {isRewardableVault(vault) ? (
+              <RadioGroup
+                className={classes.radioGroup}
+                value={native}
+                aria-label="deposit-asset"
+                name="deposit-asset"
+              >
+                <FormControlLabel
+                  className={classes.depositTokenContainer}
+                  value={native.id}
+                  control={
+                    formState.zapOptions !== null ? <Radio /> : <div style={{ width: 12 }} />
+                  }
+                  label={formatBigUsd(
+                    pendingCompound
+                      .multipliedBy(denominatorFee)
+                      .dividedBy(callFee)
+                      .multipliedBy(denominatorFee)
+                      .div(vaultFee)
+                      .multipliedBy(nativeUsd)
+                  )}
+                  disabled={!formReady}
+                />
+              </RadioGroup>
+            ) : null}
 
-            {showDepositedText && <div className={classes.balanceText2}>{t('Compound-Verb')}</div>}
+            {showDepositedText && isRewardableVault(vault) && (
+              <div className={classes.balanceText2}>{t('Compound-Verb')}</div>
+            )}
 
-            <RadioGroup
-              className={classes.radioGroup}
-              value={native}
-              aria-label="pending-asset"
-              name="pending-asset"
-            >
-              <FormControlLabel
-                className={classes.depositTokenContainer}
-                value={native.id}
-                control={formState.zapOptions !== null ? <Radio /> : <div style={{ width: 12 }} />}
-                label={
-                  <BountyWithBalance
-                    token={native}
-                    vaultId={vaultId}
-                    balance={pendingCompound}
-                    decimals={12}
-                    usdValue={pendingCompound.multipliedBy(nativeUsd)}
-                  />
-                }
-                disabled={!formReady}
-              />
-            </RadioGroup>
+            {isRewardableVault(vault) ? (
+              <RadioGroup
+                className={classes.radioGroup}
+                value={native}
+                aria-label="pending-asset"
+                name="pending-asset"
+              >
+                <FormControlLabel
+                  className={classes.depositTokenContainer}
+                  value={native.id}
+                  control={
+                    formState.zapOptions !== null ? <Radio /> : <div style={{ width: 12 }} />
+                  }
+                  label={
+                    <BountyWithBalance
+                      token={native}
+                      vaultId={vaultId}
+                      balance={pendingCompound}
+                      decimals={12}
+                      usdValue={pendingCompound.multipliedBy(nativeUsd)}
+                    />
+                  }
+                  disabled={!formReady}
+                />
+              </RadioGroup>
+            ) : null}
           </div>
         </Box>
         <Box mt={3}>

@@ -139,43 +139,26 @@ const VaultContent = memo<VaultContentProps>(function VaultContent({ vaultId }) 
                 <RetirePauseReason vaultId={vaultId} className={classes.retirePauseReason} />
               </Hidden>
               <div className={classes.dw}>
-                {isRewardableVault(vault) ? (
-                  <div className={classes.tabs3}>
-                    <Button
-                      onClick={() => setDw('deposit')}
-                      className={dw === 'deposit' ? classes.selected : ''}
-                    >
-                      {t('Deposit-Verb')}
-                    </Button>
-                    <Button
-                      onClick={() => setDw('withdraw')}
-                      className={dw === 'withdraw' ? classes.selected : ''}
-                    >
-                      {t('Withdraw-Verb')}
-                    </Button>
-                    <Button
-                      onClick={() => setDw('bounty')}
-                      className={dw === 'bounty' ? classes.selected : ''}
-                    >
-                      {t('Bounty-Verb')}
-                    </Button>
-                  </div>
-                ) : (
-                  <div className={classes.tabs}>
-                    <Button
-                      onClick={() => setDw('deposit')}
-                      className={dw === 'deposit' ? classes.selected : ''}
-                    >
-                      {t('Deposit-Verb')}
-                    </Button>
-                    <Button
-                      onClick={() => setDw('withdraw')}
-                      className={dw === 'withdraw' ? classes.selected : ''}
-                    >
-                      {t('Withdraw-Verb')}
-                    </Button>
-                  </div>
-                )}
+                <div className={classes.tabs3}>
+                  <Button
+                    onClick={() => setDw('deposit')}
+                    className={dw === 'deposit' ? classes.selected : ''}
+                  >
+                    {t('Deposit-Verb')}
+                  </Button>
+                  <Button
+                    onClick={() => setDw('withdraw')}
+                    className={dw === 'withdraw' ? classes.selected : ''}
+                  >
+                    {t('Withdraw-Verb')}
+                  </Button>
+                  <Button
+                    onClick={() => setDw('bounty')}
+                    className={dw === 'bounty' ? classes.selected : ''}
+                  >
+                    {t('Bounty-Verb')}
+                  </Button>
+                </div>
                 {dw === 'deposit' ? (
                   <Deposit vaultId={vaultId} />
                 ) : dw === 'withdraw' ? (
