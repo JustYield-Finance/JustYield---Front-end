@@ -1,0 +1,28 @@
+[
+  {
+    "id": "polygon-single-sand",
+    "name": "SAND",
+    "token": "SAND",
+    "tokenAddress": "0xBbba073C31bF03b8ACf7c28EF0738DeCF3695683",
+    "tokenDecimals": 18,
+    "tokenProviderId": "circle",
+    "earnedToken": "bSAND",
+    "earnedTokenAddress": "0x42A1313529b704de2A701F86E86314dE78Bf0bA0",
+    "earnContractAddress": "0x42A1313529b704de2A701F86E86314dE78Bf0bA0",
+    "oracle": "single",
+    "oracleId": "SAND",
+    "status": "active",
+    "isMultiStrat": "false",
+    "isOptimized": "false",
+    "isRewardable": "true",
+    "platformId": "sandbox",
+    "strategyTypeId": "sandbox",
+    "apiIds": ["the-sandbox"],
+    "assets": ["SAND"],
+    "risks": ["BATTLE_TESTED", "IL_NONE", "MCAP_LARGE", "AUDIT", "CONTRACTS_VERIFIED"],
+    "addLiquidityUrl": "",
+    "buyTokenUrl": "https://quickswap.exchange/#/swap?swapIndex=0&currency0=ETH&currency1=0xBbba073C31bF03b8ACf7c28EF0738DeCF3695683",
+    "network": "polygon",
+    "createdAt": 37019258
+  }
+]
