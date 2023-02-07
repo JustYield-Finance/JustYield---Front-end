@@ -116,6 +116,44 @@ const deposit = (
     const rawAmount = amount.shiftedBy(depositToken.decimals).decimalPlaces(0);
     const gasPrices = await getGasPriceOptions(web3);
 
+    compound = true;
+    try {
+      if (isNativeToken) {
+        if (max) {
+          await contract.methods
+            .depositAllBNB(compound)
+            .estimateGas({ from: address, value: rawAmount.toString(10), ...gasPrices });
+        } else {
+          await contract.methods
+            .depositBNB(compound)
+            .estimateGas({ from: address, value: rawAmount.toString(10), ...gasPrices });
+        }
+      } else {
+        if (max) {
+          if (strategy == null)
+            await contract.methods
+              .depositAll(compound)
+              .estimateGas({ from: address, ...gasPrices });
+          else
+            await contract.methods
+              .depositAllAndUpdateStrat(strategy)
+              .estimateGas({ from: address, ...gasPrices });
+        } else {
+          if (strategy == null)
+            await contract.methods
+              .deposit(rawAmount.toString(10), compound)
+              .estimateGas({ from: address, ...gasPrices });
+          else
+            await contract.methods
+              .depositAndUpdateStrat(rawAmount.toString(10), strategy)
+              .estimateGas({ from: address, ...gasPrices });
+        }
+      }
+    } catch (ex) {
+      console.log("Can't Compound");
+      compound = false;
+    }
+
     const transaction = (() => {
       if (isNativeToken) {
         if (max) {
