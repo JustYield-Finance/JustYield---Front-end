@@ -194,6 +194,21 @@ const _Steps = ({
                     </Box>
                   </>
                 )}
+              {/* Succes harvest */}
+              {steps.items[steps.currentStep].step === 'harvest' &&
+                walletActionsState.result === 'success' && (
+                  <>
+                    <Box className={clsx(classes.content, classes.successContent)}>
+                      <div className={classes.message}>
+                        {t('Transactn-Compound', {
+                          amount: formatBigDecimals(walletActionsState.data.amount, 2),
+                          token: walletActionsState.data.token.symbol,
+                        })}
+                      </div>
+                      <TransactionLink chainId={chainId} />
+                    </Box>
+                  </>
+                )}
               {/* Boost Success */}
               {steps.items[steps.currentStep].step === 'stake' &&
                 walletActionsState.result === 'success' && (

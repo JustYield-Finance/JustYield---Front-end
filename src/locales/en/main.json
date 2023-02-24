@@ -270,6 +270,7 @@
   "Transactn-ConfirmPending": "Confirmation Pending",
   "Transactn-Wait": "Waiting for network to confirm transaction",
   "Transactn-Confirmed": "Transactions Confirmed",
+  "Transactn-Compound": "You have successfully executed Compound command.",
   "Transactn-Success": "You have successfully deposited {{amount}} {{token}} in the Vault.",
   "Transactn-Success-Bst": "You have successfully deposited {{amount}} {{token}} in the vault Boost",
   "Transactn-Withdrawal": "You have successfully withdrawn {{amount}} {{token}} from the Vault.",
