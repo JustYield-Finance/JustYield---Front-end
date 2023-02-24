@@ -420,7 +420,7 @@ const withdraw = (vault: VaultEntity, oracleAmount: BigNumber, max: boolean) => 
     try {
       if (isNativeToken) {
         if (max) {
-          await contract.methods.withdrawBNB(true).estimateGas({ from: address, ...gasPrices });
+          await contract.methods.withdrawAllBNB(true).estimateGas({ from: address, ...gasPrices });
         } else {
           await contract.methods
             .withdrawBNB(rawAmount.toString(10), true)

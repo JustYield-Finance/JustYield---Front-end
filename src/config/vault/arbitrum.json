@@ -179,5 +179,30 @@
     "buyTokenUrl": "https://app.uniswap.org/#/tokens/arbitrum/0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
     "network": "arbitrum",
     "createdAt": 56595454
+  },
+  {
+    "id": "arbitrum-synapse-weth",
+    "name": "ETH",
+    "token": "ETH",
+    "tokenDecimals": 18,
+    "tokenProviderId": "circle",
+    "earnedToken": "bWETH",
+    "earnedTokenAddress": "0xFdd7165d49E1a361023Ea982DdCB80a3fb177338",
+    "earnContractAddress": "0xFdd7165d49E1a361023Ea982DdCB80a3fb177338",
+    "oracle": "single",
+    "oracleId": "ETH",
+    "status": "active",
+    "isMultiStrat": "false",
+    "isOptimized": "false",
+    "isRewardable": "false",
+    "platformId": "synapse",
+    "strategyTypeId": "synapse-arbitrum-eth",
+    "apiIds": ["ethereum"],
+    "assets": ["ETH"],
+    "risks": ["BATTLE_TESTED", "MCAP_LARGE", "AUDIT", "CONTRACTS_VERIFIED"],
+    "addLiquidityUrl": "",
+    "buyTokenUrl": "https://app.uniswap.org/#/tokens/arbitrum/0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+    "network": "arbitrum",
+    "createdAt": 63802818
   }
 ]
