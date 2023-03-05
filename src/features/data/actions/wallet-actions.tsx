@@ -54,7 +54,7 @@ import { ZapDepositEstimate, ZapOptions } from '../apis/zap/zap-types';
 export const WALLET_ACTION = 'WALLET_ACTION';
 export const WALLET_ACTION_RESET = 'WALLET_ACTION_RESET';
 
-const approval = (token: TokenErc20, spenderAddress: string) => {
+const approval = (token: TokenErc20, spenderAddress: string, glpAddress: string = null) => {
   return captureWalletErrors(async (dispatch, getState) => {
     dispatch({ type: WALLET_ACTION_RESET });
     const state = getState();
@@ -67,7 +67,10 @@ const approval = (token: TokenErc20, spenderAddress: string) => {
     const web3 = await walletApi.getConnectedWeb3Instance();
     const native = selectChainNativeToken(state, token.chainId);
 
-    const contract = new web3.eth.Contract(erc20Abi as any, token.address);
+    const contract = new web3.eth.Contract(
+      erc20Abi as any,
+      glpAddress != null ? glpAddress : token.address
+    );
     const maxAmount = web3.utils.toWei('8000000000', 'ether');
     const gasPrices = await getGasPriceOptions(web3);
     const transaction = contract.methods

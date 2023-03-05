@@ -93,6 +93,16 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
       ? selectIsApprovalNeededForDeposit(state, spenderAddress)
       : false
   );
+  const fsGLPAddress = '0x2F546AD4eDD93B956C8999Be404cdCAFde3E89AE';
+  const needsApprovalGLP = useAppSelector(state =>
+    formState.selectedToken &&
+    formState.selectedToken.id !== native.id &&
+    spenderAddress &&
+    vault.depositTokenAddress.toLowerCase() ==
+      '0x1aDDD80E6039594eE970E5872D247bf0414C8903'.toLowerCase() // Special Case for GLP
+      ? selectIsApprovalNeededForDeposit(state, spenderAddress, fsGLPAddress)
+      : false
+  );
 
   const formDataLoaded = useAppSelector(
     state =>
@@ -145,11 +155,15 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
       return dispatch(askForNetworkChange({ chainId: vault.chainId }));
     }
 
-    if (!isTokenNative(formState.selectedToken) && needsApproval) {
+    if (!isTokenNative(formState.selectedToken) && (needsApproval || needsApprovalGLP)) {
       steps.push({
         step: 'approve',
         message: t('Vault-ApproveMsg'),
-        action: walletActions.approval(formState.selectedToken, spenderAddress),
+        action: walletActions.approval(
+          formState.selectedToken,
+          spenderAddress,
+          needsApprovalGLP ? fsGLPAddress : null
+        ),
         pending: false,
       });
     }

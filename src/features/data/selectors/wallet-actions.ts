@@ -5,14 +5,18 @@ import { selectBoostById } from './boosts';
 import { selectTokenByAddress } from './tokens';
 import { selectStandardVaultById, selectVaultById, selectVaultPricePerFullShare } from './vaults';
 
-export const selectIsApprovalNeededForDeposit = (state: BeefyState, spenderAddress: string) => {
+export const selectIsApprovalNeededForDeposit = (
+  state: BeefyState,
+  spenderAddress: string,
+  glpAddress: string = null
+) => {
   const tokenAddress = state.ui.deposit.selectedToken.address;
   const vaultId = state.ui.deposit.vaultId;
   const vault = selectVaultById(state, vaultId);
   const allowance = selectAllowanceByTokenAddress(
     state,
     vault.chainId,
-    tokenAddress,
+    glpAddress != null ? glpAddress : tokenAddress,
     spenderAddress
   );
   return allowance.isLessThan(state.ui.deposit.amount);
