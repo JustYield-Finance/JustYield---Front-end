@@ -211,7 +211,7 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
     startStepper(steps);
   };
 
-  const [compound, setCompound] = useState(isRewardableVault(vault) ? true : false);
+  const [compound, setCompound] = useState(true);
   const handleCompound = e => {
     setCompound(e);
   };
@@ -322,7 +322,8 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
         ) : null}
         <FeeBreakdown vaultId={vaultId} />
         <MaxNativeDepositAlert />
-        {isRewardableVault(vault) ? (
+        {/*
+        isRewardableVault(vault) ? (
           <Box mb={1} className={classes.compoundBox}>
             <LabelledCheckbox
               labelClass={classes.labelCheckbox}
@@ -337,10 +338,11 @@ export const Deposit = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
               }
             />
           </Box>
-        ) : null}
+        ) : null
+        */}
         <Box mt={3}>
           {vault.chainId === 'emerald' ? <EmeraldGasNotice /> : null}
-          {vault.status !== 'active' ? (
+          {vault.status !== 'active' && vault.status !== 'pending' ? (
             <Button className={classes.btnSubmit} fullWidth={true} disabled={true}>
               {t('Deposit-Disabled')}
             </Button>

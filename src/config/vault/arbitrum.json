@@ -256,5 +256,31 @@
     "buyTokenUrl": "https://app.uniswap.org/#/tokens/arbitrum/0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
     "network": "arbitrum",
     "createdAt": 63802818
+  },
+  {
+    "id": "arbitrum-gmx-glp",
+    "name": "GLP",
+    "token": "GLP",
+    "tokenAddress": "0x1aDDD80E6039594eE970E5872D247bf0414C8903",
+    "tokenDecimals": 18,
+    "tokenProviderId": "circle",
+    "earnedToken": "bGLP",
+    "earnedTokenAddress": "0x9e41F39192230eE8F5d0ed45Cd468A323453f2bb",
+    "earnContractAddress": "0x9e41F39192230eE8F5d0ed45Cd468A323453f2bb",
+    "oracle": "single",
+    "oracleId": "GLP",
+    "status": "pending",
+    "isMultiStrat": "false",
+    "isOptimized": "false",
+    "isRewardable": "true",
+    "platformId": "gmx",
+    "strategyTypeId": "gmx-arbitrum",
+    "apiIds": [],
+    "assets": ["GLP"],
+    "risks": ["BATTLE_TESTED", "MCAP_LARGE", "AUDIT", "CONTRACTS_VERIFIED"],
+    "addLiquidityUrl": "",
+    "buyTokenUrl": "https://app.gmx.io/#/trade/?ref=justyield",
+    "network": "arbitrum",
+    "createdAt": 66511682
   }
 ]

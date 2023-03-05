@@ -62,7 +62,7 @@ export interface VaultStandard {
    */
   platformId: PlatformEntity['id'];
 
-  status: 'active' | 'eol' | 'paused';
+  status: 'active' | 'eol' | 'paused' | 'pending';
 
   type: 'lps' | 'single';
 
@@ -128,7 +128,7 @@ export interface VaultGov {
 
   platformId: PlatformEntity['id'];
 
-  status: 'active' | 'eol' | 'paused';
+  status: 'active' | 'eol' | 'paused' | 'pending';
 
   tags: VaultTag[];
 
@@ -167,6 +167,10 @@ export function isVaultActive(vault: VaultEntity) {
 
 export function isVaultPaused(vault: VaultEntity) {
   return vault.status === 'paused';
+}
+
+export function isVaultPending(vault: VaultEntity) {
+  return vault.status === 'pending';
 }
 
 export function isMultiStratVault(vault: VaultEntity) {

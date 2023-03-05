@@ -6,6 +6,7 @@ import {
   isVaultRetired,
   VaultEntity,
   isGovVault,
+  isVaultPending,
 } from '../../../data/entities/vault';
 import { makeStyles } from '@material-ui/core';
 import { styles } from './styles';
@@ -116,6 +117,10 @@ export const VaultV3 = memo<VaultProps>(function Vault({ vaultId }) {
       }
     } catch (Ex) {}
   };
+
+  if (isVaultPending(vault)) {
+    return <></>;
+  }
 
   return (
     <Link
