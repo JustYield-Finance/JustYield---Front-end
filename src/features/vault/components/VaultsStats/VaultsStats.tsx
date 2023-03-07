@@ -20,7 +20,7 @@ import { GovVaultRewards } from '../../../../components/GovVaultRewards/GovVault
 import { getBeefyApi } from '../../../data/apis/instances';
 import { useAppSelector } from '../../../../store';
 import { selectChainNativeToken, selectTokenPriceByAddress } from '../../../data/selectors/tokens';
-import { formatBigDecimals, formatBigUsd } from '../../../../helpers/format';
+import { formatBigDecimals, formatBigUsd, formatPercent } from '../../../../helpers/format';
 import { AssetsImage } from '../../../../components/AssetsImage';
 import { BountyWithBalance } from '../BountyWithBalance';
 import BigNumber from 'bignumber.js';
@@ -28,6 +28,7 @@ import BigNumber from 'bignumber.js';
 const useStyles = makeStyles(styles);
 var intervalStarted = false;
 var beefyState;
+const baseUrlAPI = 'https://api.coingecko.com/api/v3/simple/price';
 
 function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
   const lastHarvestStr = useLastHarvestStr(vaultId);
@@ -36,6 +37,37 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
   const vault = useAppSelector(state => selectVaultById(state, vaultId));
   //console.log(vault);
   const native = useAppSelector(state => selectChainNativeToken(state, vault.chainId));
+
+  const [rewardPriceData, setRewardPriceData] = useState({
+    usd: 0,
+    usd_24h_change: 0,
+  });
+  useEffect(() => {
+    if (vault.pendingRewards != null) {
+      getPrices([vault.pendingRewards]);
+    }
+  }, []);
+  const getPrices = async ids => {
+    try {
+      if (ids.length > 0) {
+        const completeURL =
+          baseUrlAPI + '?ids=' + ids.join() + '&vs_currencies=usd&include_24hr_change=true';
+        const response = await fetch(completeURL);
+        const jsonData = await response.json();
+        var totalUsd = 0;
+        var totalUsdChange = 0;
+        for (let i = 0; i < ids.length; i++) {
+          totalUsd += jsonData[Object.keys(jsonData)[i]].usd;
+          totalUsdChange += jsonData[Object.keys(jsonData)[i]].usd_24h_change / 100;
+        }
+        setRewardPriceData({
+          usd: totalUsd / ids.length,
+          usd_24h_change: formatPercent(totalUsdChange / ids.length),
+        });
+      }
+    } catch (Ex) {}
+  };
+
   const nativeUsd = useAppSelector(state =>
     selectTokenPriceByAddress(state, vault.chainId, native.address)
   );
@@ -94,7 +126,7 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
                       .dividedBy(callFee)
                       .multipliedBy(denominatorFee)
                       .div(vaultFee)
-                      .multipliedBy(nativeUsd)
+                      .multipliedBy(vault.pendingRewards == null ? nativeUsd : rewardPriceData.usd)
                   )}
                   usdValue={null}
                 />
@@ -143,7 +175,11 @@ function VaultsStatsComponent({ vaultId }: { vaultId: VaultEntity['id'] }) {
                       <BountyWithBalance
                         token={native}
                         vaultId={vaultId}
-                        balance={pendingCompound}
+                        balance={
+                          vault.pendingRewards == null
+                            ? pendingCompound
+                            : pendingCompound.dividedBy(nativeUsd).multipliedBy(rewardPriceData.usd)
+                        }
                       />
                     }
                     tooltip={{

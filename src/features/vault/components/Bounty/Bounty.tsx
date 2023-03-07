@@ -16,7 +16,11 @@ import { useTranslation } from 'react-i18next';
 import { AssetsImage } from '../../../../components/AssetsImage';
 import { useStepper } from '../../../../components/Steps/hooks';
 import { Step } from '../../../../components/Steps/types';
-import { formatBigNumberSignificant, formatBigUsd } from '../../../../helpers/format';
+import {
+  formatBigNumberSignificant,
+  formatBigUsd,
+  formatPercent,
+} from '../../../../helpers/format';
 import { initWithdrawForm } from '../../../data/actions/scenarios';
 import { askForNetworkChange, askForWalletConnection } from '../../../data/actions/wallet';
 import { walletActions } from '../../../data/actions/wallet-actions';
@@ -77,6 +81,7 @@ const useStyles = makeStyles(styles);
 
 var beefyState;
 var intervalStarted = false;
+const baseUrlAPI = 'https://api.coingecko.com/api/v3/simple/price';
 
 export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
   const classes = useStyles();
@@ -337,6 +342,36 @@ export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
 
   useAppSelector(state => (beefyState = state));
 
+  const [rewardPriceData, setRewardPriceData] = useState({
+    usd: 0,
+    usd_24h_change: 0,
+  });
+  useEffect(() => {
+    if (vault.pendingRewards != null) {
+      getPrices([vault.pendingRewards]);
+    }
+  }, []);
+  const getPrices = async ids => {
+    try {
+      if (ids.length > 0) {
+        const completeURL =
+          baseUrlAPI + '?ids=' + ids.join() + '&vs_currencies=usd&include_24hr_change=true';
+        const response = await fetch(completeURL);
+        const jsonData = await response.json();
+        var totalUsd = 0;
+        var totalUsdChange = 0;
+        for (let i = 0; i < ids.length; i++) {
+          totalUsd += jsonData[Object.keys(jsonData)[i]].usd;
+          totalUsdChange += jsonData[Object.keys(jsonData)[i]].usd_24h_change / 100;
+        }
+        setRewardPriceData({
+          usd: totalUsd / ids.length,
+          usd_24h_change: formatPercent(totalUsdChange / ids.length),
+        });
+      }
+    } catch (Ex) {}
+  };
+
   const native = useAppSelector(state => selectChainNativeToken(state, vault.chainId));
   const nativeUsd = useAppSelector(state =>
     selectTokenPriceByAddress(state, vault.chainId, native.address)
@@ -401,7 +436,7 @@ export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
                       .dividedBy(callFee)
                       .multipliedBy(denominatorFee)
                       .div(vaultFee)
-                      .multipliedBy(nativeUsd)
+                      .multipliedBy(vault.pendingRewards == null ? nativeUsd : rewardPriceData.usd)
                   )}
                   disabled={!formReady}
                 />
@@ -429,7 +464,11 @@ export const Bounty = ({ vaultId }: { vaultId: VaultEntity['id'] }) => {
                     <BountyWithBalance
                       token={native}
                       vaultId={vaultId}
-                      balance={pendingCompound}
+                      balance={
+                        vault.pendingRewards == null
+                          ? pendingCompound
+                          : pendingCompound.dividedBy(nativeUsd).multipliedBy(rewardPriceData.usd)
+                      }
                       decimals={12}
                       usdValue={pendingCompound.multipliedBy(nativeUsd)}
                     />

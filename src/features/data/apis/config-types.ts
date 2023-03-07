@@ -12,6 +12,7 @@ export interface VaultConfig {
   isMultiStrat: 'true' | 'false';
   isOptimized: 'true' | 'false';
   isRewardable: 'true' | 'false';
+  pendingRewards?: string | null;
   apiIds: string[];
   tokenAddress?: string | null;
   tokenDecimals: number;

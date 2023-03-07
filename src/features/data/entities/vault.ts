@@ -55,6 +55,8 @@ export interface VaultStandard {
 
   isRewardable: 'true' | 'false';
 
+  pendingRewards?: string | null;
+
   apiIds: string[];
 
   /**
@@ -123,6 +125,8 @@ export interface VaultGov {
   isOptimized: 'true' | 'false';
 
   isRewardable: 'true' | 'false';
+
+  pendingRewards?: string | null;
 
   apiIds: string[];
 
