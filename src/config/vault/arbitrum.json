@@ -11,7 +11,7 @@
     "earnContractAddress": "0xBc6254C57D82aBc5Eb8FBE337Fe5Aa87c7c7D195",
     "oracle": "single",
     "oracleId": "USDT",
-    "status": "paused",
+    "status": "eol",
     "isMultiStrat": "false",
     "isOptimized": "false",
     "isRewardable": "true",
