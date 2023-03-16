@@ -153,69 +153,6 @@ export const Home = memo(function Home() {
           </div>
         </div>
       </div>
-      {/*
-      <section className="section home-feature">
-        <div className="container-lg">
-            <div className="row">
-                <div className="col-lg-12">
-                    <div className="row">
-                        <div className='col'>
-                          <div className="" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s">
-                              <div className="features-small-item">
-                                  <div className="icon">
-                                      <i><img src={btcIcon} width="100%" alt=""/></i>
-                                  </div>
-                                  <h5 className="features-title">{bestBTC}% APY</h5>
-                                  <p className='d-flex justify-content-center'>
-                                    <Link
-                                      to={`/vault/${linkBTC}`}
-                                    >
-                                      <button className='btn text-white' style={{background: '#85bf4b'}}><b>Stake Now</b></button>
-                                    </Link>
-                                  </p>
-                              </div>
-                          </div>
-                        </div>
-                        <div className='col'>
-                          <div className="" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.4s">
-                              <div className="features-small-item">
-                                  <div className="icon">
-                                      <i><img src={usdIcon} width="100%" alt=""/></i>
-                                  </div>
-                                  <h5 className="features-title">{bestUSD}% APY</h5>
-                                  <p className='d-flex justify-content-center'>
-                                    <Link
-                                      to={`/vault/${linkUSD}`}
-                                    >
-                                      <button className='btn text-white' style={{background: '#85bf4b'}}><b>Stake Now</b></button>
-                                    </Link>
-                                  </p>
-                              </div>
-                          </div>
-                        </div>
-                        <div className='col'>
-                          <div className="" data-scroll-reveal="enter bottom move 50px over 0.6s after 0.6s">
-                              <div className="features-small-item">
-                                  <div className="icon">
-                                      <i><img src={ethIcon} width="100%" alt=""/></i>
-                                  </div>
-                                  <h5 className="features-title">{bestETH}% APY</h5>
-                                  <p className='d-flex justify-content-center'>
-                                    <Link
-                                      to={`/vault/${linkETH}`}
-                                    >
-                                      <button className='btn text-white' style={{background: '#85bf4b'}}><b>Stake Now</b></button>
-                                    </Link>
-                                  </p>
-                              </div>
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </section>
-      */}
     </div>
   );
 });
