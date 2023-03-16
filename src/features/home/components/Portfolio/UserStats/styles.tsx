@@ -13,11 +13,11 @@ export const styles = (theme: Theme) => ({
     },
   },
   value: {
-    ...theme.typography['h2'],
+    ...theme.typography['h3'],
     color: theme.palette.text.primary,
   },
   label: {
-    ...theme.typography['subline-lg'],
+    ...theme.typography['subline-md'],
     display: 'inline-flex',
     color: theme.palette.text.disabled,
   },

@@ -106,7 +106,7 @@ nav .menu-item:nth-of-type(4):hover ~ #sub-menu-container #sub-menu-holder {
   top: 3.5em;
   color: rgba(0,0,0,0.5);
   border: solid 2px #cfcaaf;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 1);
   border-radius: 10px;
   min-width: 22em;
   pointer-events: none;

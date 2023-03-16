@@ -10,14 +10,12 @@ type VaultTypeProps = {
   vaultType?: string;
 };
 
-export const Vaults = memo<VaultTypeProps>(function Vaults({
-  vaultType,
-}) {
+export const Vaults = memo<VaultTypeProps>(function Vaults({ vaultType }) {
   const classes = useStyles();
 
   return (
     <div className={classes.vaults}>
-      <VaultsHeader />
+      {vaultType == 'home' ? null : <VaultsHeader />}
       <VaultsList vaultType={vaultType} />
     </div>
   );

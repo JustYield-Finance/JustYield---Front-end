@@ -2,7 +2,7 @@ import { Theme } from '@material-ui/core';
 
 export const styles = (theme: Theme) => ({
   navHeader: {
-    background: 'transparent',
+    background: '#d9ecf2',
     boxShadow: 'none',
     '&:hover .MuiListItem-button': {
       background: 'transparent',

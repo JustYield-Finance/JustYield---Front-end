@@ -76,17 +76,9 @@ const NavLinks = memo(function () {
   const { t } = useTranslation();
   const classes = useStyles();
   const navLinks = [
-    //{ title: t('Header-Vaults'), url: '/' },
-    //{ title: t('Header-Proposals'), url: 'https://vote.justyield.finance' },
-    //{ title: t('Header-BuyCrypto'), url: '/onramp' },
-    //{ title: t('Header-BridgeBifi'), url: '/bridge', badge: true },
-    //{ title: t('Header-News'), url: 'https://justyield.com/articles/' },
-    //{ title: t('Header-Docs'), url: 'https://docs.justyield.finance' }
-    //{ title: t('Header-Vaults-Single'), url: '/single' },
-    //{ title: t('Header-Vaults-LP'), url: '/lps' },
-    { title: t('Optimized Vaults'), url: '/' },
-    { title: t('Multi-Strategies Vaults'), url: '/multi' },
-    { title: t('Single-Exposure Vaults'), url: '/single' },
+    { title: t('Earn'), url: '/all' },
+    //{ title: t('Multi-Strategies Vaults'), url: '/multi' },
+    //{ title: t('Single-Exposure Vaults'), url: '/single' },
     { title: t('Documentation'), url: 'https://docs.justyield.finance' },
     { title: t('Treasury'), url: '/treasury' },
     { title: t('Propose, Vote, Delegate'), url: '/vote' },
@@ -138,16 +130,23 @@ const NavLinksFull = memo(function () {
   return (
     <>
       <nav id="menu">
-        {/*Products Menu
-          <NavLink activeClassName={classes.active} exact={true} className={classes.navLink} key={url} to={url[0] === '/' ? url : { pathname: url }} target={url[0] === '/' ? undefined : '_blank'}>
-            <a href="#">Products</a>
-          </NavLink>
-          */}
+        {/*Products Menu*/}
         <div className="menu-item">
           <div className="menu-text">
-            <a>Products</a>
+            <NavLink
+              activeClassName={classes.active}
+              exact={true}
+              className={classes.newNavLink}
+              key={'/all'}
+              to={'/all'}
+              target={undefined}
+            >
+              <button className="btn text-white" style={{ background: '#85bf4b' }}>
+                <b>Earn</b>
+              </button>
+            </NavLink>
           </div>
-          <div className="sub-menu">
+          {/*<div className="sub-menu">
             <div className="icon-box">
               <div className="icon">
                 <img src={coin} className="menuIcon" />
@@ -209,12 +208,12 @@ const NavLinksFull = memo(function () {
               </div>
             </div>
             <div className="sub-menu-holder"></div>
-          </div>
+          </div>*/}
         </div>
         {/*Just Yield Menu*/}
-        <div className="menu-item">
+        <div className="menu-item align-self-center">
           <div className="menu-text">
-            <a>Just Yield</a>
+            <a>Ecosystem</a>
           </div>
           <div className="sub-menu triple">
             <div className="top-container gb c icon-box">
@@ -326,7 +325,7 @@ const NavLinksFull = memo(function () {
                   <img src={twitter} className="menuIcon" />
                 </div>
                 <div className="text">
-                  <div className="title">Twitter</div>
+                  <div className="title ">Twitter</div>
                 </div>
               </a>
             </div>
@@ -380,10 +379,16 @@ const NavLinksFull = memo(function () {
         </div>
         {/*Governance Menu*/}
         <div className="menu-item">
-          <div className="menu-text">
-            <a>Governance</a>
+          <div className="menu-text align-self-center">
+            <a className="disabled">
+              Governance
+              <span className="position-absolute top-5 start-100 translate-middle badge rounded-pill bg-info">
+                Soon
+                <span className="visually-hidden"></span>
+              </span>
+            </a>
           </div>
-          <div className="sub-menu">
+          {/*<div className="sub-menu">
             <div className="icon-box">
               <div className="icon">
                 <img src={treasury} className="menuIcon" />
@@ -425,7 +430,7 @@ const NavLinksFull = memo(function () {
               </div>
             </div>
             <div className="sub-menu-holder"></div>
-          </div>
+          </div>*/}
         </div>
       </nav>
     </>
@@ -467,7 +472,7 @@ export const Header = connect((state: BeefyState) => {
       setMobileOpen(!mobileOpen);
     };
     return (
-      <Box sx={{ flexGrow: 1 }}>
+      <Box style={{ background: '#d9ecf2' }} sx={{ flexGrow: 1 }}>
         <AppBar className={clsx([classes.navHeader, classes.hasPortfolio])} position="static">
           <Container className={classes.container} maxWidth="lg">
             <Toolbar disableGutters={true}>
@@ -481,7 +486,7 @@ export const Header = connect((state: BeefyState) => {
                           ? require(`../../images/bifi-logos/header-logo-notext.png`).default
                           : require(`../../images/bifi-logos/header-logo.png`).default
                       }
-                      height="75px"
+                      height="50px"
                     />
                   </Link>
                 ) : (
@@ -493,7 +498,7 @@ export const Header = connect((state: BeefyState) => {
                           ? require(`../../images/bifi-logos/header-logo-notext.png`).default
                           : require(`../../images/bifi-logos/header-logo.png`).default
                       }
-                      height="175px"
+                      height="75px"
                     />
                   </Link>
                 )}

@@ -11,10 +11,25 @@ export const VaultsHeader = memo(function VaultsHeader() {
   const classes = useStyles();
 
   return (
-    <div className={classes.header}>
-      <VaultsSearch />
-      <Filters />
-      <VaultsSort />
+    <div className="container-lg">
+      <div className="row">
+        <div className="col">
+          <VaultsSearch />
+        </div>
+        <div className="col">
+          <Filters />
+        </div>
+        <div className="col">
+          <VaultsSort />
+        </div>
+      </div>
+      {/*
+      <div className={classes.header}>
+        <VaultsSearch />
+        <Filters />
+        <VaultsSort />
+      </div>
+      */}
     </div>
   );
 });
