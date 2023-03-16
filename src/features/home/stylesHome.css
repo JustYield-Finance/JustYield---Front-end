@@ -473,7 +473,7 @@ Schema
   border: 2px solid #168B66;
   background-image: url(https://i.ibb.co/5TRLF19/Mid3-Generate-an-illustration-of-finances-featuring-a-wallet-wi-a80aef78-590d-4c04-830f-8d505a673516.png);
   background-size: contain;
-  animation: rotatecenter 10s infinite;
+  animation: rotatecenter 10s;
 }
 
 .linkcircle {
