@@ -93,66 +93,82 @@ export const Home = memo(function Home() {
   }
 
   return (
-    <div className="gradientBackground">
-      <div className="animation-example">
-        <div className="item">
-          <div className="line"></div>
-          <div className="dot"></div>
-          <div className="circle1">
-            <div id="SpeechBubblebtc">Struggling to take profits ?</div>
-          </div>
+    <NavLink exact={true} key={'/all'} to={'/all'} target={undefined}>
+      <div className="gradientBackground">
+        <div className="containerJY">
+          <h1 className="top" data-shadow="Just">
+            Just
+          </h1>
+          <h1 className="bottom" data-shadow="Yield">
+            Yield
+          </h1>
         </div>
-        <div className="item">
-          <div className="line"></div>
-          <div className="dot"></div>
-          <div className="circle2">
-            <div id="SpeechBubbleavax">DCA on yield</div>
-          </div>
+        <div id="bubbles">
+          <div id="SpeechBubblebtcMobile">Struggling to take profits ?</div>
+          <div id="SpeechBubblematicMobile">Auto-compound Vaults</div>
+          <div id="SpeechBubbleavaxMobile">DCA on yield</div>
+          <div id="SpeechBubbleethMobile">Bounty Hunts</div>
         </div>
-        <div className="item">
-          <div className="line"></div>
-          <div className="dot"></div>
-          <div className="circle3"></div>
-        </div>
-        <div className="item">
-          <div className="line"></div>
-          <div className="dot"></div>
-          <div className="circle4"></div>
-        </div>
-        <div className="item -type2">
-          <div className="line"></div>
-          <div className="dot"></div>
-          <div className="circle5"></div>
-        </div>
-        <div className="item -type2">
-          <div className="line"></div>
-          <div className="dot"></div>
-          <div className="circle6"></div>
-        </div>
-        <div className="item -type2">
-          <div className="line"></div>
-          <div className="dot"></div>
-          <div className="circle7">
-            <div id="SpeechBubblematic">Auto-compound Vaults</div>
-          </div>
-        </div>
-        <div className="item -type2">
-          <div className="line"></div>
-          <div className="dot"></div>
-          <div className="circle8">
-            <div id="SpeechBubbleeth">Bounty Hunts</div>
-          </div>
-        </div>
-        <div className="center">
-          <div className="circle"></div>
-          <div className="circle"></div>
-          <div className="circle">
-            <NavLink exact={true} key={'/all'} to={'/all'} target={undefined}>
-              <div className="linkcircle"></div>
-            </NavLink>
+        <div id="TEST">
+          <div className="animation-example">
+            <div className="item">
+              <div className="line"></div>
+              <div className="dot"></div>
+              <div className="circle1">
+                <div id="SpeechBubblebtc">Struggling to take profits ?</div>
+              </div>
+            </div>
+            <div className="item">
+              <div className="line"></div>
+              <div className="dot"></div>
+              <div className="circle2">
+                <div id="SpeechBubbleavax">DCA on yield</div>
+              </div>
+            </div>
+            <div className="item">
+              <div className="line"></div>
+              <div className="dot"></div>
+              <div className="circle3"></div>
+            </div>
+            <div className="item">
+              <div className="line"></div>
+              <div className="dot"></div>
+              <div className="circle4"></div>
+            </div>
+            <div className="item -type2">
+              <div className="line"></div>
+              <div className="dot"></div>
+              <div className="circle5"></div>
+            </div>
+            <div className="item -type2">
+              <div className="line"></div>
+              <div className="dot"></div>
+              <div className="circle6"></div>
+            </div>
+            <div className="item -type2">
+              <div className="line"></div>
+              <div className="dot"></div>
+              <div className="circle7">
+                <div id="SpeechBubblematic">Auto-compound Vaults</div>
+              </div>
+            </div>
+            <div className="item -type2">
+              <div className="line"></div>
+              <div className="dot"></div>
+              <div className="circle8">
+                <div id="SpeechBubbleeth">Bounty Hunts</div>
+              </div>
+            </div>
+            <div className="center">
+              <div className="circle"></div>
+              <div className="circle"></div>
+              <div className="circle">
+                <div className="linkcircle"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 });

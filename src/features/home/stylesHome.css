@@ -1,29 +1,105 @@
-#SpeechBubblebtc {
-  position: relative;
-  text-align: center;
-  background-color: white;
-  opacity: 0.75;
-  color: #168B66;
-  border-radius: 10px;
-  transform: scale(0);
-  left: 80%;
-  bottom: 80%;
-  padding: 10px;
-  width: max-content;
-  animation: shrink 10s infinite;
-}
-#SpeechBubblebtc::before {
-  content: "";
-  display: block;
-  color:white;
-  width: 0;
-  position: absolute;
-  bottom: -10px;
-  left: 5px;
-  border-style: solid;
+#gradientBackground {
+  min-height: 720px;
 }
 
-#SpeechBubblematic {
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+.containerJY {
+  text-align: center;
+  width: 100%;
+}
+
+.containerJY:before {
+  content: '';
+  display: inline-block;
+  font-size: 0;
+  height: 100%;
+}
+
+.top {
+  opacity: 0;
+  animation: 2s moveFromRight 4s ease-in-out forwards;
+}
+.bottom {
+  opacity: 0;
+  animation: 2s moveFromLeft 4s ease-in-out forwards;
+}
+
+@keyframes moveFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-300%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes moveFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(300%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.top, .bottom {
+  position: relative;
+  display: inline-block;
+  color: #85bf4b;
+  font-family: 'Righteous', serif;
+  font-size: 10em; 
+  text-shadow: .03em .03em 0 white;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.top:after, .bottom:after {
+  content: attr(data-shadow);
+  position: absolute;
+  top: .06em;
+  left: .06em;
+  align-items: center;
+  z-index: -1;
+  text-shadow: none;
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent 45%,
+      #168B66 45%,
+      #168B66 55%,
+      transparent 0
+      );
+  background-size: .05em .05em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shad-anim 15s linear infinite;
+}
+
+@media (max-width: 1200px) {
+  .top, .bottom {
+    font-size: 6em; 
+  }
+  .top {
+    opacity: 0;
+    animation: moveFromRight 2s ease-in-out forwards;
+  }
+  .bottom {
+    opacity: 0;
+    animation: moveFromLeft 2s ease-in-out forwards;
+  }
+}
+
+@keyframes shad-anim {
+  0% {background-position: 0 0}
+  0% {background-position: 100% -100%}
+}
+
+#SpeechBubblebtc, #SpeechBubblematic, #SpeechBubbleavax, #SpeechBubbleeth {
   position: relative;
   text-align: center;
   background-color: white;
@@ -31,71 +107,86 @@
   color: #168B66;
   border-radius: 10px;
   transform: scale(0);
-  animation: shrink2 10s infinite;
   left: 80%;
   bottom: 80%;
   padding: 10px;
   width: max-content;
+  border: 2px solid #168B66;
+}
+#SpeechBubblebtc::before, #SpeechBubblematic::before, #SpeechBubbleavax::before, #SpeechBubbleeth::before {
+  content: "";
+  display: block;
+  color:#168B66;
+  width: 0;
+  position: absolute;
+  border-style: solid;
+  border-style: 2px solid #168B66;
+  bottom: -10px;
+}
+#SpeechBubblebtc::before, #SpeechBubbleavax::before, #SpeechBubbleeth::before {
+  left: 5px;
 }
 #SpeechBubblematic::before {
-  content: "";
-  display: block;
-  color:white;
-  width: 0;
-  position: absolute;
-  bottom: -10px;
   right: 5px;
-  border-style: solid;
 }
-
+#SpeechBubblebtc {
+  animation: shrink 10s infinite;
+}
+#SpeechBubblematic {
+  animation: shrink2 10s infinite;
+}
 #SpeechBubbleavax {
-  position: relative;
-  text-align: center;
-  background-color: white;
-  opacity: 0.75;
-  color: #168B66;
-  border-radius: 10px;
-  transform: scale(0);
   animation: shrink3 10s infinite;
-  left: 80%;
-  bottom: 80%;
-  padding: 10px;
-  width: max-content;
 }
-#SpeechBubbleavax::before {
-  content: "";
-  display: block;
-  color:white;
-  width: 0;
-  position: absolute;
-  bottom: -10px;
-  left: 5px;
-  border-style: solid;
+#SpeechBubbleeth {
+  animation: shrink4 10s infinite;
 }
 
-#SpeechBubbleeth {
-  position: relative;
-  text-align: center;
-  background-color: white;
-  opacity: 0.75;
-  color: #168B66;
-  border-radius: 10px;
-  transform: scale(0);
-  animation: shrink4 10s infinite;
-  left: 80%;
-  bottom: 80%;
-  padding: 10px;
-  width: max-content;
+#SpeechBubblebtcMobile, #SpeechBubblematicMobile, #SpeechBubbleavaxMobile, #SpeechBubbleethMobile {
+  display: none;
 }
-#SpeechBubbleeth::before {
-  content: "";
-  display: block;
-  color:white;
-  width: 0;
-  position: absolute;
-  bottom: -10px;
-  left: 5px;
-  border-style: solid;
+@media (max-width: 1200px) {
+  #SpeechBubblebtc, #SpeechBubblematic, #SpeechBubbleavax, #SpeechBubbleeth {
+    display: none;
+  }
+  
+  #SpeechBubblebtcMobile, #SpeechBubblematicMobile, #SpeechBubbleavaxMobile, #SpeechBubbleethMobile {
+    position: absolute;
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+    z-index: 3;
+    border: 2px solid #168B66;
+    text-align: center;
+    background-color: white;
+    opacity: 0.75;
+    color: #168B66;
+    border-radius: 10px;
+    transform: scale(0);
+  }
+
+  /*
+  #bubbles {
+    position: relative;
+    display: block;
+    width: 100%;
+    left: 25%;
+    height: 75px;
+  }
+
+  #SpeechBubblebtcMobile {
+    animation: shrink 10s infinite;
+  }
+  #SpeechBubblematicMobile {
+    animation: shrink2Mobile 10s infinite;
+  }
+  #SpeechBubbleavaxMobile {
+    animation: shrink3 10s infinite;
+  }
+  #SpeechBubbleethMobile {
+    animation: shrink4 10s infinite;
+  }*/
 }
 
 @keyframes shrink {
@@ -127,6 +218,24 @@
     -o-transform: scale(-1, 1);
     -ms-transform: scale(-1, 1);
     transform: scale(-1, 1);
+  }
+  45% {
+    transform : scale(0);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes shrink2Mobile {
+  0% {
+    transform: scale(0);
+  }
+  15% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1);
   }
   45% {
     transform : scale(0);
@@ -236,9 +345,7 @@ Schema
 }
 .animation-example {
   position: relative;
-  top: 25px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: auto;
   height: 70vmin;
   width: 70vmin;
 }
@@ -475,7 +582,6 @@ Schema
   background-size: contain;
   animation: rotatecenter 10s;
 }
-
 .linkcircle {
   position: relative;
   width: 100%;

@@ -9,9 +9,7 @@ export const styles = (theme: Theme) => ({
     minHeight: '100vh',
     width: '100%',
   },
-  wrapperTop: {
-    marginBottom: 'auto',
-  },
+  wrapperTop: {},
   footer: {
     background: theme.palette.background.footer,
     padding: `${theme.spacing(5)}px`,
