@@ -93,7 +93,14 @@ export const Home = memo(function Home() {
   }
 
   return (
-    <NavLink exact={true} key={'/all'} to={'/all'} target={undefined}>
+    <NavLink
+      className="gradientBackground"
+      exact={true}
+      key={'/all'}
+      to={'/all'}
+      target={undefined}
+    >
+      <div className="backgroundImg" />
       <div className="gradientBackground">
         <div className="containerJY">
           <h1 className="top" data-shadow="Just">

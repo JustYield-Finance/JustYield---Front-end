@@ -1,5 +1,14 @@
-#gradientBackground {
-  min-height: 720px;
+.backgroundImg {
+  position: absolute;
+  background-image: url(https://i.ibb.co/KFyWTPz/justyield-back.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  height: 100%;
+  width: 100%;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Righteous);
@@ -18,11 +27,11 @@
 
 .top {
   opacity: 0;
-  animation: 2s moveFromRight 4s ease-in-out forwards;
+  animation: moveFromRight 2s ease-in-out forwards;
 }
 .bottom {
   opacity: 0;
-  animation: 2s moveFromLeft 4s ease-in-out forwards;
+  animation: moveFromLeft 2s ease-in-out forwards;
 }
 
 @keyframes moveFromRight {
@@ -77,7 +86,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: shad-anim 15s linear infinite;
+  animation: shad-anim 30s linear infinite;
 }
 
 @media (max-width: 1200px) {
@@ -106,7 +115,6 @@
   opacity: 0.75;
   color: #168B66;
   border-radius: 10px;
-  transform: scale(0);
   left: 80%;
   bottom: 80%;
   padding: 10px;
@@ -133,6 +141,11 @@
   animation: shrink 10s infinite;
 }
 #SpeechBubblematic {
+  -moz-transform: scale(-1, 1);
+  -webkit-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
   animation: shrink2 10s infinite;
 }
 #SpeechBubbleavax {
@@ -191,102 +204,97 @@
 
 @keyframes shrink {
   0% {
-    transform: scale(0);
+    opacity: 0;
   }
   15% {
-    transform: scale(1);
+    opacity: 0.75;
   }
   30% {
-    transform: scale(0);
+    opacity: 0;
   }
   100% {
-    transform: scale(0);
+    opacity: 0;
   }
 }
 
 @keyframes shrink2 {
   0% {
-    transform: scale(0);
+    opacity: 0;
   }
   15% {
-    transform: scale(0);
+    opacity: 0;
   }
   30% {
-    transform: scale(1);
-    -moz-transform: scale(-1, 1);
-    -webkit-transform: scale(-1, 1);
-    -o-transform: scale(-1, 1);
-    -ms-transform: scale(-1, 1);
-    transform: scale(-1, 1);
+    opacity: 0.75;
   }
   45% {
-    transform : scale(0);
+    opacity: 0;
   }
   100% {
-    transform: scale(0);
+    opacity: 0;
   }
 }
 
 @keyframes shrink2Mobile {
   0% {
-    transform: scale(0);
+    opacity: 0;
   }
   15% {
-    transform: scale(0);
+    opacity: 0;
   }
   30% {
-    transform: scale(1);
+    opacity: 0.75;
   }
   45% {
-    transform : scale(0);
+    opacity: 0;
   }
   100% {
-    transform: scale(0);
+    opacity: 0;
   }
 }
 
 @keyframes shrink3 {
   0% {
-    transform: scale(0);
+    opacity: 0;
   }
   15% {
-    transform: scale(0);
+    opacity: 0;
   }
   30% {
-    transform: scale(0);
+    opacity: 0;
   }
   45% {
-    transform: scale(1);
+    opacity: 0.75;
   }
   60% {
-    transform: scale(0);
+    opacity: 0;
   }
   100% {
-    transform: scale(0);
+    opacity: 0;
   }
 }
 
 @keyframes shrink4 {
   0% {
-    transform: scale(0);
+    opacity: 0;
   }
   15% {
-    transform: scale(0);
+    opacity: 0;
   }
   30% {
-    transform: scale(0);
+    opacity: 0;
   }
   45% {
-    transform: scale(0);
+    opacity: 0;
   }
   60% {
-    transform: scale(1);
+    opacity: 0.75;
   }
   75% {
-    transform: scale(0);
+    opacity: 0;
   }
   100% {
-    transform: scale(0);
+    opacity: 0;
   }
 }
 
@@ -390,7 +398,7 @@ Schema
   transform: translateX(-50%) translateY(-50%);
   height: 5%;
   width: 5%;
-  background: #85bf4b;
+  background: white;
   border: 2px solid #5bc0eb;
   border-radius: 50%;
 }

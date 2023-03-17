@@ -43,31 +43,37 @@ export const App = () => {
           <DefaultMeta />
           <Redirects />
           <WrappedFooter>
-            <Header />
             <React.Suspense fallback={<CowLoader text="Loading" />}>
               <Switch>
                 <Route exact path="/">
                   <Home />
                 </Route>
                 <Route exact path="/multi">
+                  <Header />
                   <Multi />
                 </Route>
                 <Route exact path="/single">
+                  <Header />
                   <Single />
                 </Route>
                 <Route exact path="/all">
+                  <Header />
                   <All />
                 </Route>
                 <Route strict sensitive exact path={['/:network/vault/:id', '/vault/:id']}>
+                  <Header />
                   <Vault />
                 </Route>
                 <Route exact path="/onramp">
+                  <Header />
                   <OnRamp />
                 </Route>
                 <Route exact path="/bridge">
+                  <Header />
                   <Bridge />
                 </Route>
                 <Route>
+                  <Header />
                   <PageNotFound />
                 </Route>
               </Switch>

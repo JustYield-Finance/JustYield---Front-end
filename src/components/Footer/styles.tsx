@@ -9,7 +9,14 @@ export const styles = (theme: Theme) => ({
     minHeight: '100vh',
     width: '100%',
   },
-  wrapperTop: {},
+  wrapperTop: {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    alignItems: 'stretch',
+    justifyContent: 'flex-start',
+    minHeight: '100vh',
+    width: '100%',
+  },
   footer: {
     background: theme.palette.background.footer,
     padding: `${theme.spacing(5)}px`,
