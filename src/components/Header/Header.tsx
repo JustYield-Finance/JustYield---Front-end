@@ -472,7 +472,7 @@ export const Header = connect((state: BeefyState) => {
       setMobileOpen(!mobileOpen);
     };
     return (
-      <Box style={{ background: '#d9ecf2' }} sx={{ flexGrow: 1 }}>
+      <Box style={{ background: '#E8E8E9' }} sx={{ flexGrow: 1 }}>
         <AppBar className={clsx([classes.navHeader, classes.hasPortfolio])} position="static">
           <Container className={classes.container} maxWidth="lg">
             <Toolbar disableGutters={true}>

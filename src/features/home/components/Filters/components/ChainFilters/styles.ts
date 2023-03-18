@@ -31,7 +31,7 @@ export const styles = (theme: Theme) => ({
     },
   },
   selected: {
-    background: '#d9ecf2',
+    background: '#E8E8E9',
   },
   tooltip: {
     ...theme.typography['body-lg-med'],

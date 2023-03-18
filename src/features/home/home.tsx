@@ -116,7 +116,7 @@ export const Home = memo(function Home() {
           <div id="SpeechBubbleavaxMobile">DCA on yield</div>
           <div id="SpeechBubbleethMobile">Bounty Hunts</div>
         </div>
-        <div id="TEST">
+        <div id="schemaContainer">
           <div className="animation-example">
             <div className="item">
               <div className="line"></div>
@@ -132,11 +132,7 @@ export const Home = memo(function Home() {
                 <div id="SpeechBubbleavax">DCA on yield</div>
               </div>
             </div>
-            <div className="item">
-              <div className="line"></div>
-              <div className="dot"></div>
-              <div className="circle3"></div>
-            </div>
+            <div className="item"></div>
             <div className="item">
               <div className="line"></div>
               <div className="dot"></div>

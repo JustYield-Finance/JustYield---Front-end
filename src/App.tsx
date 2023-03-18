@@ -46,7 +46,8 @@ export const App = () => {
             <React.Suspense fallback={<CowLoader text="Loading" />}>
               <Switch>
                 <Route exact path="/">
-                  <Home />
+                  <Header />
+                  <All />
                 </Route>
                 <Route exact path="/multi">
                   <Header />
