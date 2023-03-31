@@ -15,6 +15,7 @@ import { DefaultMeta } from './components/Meta';
 import { HelmetProvider } from 'react-helmet-async';
 import { Redirects } from './components/Redirects';
 import { All, Single, Multi } from './features/home';
+import { Landpage } from './features/home/landpage';
 
 const Home = React.lazy(() => import(`./features/home`));
 const Vault = React.lazy(() => import(`./features/vault`));
@@ -47,7 +48,7 @@ export const App = () => {
               <Switch>
                 <Route exact path="/">
                   <Header />
-                  <All />
+                  <Landpage />
                 </Route>
                 <Route exact path="/multi">
                   <Header />
