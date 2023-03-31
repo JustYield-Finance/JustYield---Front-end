@@ -14,6 +14,9 @@ import { selectFilteredVaults } from '../data/selectors/filtered-vaults';
 
 import front from '../../images/bifi-logos/front.png';
 import arbitrum from '../../images/networks/arbitrum-1.svg';
+import choose from '../../images/bifi-logos/choose.png';
+import deposit from '../../images/bifi-logos/deposit.png';
+import compound from '../../images/bifi-logos/compound.png';
 
 import './stylesLandpage.css';
 
@@ -90,7 +93,7 @@ export const Landpage = memo(function Home() {
           </p>
         </div>
       </div>
-      <div className="col-lg-8 mx-auto">
+      <div className="col-lg-8 mx-auto mb-5">
         <div className="apland-timeline-area">
           <div className="single-timeline-area">
             <div
@@ -320,6 +323,9 @@ export const Landpage = memo(function Home() {
           </div>
         </div>
       </div>
+      {
+        // Steps
+      }
     </>
   );
 });
